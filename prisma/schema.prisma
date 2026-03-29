@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Sequence {
+  id          String       @id @default(cuid())
+  name        String
+  subject     String
+  emoji       String       @default("📚")
+  createdAt   DateTime     @default(now())
+  documents   Document[]
+  evaluations Evaluation[]
+}
+
+model Document {
+  id         String   @id @default(cuid())
+  sequenceId String
+  sequence   Sequence @relation(fields: [sequenceId], references: [id], onDelete: Cascade)
+  filename   String
+  filePath   String
+  mimeType   String
+  rawText    String   @default("")
+  createdAt  DateTime @default(now())
+}
+
+model Evaluation {
+  id          String    @id @default(cuid())
+  sequenceId  String
+  sequence    Sequence  @relation(fields: [sequenceId], references: [id], onDelete: Cascade)
+  level       Int
+  questions   String    // JSON: Question[]
+  answers     String    @default("{}") // JSON: { [questionIndex]: answerIndex }
+  score       Int?
+  submittedAt DateTime?
+  createdAt   DateTime  @default(now())
+}
