@@ -56,10 +56,9 @@ export async function generateQcm(
   let prompt: string;
   if (courseText.trim()) {
     prompt = buildQcmPrompt(level, courseText, previousQuestions, questionCount, helpMode, sequence.subject, sequence.name);
-  } else if (sequence.topic?.trim()) {
-    prompt = buildFreeTopicQcmPrompt(sequence.topic, level, previousQuestions, questionCount, helpMode, sequence.subject, sequence.name);
   } else {
-    throw new Error("Aucun contenu disponible. Uploadez des documents ou créez une séquence libre.");
+    const topic = sequence.topic?.trim() || sequence.name;
+    prompt = buildFreeTopicQcmPrompt(topic, level, previousQuestions, questionCount, helpMode, sequence.subject, sequence.name);
   }
 
   const questions = await claudeJson<Question[]>(prompt, schema);
