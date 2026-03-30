@@ -82,6 +82,9 @@ export default async function SequenceDetailPage({ params, searchParams }: Props
           <div>
             <h1 className="text-xl font-bold text-gray-900 leading-tight">{sequence.name}</h1>
             <p className="text-sm text-gray-500">{sequence.subject}</p>
+            {sequence.topic && (
+              <p className="text-sm text-gray-400 mt-0.5 line-clamp-2">{sequence.topic}</p>
+            )}
           </div>
         </div>
         <DeleteSequenceButton sequenceId={sequence.id} />
@@ -164,18 +167,18 @@ export default async function SequenceDetailPage({ params, searchParams }: Props
         </section>
       )}
 
-      {/* Générer quiz */}
+      {/* CTA Nouveau quiz */}
       <Link
-        href={`/sequences/${sequence.id}/qcm`}
+        href="/sequences/new"
         className="block w-full py-3 bg-blue-600 text-white font-semibold text-center rounded-xl mb-6"
       >
-        🎯 Générer un quiz
+        + Nouveau quiz
       </Link>
 
       {/* Evaluations */}
       <section>
         <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
-          Historique ({evaluations.length})
+          Quiz ({evaluations.length})
         </h2>
 
         {evaluations.length === 0 ? (
@@ -192,12 +195,11 @@ export default async function SequenceDetailPage({ params, searchParams }: Props
                   href={`/sequences/${sequence.id}/qcm/${ev.id}`}
                   className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors"
                 >
-                  <span className={`text-sm font-bold ${LEVEL_COLORS[ev.level] ?? "text-gray-600"}`}>
-                    N{ev.level}
-                  </span>
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900">
-                      {LEVEL_LABELS[ev.level] ?? `Niveau ${ev.level}`}
+                      <span className={LEVEL_COLORS[ev.level] ?? "text-gray-600"}>
+                        {LEVEL_LABELS[ev.level] ?? `Niveau ${ev.level}`}
+                      </span>
                       {ev.submitted_at ? ` — ${ev.score ?? 0}/${qs.length}` : " — En cours"}
                     </p>
                     {ev.submitted_at && ev.score !== null && (
