@@ -6,19 +6,19 @@ import { createSequence } from "@/actions/sequences";
 import { LEVELS } from "@/lib/prompts";
 import SubmitButton from "./submit-button";
 
-const SUBJECTS: { label: string; emoji: string }[] = [
-  { label: "Mathématiques", emoji: "📐" },
-  { label: "Français", emoji: "📖" },
-  { label: "Histoire-Géographie", emoji: "🌍" },
-  { label: "Sciences de la Vie et de la Terre", emoji: "🔬" },
-  { label: "Physique-Chimie", emoji: "⚗️" },
-  { label: "Anglais", emoji: "🗣️" },
-  { label: "Arts Plastiques", emoji: "🎨" },
-  { label: "Musique", emoji: "🎵" },
-  { label: "EPS", emoji: "⚽" },
-  { label: "Technologie", emoji: "💻" },
-  { label: "Latin", emoji: "🏛️" },
-  { label: "Espagnol", emoji: "🌞" },
+const SUBJECTS: { label: string; emoji: string; titleHint: string; descHint: string }[] = [
+  { label: "Mathématiques", emoji: "📐", titleHint: "ex. Les fractions décimales", descHint: "ex. addition, soustraction et comparaison de fractions" },
+  { label: "Français", emoji: "📖", titleHint: "ex. Le récit d'aventure", descHint: "ex. les caractéristiques du récit d'aventure, les temps du récit" },
+  { label: "Histoire-Géographie", emoji: "🌍", titleHint: "ex. La Première Guerre mondiale", descHint: "ex. les causes, les grandes batailles, l'armistice de 1918" },
+  { label: "Sciences de la Vie et de la Terre", emoji: "🔬", titleHint: "ex. La digestion des aliments", descHint: "ex. le trajet des aliments, les organes digestifs, l'absorption" },
+  { label: "Physique-Chimie", emoji: "⚗️", titleHint: "ex. Les circuits électriques", descHint: "ex. circuit en série, en dérivation, rôle de chaque composant" },
+  { label: "Anglais", emoji: "🗣️", titleHint: "ex. Present Perfect", descHint: "ex. formation, emploi, mots-clés (already, yet, since, for)" },
+  { label: "Arts Plastiques", emoji: "🎨", titleHint: "ex. La perspective", descHint: "ex. point de fuite, lignes de fuite, profondeur" },
+  { label: "Musique", emoji: "🎵", titleHint: "ex. Les familles d'instruments", descHint: "ex. cordes, vents, percussions, exemples d'instruments" },
+  { label: "EPS", emoji: "⚽", titleHint: "ex. Les règles du handball", descHint: "ex. terrain, nombre de joueurs, fautes, pénaltys" },
+  { label: "Technologie", emoji: "💻", titleHint: "ex. Les matériaux", descHint: "ex. propriétés des matériaux, familles, recyclage" },
+  { label: "Latin", emoji: "🏛️", titleHint: "ex. Les déclinaisons", descHint: "ex. nominatif, accusatif, génitif, datif, ablatif" },
+  { label: "Espagnol", emoji: "🌞", titleHint: "ex. El presente de indicativo", descHint: "ex. verbos regulares -ar, -er, -ir, irregulares" },
 ];
 
 const QUESTION_COUNTS = [10, 20] as const;
@@ -66,6 +66,7 @@ export default function NewSequencePage() {
   }
 
   const isExpertLevel = level === 4;
+  const currentSubject = SUBJECTS.find((s) => s.label === subject);
 
   const BackButton = ({ toSequences = false }: { toSequences?: boolean }) =>
     toSequences ? (
@@ -160,7 +161,7 @@ export default function NewSequencePage() {
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="ex. Les régimes alimentaires"
+              placeholder={currentSubject?.titleHint ?? "ex. Les régimes alimentaires"}
               className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg bg-slate-50 focus:outline-none focus:bg-white focus:border-blue-500"
             />
           </div>
@@ -172,7 +173,7 @@ export default function NewSequencePage() {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               rows={3}
-              placeholder="ex. les régimes alimentaires des animaux : herbivore, carnivore, omnivore..."
+              placeholder={currentSubject?.descHint ?? "ex. précisions sur le sujet à réviser..."}
               className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg bg-slate-50 focus:outline-none focus:bg-white focus:border-blue-500 resize-none"
             />
           </div>
