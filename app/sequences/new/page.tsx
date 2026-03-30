@@ -24,7 +24,9 @@ const SUBJECTS: { label: string; emoji: string; titleHint: string; descHint: str
 const QUESTION_COUNTS = [10, 20] as const;
 type QuestionCount = 10 | 20;
 
-const STEP_LABELS = ["Matière", "Contenu", "Niveau", "Options", "Documents"];
+const STEP_LABELS = ["Matière", "Contenu", "Niveau", "Options", "Docs", "Récap"];
+
+const LEVEL_LABELS: Record<number, string> = { 1: "Facile", 2: "Moyen", 3: "Difficile", 4: "Expert" };
 
 export default function NewSequencePage() {
   const [step, setStep] = useState(0);
@@ -287,19 +289,11 @@ export default function NewSequencePage() {
         </div>
       )}
 
-      {/* ── Step 4 : Documents ────────────────────────────────────── */}
+      {/* ── Step 4 : Documents (optionnel) ────────────────────────── */}
       {step === 4 && (
-        <form action={createSequence} className="space-y-5">
-          {/* Hidden fields */}
-          <input type="hidden" name="subject" value={subject} />
-          <input type="hidden" name="title" value={title} />
-          <input type="hidden" name="description" value={description} />
-          <input type="hidden" name="level" value={level} />
-          <input type="hidden" name="questionCount" value={questionCount} />
-          <input type="hidden" name="helpMode" value={helpMode ? "1" : "0"} />
-
+        <div className="space-y-5">
           <p className="text-sm text-gray-500">
-            Ajoute tes documents de cours pour un quiz plus précis — ou passe directement à la génération.
+            Ajoute tes documents de cours pour un quiz plus précis, ou passe à l&apos;étape suivante.
           </p>
 
           <label className="flex items-center gap-2 px-4 py-4 border border-dashed border-gray-300 rounded-xl bg-slate-50 cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition-colors">
@@ -309,7 +303,6 @@ export default function NewSequencePage() {
             <span className="text-sm text-gray-500">Ajouter des photos ou PDFs</span>
             <input
               type="file"
-              name="files"
               multiple
               accept="image/jpeg,image/png,image/webp,application/pdf"
               className="sr-only"
@@ -333,6 +326,88 @@ export default function NewSequencePage() {
               ))}
             </ul>
           )}
+
+          <div className="flex items-center justify-between pt-1">
+            <BackButton />
+            <button
+              onClick={next}
+              className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl"
+            >
+              {files.length > 0 ? "Suivant →" : "Passer →"}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ── Step 5 : Récap ────────────────────────────────────────── */}
+      {step === 5 && (
+        <form action={createSequence} className="space-y-5">
+          {/* Hidden fields */}
+          <input type="hidden" name="subject" value={subject} />
+          <input type="hidden" name="title" value={title} />
+          <input type="hidden" name="description" value={description} />
+          <input type="hidden" name="level" value={level} />
+          <input type="hidden" name="questionCount" value={questionCount} />
+          <input type="hidden" name="helpMode" value={helpMode ? "1" : "0"} />
+          {/* Re-attach files via a hidden DataTransfer (handled by SubmitButton) */}
+
+          <p className="text-sm text-gray-500 mb-1">Vérifie avant de lancer la génération</p>
+
+          <div className="bg-white rounded-xl border border-gray-200 divide-y divide-gray-100">
+            <div className="flex items-center justify-between px-4 py-3">
+              <span className="text-sm text-gray-500">Matière</span>
+              <span className="text-sm font-medium text-gray-900">
+                {currentSubject?.emoji} {subject}
+              </span>
+            </div>
+            <div className="flex items-center justify-between px-4 py-3">
+              <span className="text-sm text-gray-500">Titre</span>
+              <span className="text-sm font-medium text-gray-900 text-right max-w-[60%] truncate">{title}</span>
+            </div>
+            {description.trim() && (
+              <div className="flex items-center justify-between px-4 py-3">
+                <span className="text-sm text-gray-500">Détails</span>
+                <span className="text-sm text-gray-700 text-right max-w-[60%] truncate">{description}</span>
+              </div>
+            )}
+            <div className="flex items-center justify-between px-4 py-3">
+              <span className="text-sm text-gray-500">Niveau</span>
+              <span className="text-sm font-medium text-gray-900">
+                {LEVELS.find((l) => l.value === level)?.emoji} {LEVEL_LABELS[level]}
+              </span>
+            </div>
+            <div className="flex items-center justify-between px-4 py-3">
+              <span className="text-sm text-gray-500">Questions</span>
+              <span className="text-sm font-medium text-gray-900">{questionCount}</span>
+            </div>
+            <div className="flex items-center justify-between px-4 py-3">
+              <span className="text-sm text-gray-500">Aide</span>
+              <span className="text-sm font-medium text-gray-900">
+                {isExpertLevel ? "Indisponible (Expert)" : helpMode ? "💡 Activée" : "Désactivée"}
+              </span>
+            </div>
+            {files.length > 0 && (
+              <div className="flex items-center justify-between px-4 py-3">
+                <span className="text-sm text-gray-500">Documents</span>
+                <span className="text-sm font-medium text-gray-900">{files.length} fichier{files.length > 1 ? "s" : ""}</span>
+              </div>
+            )}
+          </div>
+
+          {/* Inject files into the form */}
+          <input
+            type="file"
+            name="files"
+            multiple
+            className="sr-only"
+            ref={(input) => {
+              if (input && files.length > 0) {
+                const dt = new DataTransfer();
+                files.forEach((f) => dt.items.add(f));
+                input.files = dt.files;
+              }
+            }}
+          />
 
           <SubmitButton />
 
