@@ -68,17 +68,23 @@ export function buildQcmPrompt(
   courseText: string,
   previousQuestions: string[] = [],
   questionCount = 10,
-  helpMode = false
+  helpMode = false,
+  subject = "",
+  title = ""
 ): string {
   const levelDesc = LEVEL_DESCRIPTIONS[level];
   const previousNote =
     previousQuestions.length > 0
       ? `\n\nÉVITE ces questions déjà posées:\n${previousQuestions.map((q, i) => `${i + 1}. ${q}`).join("\n")}`
       : "";
+  const contextLines = [
+    subject ? `MATIÈRE : ${subject}` : "",
+    title ? `SÉQUENCE : ${title}` : "",
+  ].filter(Boolean).join("\n");
 
   return `Tu es un professeur expert créant des QCM pour un élève de 5e (collège français).
 
-NIVEAU : ${level}/4 — ${levelDesc}${hintInstruction(helpMode)}
+${contextLines ? contextLines + "\n" : ""}NIVEAU : ${level}/4 — ${levelDesc}${hintInstruction(helpMode)}
 
 Génère exactement ${questionCount} questions à choix multiples basées UNIQUEMENT sur ce cours.
 Chaque question doit avoir 4 choix (A, B, C, D) avec une seule bonne réponse.${previousNote}
@@ -98,17 +104,23 @@ export function buildFreeTopicQcmPrompt(
   level: number,
   previousQuestions: string[] = [],
   questionCount = 10,
-  helpMode = false
+  helpMode = false,
+  subject = "",
+  title = ""
 ): string {
   const levelDesc = LEVEL_DESCRIPTIONS[level];
   const previousNote =
     previousQuestions.length > 0
       ? `\n\nÉVITE ces questions déjà posées:\n${previousQuestions.map((q, i) => `${i + 1}. ${q}`).join("\n")}`
       : "";
+  const contextLines = [
+    subject ? `MATIÈRE : ${subject}` : "",
+    title ? `SÉQUENCE : ${title}` : "",
+  ].filter(Boolean).join("\n");
 
   return `Tu es un professeur expert créant des QCM pour un élève de 5e (collège français, programme officiel Éducation Nationale).
 
-SUJET : ${topic}
+${contextLines ? contextLines + "\n" : ""}SUJET : ${topic}
 NIVEAU : ${level}/4 — ${levelDesc}${hintInstruction(helpMode)}
 
 Génère exactement ${questionCount} questions à choix multiples sur ce sujet, adaptées au programme de 5e.
