@@ -29,6 +29,10 @@ prisma/prisma/
 # Uploads
 public/uploads/*/
 
+# Programmes PDFs (large binary files)
+docs/programmes/pdfs/
+
+
 # Playwright
 tests/screenshots/
 playwright-report/
@@ -37,3 +41,4 @@ test-results/
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+.vercel
