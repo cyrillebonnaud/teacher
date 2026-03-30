@@ -1,5 +1,6 @@
 "use server";
 
+import { randomUUID } from "crypto";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { supabase, uploadToStorage } from "@/lib/supabase";
@@ -47,7 +48,7 @@ export async function createSequence(formData: FormData) {
 
   const { data: sequence, error } = await supabase
     .from("sequences")
-    .insert({ name: title, subject: subject.trim(), emoji, topic: description || null, child_id: childId })
+    .insert({ id: randomUUID(), name: title, subject: subject.trim(), emoji, topic: description || null, child_id: childId })
     .select()
     .single();
 
@@ -60,6 +61,7 @@ export async function createSequence(formData: FormData) {
     try {
       const publicUrl = await uploadToStorage("documents", sequence.id + "/" + filename, buffer, file.type);
       await supabase.from("documents").insert({
+        id: randomUUID(),
         sequence_id: sequence.id,
         filename: file.name,
         file_path: publicUrl,

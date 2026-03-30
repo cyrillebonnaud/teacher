@@ -1,5 +1,6 @@
 "use server";
 
+import { randomUUID } from "crypto";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { supabase, uploadToStorage } from "@/lib/supabase";
@@ -24,6 +25,7 @@ export async function uploadDocument(sequenceId: string, formData: FormData) {
   const { data: document, error } = await supabase
     .from("documents")
     .insert({
+      id: randomUUID(),
       sequence_id: sequenceId,
       filename: file.name,
       file_path: publicUrl,

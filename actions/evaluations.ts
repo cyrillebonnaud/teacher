@@ -1,5 +1,6 @@
 "use server";
 
+import { randomUUID } from "crypto";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { supabase } from "@/lib/supabase";
@@ -69,6 +70,7 @@ export async function generateQcm(
   const { data: evaluation, error } = await supabase
     .from("evaluations")
     .insert({
+      id: randomUUID(),
       sequence_id: sequenceId,
       level,
       questions: JSON.stringify(questions),
@@ -109,6 +111,7 @@ export async function retryQcmSameQuestions(evalId: string) {
   const { data: newEval, error } = await supabase
     .from("evaluations")
     .insert({
+      id: randomUUID(),
       sequence_id: evaluation.sequence_id,
       level: evaluation.level,
       questions: evaluation.questions,
