@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { jwtVerify } from "jose";
 
-const PUBLIC_PATHS = ["/login"];
+const PUBLIC_PATHS = ["/login", "/api/test/"];
 
 function getSecret(): Uint8Array {
   const secret =
@@ -13,7 +13,7 @@ function getSecret(): Uint8Array {
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Allow public paths
+  // Allow public paths and test API
   if (PUBLIC_PATHS.some((p) => pathname.startsWith(p))) {
     return NextResponse.next();
   }
@@ -27,7 +27,10 @@ export async function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const token = request.cookies.get("parent_session")?.value;
+  // Support both new "session" cookie and old "parent_session" cookie
+  const token =
+    request.cookies.get("session")?.value ??
+    request.cookies.get("parent_session")?.value;
   if (!token) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
