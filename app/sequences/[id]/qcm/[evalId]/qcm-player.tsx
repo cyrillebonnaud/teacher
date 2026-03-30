@@ -216,6 +216,7 @@ export default function QcmPlayer({
 
       {/* Current question */}
       <QcmQuestion
+        key={currentIndex}
         question={questions[currentIndex]}
         index={currentIndex}
         total={questions.length}
