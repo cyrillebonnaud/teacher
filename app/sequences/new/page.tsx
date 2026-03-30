@@ -46,46 +46,56 @@ export default function NewSequencePage() {
     setFiles((prev) => prev.filter((_, i) => i !== index));
   }
 
-  function canAdvance() {
-    if (step === 0) return subject !== "";
-    if (step === 1) return description.trim().length > 0;
-    return true;
+  function next() { setStep((s) => s + 1); }
+  function back() { setStep((s) => s - 1); }
+
+  function selectSubject(s: string) {
+    setSubject(s);
+    setStep(1);
   }
 
-  function next() {
-    if (canAdvance()) setStep((s) => s + 1);
-  }
-
-  function back() {
-    setStep((s) => s - 1);
-  }
-
-  // Reset helpMode when switching to expert level
   function selectLevel(v: number) {
     setLevel(v);
     if (v === 4) setHelpMode(false);
+    setStep(3);
+  }
+
+  function selectQuestionCount(count: QuestionCount) {
+    setQuestionCount(count);
+    setStep(4);
   }
 
   const isExpertLevel = level === 4;
 
+  const BackButton = ({ toSequences = false }: { toSequences?: boolean }) =>
+    toSequences ? (
+      <Link
+        href="/sequences"
+        className="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+        Précédent
+      </Link>
+    ) : (
+      <button
+        type="button"
+        onClick={back}
+        className="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+        Précédent
+      </button>
+    );
+
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
       {/* Header */}
-      <div className="flex items-center gap-3 mb-6">
-        {step === 0 ? (
-          <Link href="/sequences" className="text-gray-400 hover:text-gray-600">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </Link>
-        ) : (
-          <button onClick={back} className="text-gray-400 hover:text-gray-600">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
-        )}
-        <h1 className="text-xl font-bold text-gray-900">Nouveau QCM</h1>
+      <div className="mb-6">
+        <h1 className="text-xl font-bold text-gray-900">Nouveau quiz</h1>
       </div>
 
       {/* Step indicator */}
@@ -105,7 +115,7 @@ export default function NewSequencePage() {
               </span>
             </div>
             {i < STEP_LABELS.length - 1 && (
-              <div className={`flex-1 h-0.5 mb-4 mx-1 ${i < step ? "bg-blue-600" : "bg-gray-200"}`} style={{ width: 16 }} />
+              <div className={`h-0.5 mb-4 mx-1 ${i < step ? "bg-blue-600" : "bg-gray-200"}`} style={{ width: 16 }} />
             )}
           </div>
         ))}
@@ -120,7 +130,7 @@ export default function NewSequencePage() {
               <button
                 key={label}
                 type="button"
-                onClick={() => setSubject(label)}
+                onClick={() => selectSubject(label)}
                 className={`flex items-center gap-2 px-3 py-3 rounded-xl border-2 text-left transition-colors ${
                   subject === label
                     ? "border-blue-500 bg-blue-50 text-blue-700"
@@ -132,20 +142,16 @@ export default function NewSequencePage() {
               </button>
             ))}
           </div>
-          <button
-            onClick={next}
-            disabled={!subject}
-            className="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl disabled:opacity-40 mt-2"
-          >
-            Suivant →
-          </button>
+          <div className="pt-1">
+            <BackButton toSequences />
+          </div>
         </div>
       )}
 
       {/* ── Step 1 : Contenu ───────────────────────────────────────── */}
       {step === 1 && (
         <div className="space-y-4">
-          <p className="text-sm text-gray-500">Sur quoi porte ce QCM ?</p>
+          <p className="text-sm text-gray-500">Sur quoi porte ce quiz ?</p>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Titre <span className="text-gray-400 font-normal">(optionnel)</span>
@@ -171,13 +177,16 @@ export default function NewSequencePage() {
               className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg bg-slate-50 focus:outline-none focus:bg-white focus:border-blue-500 resize-none"
             />
           </div>
-          <button
-            onClick={next}
-            disabled={!description.trim()}
-            className="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl disabled:opacity-40"
-          >
-            Suivant →
-          </button>
+          <div className="flex items-center justify-between pt-1">
+            <BackButton />
+            <button
+              onClick={next}
+              disabled={!description.trim()}
+              className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl disabled:opacity-40"
+            >
+              Suivant →
+            </button>
+          </div>
         </div>
       )}
 
@@ -208,19 +217,16 @@ export default function NewSequencePage() {
               )}
             </button>
           ))}
-          <button
-            onClick={next}
-            className="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl mt-2"
-          >
-            Suivant →
-          </button>
+          <div className="pt-1">
+            <BackButton />
+          </div>
         </div>
       )}
 
       {/* ── Step 3 : Options ──────────────────────────────────────── */}
       {step === 3 && (
         <div className="space-y-6">
-          {/* Aide — uniquement niveaux 1-3 */}
+          {/* Aide */}
           {!isExpertLevel && (
             <div>
               <p className="text-sm font-medium text-gray-700 mb-3">Option aide</p>
@@ -261,7 +267,7 @@ export default function NewSequencePage() {
                 <button
                   key={count}
                   type="button"
-                  onClick={() => setQuestionCount(count)}
+                  onClick={() => selectQuestionCount(count)}
                   className={`flex-1 py-4 rounded-xl text-lg font-bold border-2 transition-colors ${
                     questionCount === count
                       ? "border-blue-500 bg-blue-50 text-blue-700"
@@ -275,12 +281,9 @@ export default function NewSequencePage() {
             </div>
           </div>
 
-          <button
-            onClick={next}
-            className="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl"
-          >
-            Suivant →
-          </button>
+          <div className="pt-1">
+            <BackButton />
+          </div>
         </div>
       )}
 
@@ -296,7 +299,7 @@ export default function NewSequencePage() {
           <input type="hidden" name="helpMode" value={helpMode ? "1" : "0"} />
 
           <p className="text-sm text-gray-500">
-            Ajoute tes documents de cours pour un QCM plus précis — ou passe directement à la génération.
+            Ajoute tes documents de cours pour un quiz plus précis — ou passe directement à la génération.
           </p>
 
           <label className="flex items-center gap-2 px-4 py-4 border border-dashed border-gray-300 rounded-xl bg-slate-50 cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition-colors">
@@ -332,6 +335,10 @@ export default function NewSequencePage() {
           )}
 
           <SubmitButton />
+
+          <div className="pt-1">
+            <BackButton />
+          </div>
         </form>
       )}
     </div>

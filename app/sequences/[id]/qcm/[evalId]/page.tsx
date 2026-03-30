@@ -33,7 +33,7 @@ export default async function QcmEvalPage({ params }: Props) {
         </Link>
         <div>
           <h1 className="text-xl font-bold text-gray-900">
-            QCM — {LEVEL_LABELS[evaluation.level]}
+            Quiz — {LEVEL_LABELS[evaluation.level]}
           </h1>
           <p className="text-sm text-gray-500">{sequence.emoji} {sequence.name}</p>
         </div>

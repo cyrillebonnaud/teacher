@@ -58,13 +58,13 @@ export default async function QcmLevelPage({ params }: Props) {
               <polyline points="15 18 9 12 15 6" />
             </svg>
           </Link>
-          <h1 className="text-xl font-bold text-gray-900">Générer un QCM</h1>
+          <h1 className="text-xl font-bold text-gray-900">Générer un quiz</h1>
         </div>
         <div className="bg-yellow-50 rounded-xl px-6 py-8 text-center">
           <p className="text-4xl mb-3">📂</p>
           <p className="font-semibold text-gray-900 mb-2">Aucun document disponible</p>
           <p className="text-sm text-gray-500 mb-4">
-            Uploade d&apos;abord tes documents de cours pour générer un QCM
+            Uploade d&apos;abord tes documents de cours pour générer un quiz
           </p>
           <Link
             href={`/sequences/${id}/upload`}

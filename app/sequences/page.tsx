@@ -1,13 +1,13 @@
+export const dynamic = "force-dynamic";
 import Link from "next/link";
-import { prisma } from "@/lib/db";
+import { supabase } from "@/lib/supabase";
 
 export default async function SequencesPage() {
-  const sequences = await prisma.sequence.findMany({
-    orderBy: { createdAt: "desc" },
-    include: {
-      _count: { select: { documents: true, evaluations: true } },
-    },
-  });
+  const { data: sequencesData } = await supabase
+    .from("sequences")
+    .select("*, documents(id), evaluations(id)")
+    .order("created_at", { ascending: false });
+  const sequences = sequencesData ?? [];
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
@@ -49,8 +49,8 @@ export default async function SequencesPage() {
                 <p className="text-sm text-gray-500">{seq.subject}</p>
               </div>
               <div className="text-right text-xs text-gray-400 shrink-0">
-                <p>{seq._count.documents} doc{seq._count.documents !== 1 ? "s" : ""}</p>
-                <p>{seq._count.evaluations} QCM</p>
+                <p>{(seq.documents as {id:string}[]).length} doc{(seq.documents as {id:string}[]).length !== 1 ? "s" : ""}</p>
+                <p>{(seq.evaluations as {id:string}[]).length} quiz</p>
               </div>
               <svg
                 width="16"
