@@ -10,6 +10,35 @@ interface Props {
   searchParams: Promise<{ error?: string }>;
 }
 
+interface Evaluation {
+  id: string;
+  level: number;
+  questions: string;
+  score: number | null;
+  submitted_at: string | null;
+}
+
+const LEVEL_LABELS: Record<number, string> = { 1: "Facile", 2: "Moyen", 3: "Difficile", 4: "Expert" };
+const LEVEL_COLORS: Record<number, string> = {
+  1: "text-green-600",
+  2: "text-blue-500",
+  3: "text-orange-500",
+  4: "text-gray-700",
+};
+const BAR_COLORS: Record<number, string> = {
+  1: "bg-green-500",
+  2: "bg-blue-500",
+  3: "bg-orange-500",
+  4: "bg-gray-700",
+};
+
+function starRating(score: number | null, total = 10): string {
+  if (score === null) return "";
+  const pct = Math.max(0, score) / total;
+  const stars = Math.round(pct * 5);
+  return "⭐".repeat(stars) + "☆".repeat(5 - stars);
+}
+
 export default async function SequenceDetailPage({ params, searchParams }: Props) {
   const { id } = await params;
   const { error } = await searchParams;
@@ -18,24 +47,25 @@ export default async function SequenceDetailPage({ params, searchParams }: Props
     .from("sequences")
     .select("*, documents(*), evaluations(*)")
     .eq("id", id)
-    .order("created_at", { ascending: false, referencedTable: "documents" })
     .order("created_at", { ascending: false, referencedTable: "evaluations" })
     .single();
 
   if (!sequence) notFound();
 
-  const LEVEL_LABELS: Record<number, string> = { 1: "Facile", 2: "Moyen", 3: "Difficile", 4: "Expert" };
-  const LEVEL_COLORS: Record<number, string> = {
-    1: "text-green-600",
-    2: "text-blue-500",
-    3: "text-orange-500",
-    4: "text-gray-700",
-  };
+  const evaluations = sequence.evaluations as Evaluation[];
+  const submitted = evaluations.filter((e) => e.submitted_at);
 
-  function starRating(score: number | null, total = 10): string {
-    if (score === null) return "";
-    const stars = Math.round((score / total) * 5);
-    return "⭐".repeat(stars) + "☆".repeat(5 - stars);
+  // Progression chart data: best score per level
+  const bestByLevel: Record<number, { score: number; total: number }> = {};
+  for (const ev of submitted) {
+    const qs = JSON.parse(ev.questions);
+    const total = qs.length;
+    const score = ev.score ?? 0;
+    const pct = total > 0 ? score / total : 0;
+    const prev = bestByLevel[ev.level];
+    if (!prev || pct > prev.score / prev.total) {
+      bestByLevel[ev.level] = { score, total };
+    }
   }
 
   return (
@@ -67,81 +97,94 @@ export default async function SequenceDetailPage({ params, searchParams }: Props
         </div>
       )}
 
-      {/* Documents */}
-      <section className="mb-6">
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
-          Documents ({(sequence.documents as unknown[]).length})
-        </h2>
-
-        {(sequence.documents as unknown[]).length === 0 ? (
-          <div className="bg-white rounded-xl border border-dashed border-gray-300 px-4 py-8 text-center">
-            <p className="text-gray-400 text-sm mb-3">Aucun document uploadé</p>
-            <Link
-              href={`/sequences/${sequence.id}/upload`}
-              className="inline-block px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-lg"
-            >
-              Ajouter un document
-            </Link>
-          </div>
-        ) : (
-          <>
-            <div className="bg-white rounded-xl border border-gray-200 divide-y divide-gray-100">
-              {(sequence.documents as {id:string; filename:string; raw_text:string; mime_type:string}[]).map((doc) => (
-                <Link
-                  key={doc.id}
-                  href={`/sequences/${sequence.id}/documents/${doc.id}`}
-                  className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors"
-                >
-                  <span className="text-xl">
-                    {doc.mime_type === "application/pdf" ? "📄" : "📷"}
-                  </span>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-gray-900 truncate">{doc.filename}</p>
-                    <p className="text-xs text-gray-400">
-                      {doc.raw_text.length > 0
-                        ? `${doc.raw_text.length} caractères extraits`
-                        : "Texte non extrait"}
-                    </p>
-                  </div>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
-                </Link>
-              ))}
+      {/* Progression chart */}
+      {submitted.length > 0 && (
+        <section className="mb-6">
+          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+            Progression
+          </h2>
+          <div className="bg-white rounded-xl border border-gray-200 p-4 space-y-3">
+            {/* Stats row */}
+            <div className="flex items-center justify-around text-center">
+              <div>
+                <p className="text-2xl font-bold text-gray-900">{submitted.length}</p>
+                <p className="text-xs text-gray-500">quiz terminés</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-gray-900">
+                  {submitted.length > 0
+                    ? Math.round(
+                        submitted.reduce((acc, ev) => {
+                          const total = JSON.parse(ev.questions).length;
+                          return acc + (Math.max(0, ev.score ?? 0) / total) * 100;
+                        }, 0) / submitted.length
+                      )
+                    : 0}%
+                </p>
+                <p className="text-xs text-gray-500">moyenne</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-gray-900">
+                  {Object.keys(bestByLevel).length}/4
+                </p>
+                <p className="text-xs text-gray-500">niveaux tentés</p>
+              </div>
             </div>
-            <Link
-              href={`/sequences/${sequence.id}/upload`}
-              className="mt-3 block text-center text-sm font-semibold text-blue-600 py-2"
-            >
-              + Ajouter un document
-            </Link>
-          </>
-        )}
-      </section>
+
+            {/* Best score per level bars */}
+            <div className="space-y-2 pt-2">
+              {[1, 2, 3, 4].map((lvl) => {
+                const best = bestByLevel[lvl];
+                const pct = best ? Math.max(0, Math.round((best.score / best.total) * 100)) : 0;
+                return (
+                  <div key={lvl} className="flex items-center gap-3">
+                    <span className={`text-xs font-bold w-16 ${LEVEL_COLORS[lvl]}`}>
+                      {LEVEL_LABELS[lvl]}
+                    </span>
+                    <div className="flex-1 h-5 bg-gray-100 rounded-full overflow-hidden">
+                      {best ? (
+                        <div
+                          className={`h-full rounded-full transition-all ${BAR_COLORS[lvl]}`}
+                          style={{ width: `${Math.max(pct, 2)}%` }}
+                        />
+                      ) : (
+                        <div className="h-full flex items-center justify-center">
+                          <span className="text-xs text-gray-300">—</span>
+                        </div>
+                      )}
+                    </div>
+                    <span className="text-xs font-medium text-gray-500 w-12 text-right">
+                      {best ? `${pct}%` : ""}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Générer quiz */}
-      {((sequence.documents as unknown[]).length > 0 || sequence.topic) && (
-        <Link
-          href={`/sequences/${sequence.id}/qcm`}
-          className="block w-full py-3 bg-blue-600 text-white font-semibold text-center rounded-xl mb-6"
-        >
-          🎯 Générer un quiz
-        </Link>
-      )}
+      <Link
+        href={`/sequences/${sequence.id}/qcm`}
+        className="block w-full py-3 bg-blue-600 text-white font-semibold text-center rounded-xl mb-6"
+      >
+        🎯 Générer un quiz
+      </Link>
 
       {/* Evaluations */}
       <section>
         <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
-          Évaluations ({(sequence.evaluations as unknown[]).length})
+          Historique ({evaluations.length})
         </h2>
 
-        {(sequence.evaluations as unknown[]).length === 0 ? (
+        {evaluations.length === 0 ? (
           <p className="text-gray-400 text-sm text-center py-4">
             Aucun quiz réalisé pour l&apos;instant
           </p>
         ) : (
           <div className="bg-white rounded-xl border border-gray-200 divide-y divide-gray-100">
-            {(sequence.evaluations as {id:string; level:number; questions:string; score:number|null; submitted_at:string|null}[]).map((ev) => {
+            {evaluations.map((ev) => {
               const qs = JSON.parse(ev.questions as string);
               return (
                 <Link
@@ -158,7 +201,7 @@ export default async function SequenceDetailPage({ params, searchParams }: Props
                       {ev.submitted_at ? ` — ${ev.score ?? 0}/${qs.length}` : " — En cours"}
                     </p>
                     {ev.submitted_at && ev.score !== null && (
-                      <p className="text-xs">{starRating(ev.score)}</p>
+                      <p className="text-xs">{starRating(ev.score, qs.length)}</p>
                     )}
                   </div>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
