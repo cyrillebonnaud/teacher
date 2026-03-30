@@ -95,8 +95,14 @@ export default async function SequenceDetailPage({ params, searchParams }: Props
 
       {/* Error banner */}
       {error === "qcm" && (
-        <div className="mb-4 px-4 py-3 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
-          Quiz non disponible pour l&apos;instant. Réessaie depuis le bouton ci-dessous.
+        <div className="mb-4 px-4 py-3 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800 flex items-center justify-between gap-3">
+          <span>Quiz non disponible pour l&apos;instant.</span>
+          <Link
+            href={`/sequences/${sequence.id}/qcm`}
+            className="shrink-0 px-3 py-1.5 bg-yellow-200 hover:bg-yellow-300 text-yellow-900 font-semibold rounded-lg transition-colors"
+          >
+            Réessayer
+          </Link>
         </div>
       )}
 
