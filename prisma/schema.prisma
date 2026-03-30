@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -12,6 +12,7 @@ model Sequence {
   name        String
   subject     String
   emoji       String       @default("📚")
+  topic       String?
   createdAt   DateTime     @default(now())
   documents   Document[]
   evaluations Evaluation[]
@@ -37,5 +38,6 @@ model Evaluation {
   answers     String    @default("{}") // JSON: { [questionIndex]: answerIndex }
   score       Int?
   submittedAt DateTime?
+  helpMode    Boolean   @default(false)
   createdAt   DateTime  @default(now())
 }

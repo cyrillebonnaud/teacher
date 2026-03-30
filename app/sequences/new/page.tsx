@@ -1,97 +1,339 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { createSequence } from "@/actions/sequences";
+import { LEVELS } from "@/lib/prompts";
+import SubmitButton from "./submit-button";
 
-const EMOJIS = ["📚", "📐", "🔬", "🌍", "🎨", "🏛️", "📖", "🔢", "🌿", "⚗️", "🎵", "💻"];
-
-const SUBJECTS = [
-  "Mathématiques",
-  "Français",
-  "Histoire-Géographie",
-  "Sciences de la Vie et de la Terre",
-  "Physique-Chimie",
-  "Anglais",
-  "Arts Plastiques",
-  "Musique",
-  "EPS",
-  "Technologie",
-  "Latin",
-  "Espagnol",
+const SUBJECTS: { label: string; emoji: string }[] = [
+  { label: "Mathématiques", emoji: "📐" },
+  { label: "Français", emoji: "📖" },
+  { label: "Histoire-Géographie", emoji: "🌍" },
+  { label: "Sciences de la Vie et de la Terre", emoji: "🔬" },
+  { label: "Physique-Chimie", emoji: "⚗️" },
+  { label: "Anglais", emoji: "🗣️" },
+  { label: "Arts Plastiques", emoji: "🎨" },
+  { label: "Musique", emoji: "🎵" },
+  { label: "EPS", emoji: "⚽" },
+  { label: "Technologie", emoji: "💻" },
+  { label: "Latin", emoji: "🏛️" },
+  { label: "Espagnol", emoji: "🌞" },
 ];
 
+const QUESTION_COUNTS = [10, 20] as const;
+type QuestionCount = 10 | 20;
+
+const STEP_LABELS = ["Matière", "Contenu", "Niveau", "Options", "Documents"];
+
 export default function NewSequencePage() {
+  const [step, setStep] = useState(0);
+  const [subject, setSubject] = useState("");
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [level, setLevel] = useState(2);
+  const [helpMode, setHelpMode] = useState(false);
+  const [questionCount, setQuestionCount] = useState<QuestionCount>(10);
+  const [files, setFiles] = useState<File[]>([]);
+
+  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    if (e.target.files) {
+      setFiles((prev) => [...prev, ...Array.from(e.target.files!)]);
+    }
+  }
+
+  function removeFile(index: number) {
+    setFiles((prev) => prev.filter((_, i) => i !== index));
+  }
+
+  function canAdvance() {
+    if (step === 0) return subject !== "";
+    if (step === 1) return description.trim().length > 0;
+    return true;
+  }
+
+  function next() {
+    if (canAdvance()) setStep((s) => s + 1);
+  }
+
+  function back() {
+    setStep((s) => s - 1);
+  }
+
+  // Reset helpMode when switching to expert level
+  function selectLevel(v: number) {
+    setLevel(v);
+    if (v === 4) setHelpMode(false);
+  }
+
+  const isExpertLevel = level === 4;
+
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
+      {/* Header */}
       <div className="flex items-center gap-3 mb-6">
-        <Link href="/sequences" className="text-gray-400 hover:text-gray-600">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </Link>
-        <h1 className="text-xl font-bold text-gray-900">Nouvelle séquence</h1>
+        {step === 0 ? (
+          <Link href="/sequences" className="text-gray-400 hover:text-gray-600">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </Link>
+        ) : (
+          <button onClick={back} className="text-gray-400 hover:text-gray-600">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+        )}
+        <h1 className="text-xl font-bold text-gray-900">Nouveau QCM</h1>
       </div>
 
-      <form action={createSequence} className="space-y-5">
-        {/* Emoji picker */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Icône</label>
-          <div className="flex flex-wrap gap-2">
-            {EMOJIS.map((emoji, i) => (
-              <label key={emoji} className="cursor-pointer">
-                <input
-                  type="radio"
-                  name="emoji"
-                  value={emoji}
-                  defaultChecked={i === 0}
-                  className="sr-only peer"
-                />
-                <span className="w-10 h-10 flex items-center justify-center text-2xl rounded-lg border border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 transition-colors">
-                  {emoji}
-                </span>
-              </label>
+      {/* Step indicator */}
+      <div className="flex items-center gap-1 mb-8">
+        {STEP_LABELS.map((label, i) => (
+          <div key={i} className="flex items-center gap-1">
+            <div className="flex flex-col items-center">
+              <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
+                i < step ? "bg-blue-600 text-white" :
+                i === step ? "bg-blue-600 text-white ring-4 ring-blue-100" :
+                "bg-gray-200 text-gray-400"
+              }`}>
+                {i < step ? "✓" : i + 1}
+              </div>
+              <span className={`text-xs mt-1 ${i === step ? "text-blue-600 font-medium" : "text-gray-400"}`}>
+                {label}
+              </span>
+            </div>
+            {i < STEP_LABELS.length - 1 && (
+              <div className={`flex-1 h-0.5 mb-4 mx-1 ${i < step ? "bg-blue-600" : "bg-gray-200"}`} style={{ width: 16 }} />
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* ── Step 0 : Matière ───────────────────────────────────────── */}
+      {step === 0 && (
+        <div className="space-y-4">
+          <p className="text-sm text-gray-500">Quelle matière tu veux réviser ?</p>
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+            {SUBJECTS.map(({ label, emoji }) => (
+              <button
+                key={label}
+                type="button"
+                onClick={() => setSubject(label)}
+                className={`flex items-center gap-2 px-3 py-3 rounded-xl border-2 text-left transition-colors ${
+                  subject === label
+                    ? "border-blue-500 bg-blue-50 text-blue-700"
+                    : "border-gray-200 bg-white text-gray-700 hover:border-gray-300"
+                }`}
+              >
+                <span className="text-xl">{emoji}</span>
+                <span className="text-sm font-medium leading-tight">{label}</span>
+              </button>
             ))}
           </div>
-        </div>
-
-        {/* Name */}
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-            Nom de la séquence
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            placeholder="ex. Le Moyen Âge, Les fractions..."
-            className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg bg-slate-50 focus:outline-none focus:bg-white focus:border-blue-500"
-          />
-        </div>
-
-        {/* Subject */}
-        <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-            Matière
-          </label>
-          <select
-            id="subject"
-            name="subject"
-            required
-            className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg bg-slate-50 focus:outline-none focus:bg-white focus:border-blue-500"
+          <button
+            onClick={next}
+            disabled={!subject}
+            className="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl disabled:opacity-40 mt-2"
           >
-            <option value="">Choisir une matière...</option>
-            {SUBJECTS.map((s) => (
-              <option key={s} value={s}>{s}</option>
-            ))}
-          </select>
+            Suivant →
+          </button>
         </div>
+      )}
 
-        <button
-          type="submit"
-          className="w-full py-4 bg-blue-600 text-white font-bold text-lg rounded-lg"
-        >
-          Créer la séquence
-        </button>
-      </form>
+      {/* ── Step 1 : Contenu ───────────────────────────────────────── */}
+      {step === 1 && (
+        <div className="space-y-4">
+          <p className="text-sm text-gray-500">Sur quoi porte ce QCM ?</p>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Titre <span className="text-gray-400 font-normal">(optionnel)</span>
+            </label>
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="ex. Les régimes alimentaires"
+              className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg bg-slate-50 focus:outline-none focus:bg-white focus:border-blue-500"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Décris ce que tu veux réviser <span className="text-red-400">*</span>
+            </label>
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+              rows={4}
+              placeholder="ex. les régimes alimentaires des animaux : herbivore, carnivore, omnivore..."
+              className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg bg-slate-50 focus:outline-none focus:bg-white focus:border-blue-500 resize-none"
+            />
+          </div>
+          <button
+            onClick={next}
+            disabled={!description.trim()}
+            className="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl disabled:opacity-40"
+          >
+            Suivant →
+          </button>
+        </div>
+      )}
+
+      {/* ── Step 2 : Niveau ───────────────────────────────────────── */}
+      {step === 2 && (
+        <div className="space-y-3">
+          <p className="text-sm text-gray-500">Choisis ton niveau de difficulté</p>
+          {LEVELS.map(({ value, label, emoji, description: desc }) => (
+            <button
+              key={value}
+              type="button"
+              onClick={() => selectLevel(value)}
+              className={`w-full flex items-start gap-4 px-4 py-4 rounded-xl border-2 text-left transition-colors ${
+                level === value
+                  ? "border-blue-500 bg-blue-50"
+                  : "border-gray-200 bg-white hover:border-gray-300"
+              }`}
+            >
+              <span className="text-2xl mt-0.5">{emoji}</span>
+              <div>
+                <p className={`font-semibold ${level === value ? "text-blue-700" : "text-gray-900"}`}>
+                  {label}
+                </p>
+                <p className="text-sm text-gray-500 mt-0.5">{desc}</p>
+              </div>
+              {level === value && (
+                <span className="ml-auto text-blue-600 text-lg">✓</span>
+              )}
+            </button>
+          ))}
+          <button
+            onClick={next}
+            className="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl mt-2"
+          >
+            Suivant →
+          </button>
+        </div>
+      )}
+
+      {/* ── Step 3 : Options ──────────────────────────────────────── */}
+      {step === 3 && (
+        <div className="space-y-6">
+          {/* Aide — uniquement niveaux 1-3 */}
+          {!isExpertLevel && (
+            <div>
+              <p className="text-sm font-medium text-gray-700 mb-3">Option aide</p>
+              <button
+                type="button"
+                onClick={() => setHelpMode((v) => !v)}
+                className={`w-full flex items-center justify-between px-4 py-4 rounded-xl border-2 transition-colors ${
+                  helpMode
+                    ? "border-blue-500 bg-blue-50"
+                    : "border-gray-200 bg-white hover:border-gray-300"
+                }`}
+              >
+                <div className="text-left">
+                  <p className={`font-semibold ${helpMode ? "text-blue-700" : "text-gray-900"}`}>
+                    💡 Avec aide
+                  </p>
+                  <p className="text-sm text-gray-500 mt-0.5">
+                    Un indice masqué par question — cliquer dessus coûte 0,5 pt
+                  </p>
+                </div>
+                <div className={`w-12 h-6 rounded-full transition-colors flex-shrink-0 ml-4 ${helpMode ? "bg-blue-600" : "bg-gray-200"}`}>
+                  <div className={`w-5 h-5 bg-white rounded-full shadow mt-0.5 transition-transform ${helpMode ? "translate-x-6 ml-0.5" : "ml-0.5"}`} />
+                </div>
+              </button>
+            </div>
+          )}
+          {isExpertLevel && (
+            <div className="px-4 py-3 bg-gray-50 rounded-xl border border-gray-200 text-sm text-gray-500">
+              ⚫ Mode Expert — l&apos;aide n&apos;est pas disponible à ce niveau
+            </div>
+          )}
+
+          {/* Nombre de questions */}
+          <div>
+            <p className="text-sm font-medium text-gray-700 mb-3">Nombre de questions</p>
+            <div className="flex gap-3">
+              {QUESTION_COUNTS.map((count) => (
+                <button
+                  key={count}
+                  type="button"
+                  onClick={() => setQuestionCount(count)}
+                  className={`flex-1 py-4 rounded-xl text-lg font-bold border-2 transition-colors ${
+                    questionCount === count
+                      ? "border-blue-500 bg-blue-50 text-blue-700"
+                      : "border-gray-200 bg-white text-gray-500 hover:border-gray-300"
+                  }`}
+                >
+                  {count}
+                  <span className="block text-xs font-normal text-current opacity-70 mt-0.5">questions</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <button
+            onClick={next}
+            className="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl"
+          >
+            Suivant →
+          </button>
+        </div>
+      )}
+
+      {/* ── Step 4 : Documents ────────────────────────────────────── */}
+      {step === 4 && (
+        <form action={createSequence} className="space-y-5">
+          {/* Hidden fields */}
+          <input type="hidden" name="subject" value={subject} />
+          <input type="hidden" name="title" value={title || description.slice(0, 60)} />
+          <input type="hidden" name="description" value={description} />
+          <input type="hidden" name="level" value={level} />
+          <input type="hidden" name="questionCount" value={questionCount} />
+          <input type="hidden" name="helpMode" value={helpMode ? "1" : "0"} />
+
+          <p className="text-sm text-gray-500">
+            Ajoute tes documents de cours pour un QCM plus précis — ou passe directement à la génération.
+          </p>
+
+          <label className="flex items-center gap-2 px-4 py-4 border border-dashed border-gray-300 rounded-xl bg-slate-50 cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition-colors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />
+            </svg>
+            <span className="text-sm text-gray-500">Ajouter des photos ou PDFs</span>
+            <input
+              type="file"
+              name="files"
+              multiple
+              accept="image/jpeg,image/png,image/webp,application/pdf"
+              className="sr-only"
+              onChange={handleFileChange}
+            />
+          </label>
+
+          {files.length > 0 && (
+            <ul className="space-y-1">
+              {files.map((f, i) => (
+                <li key={i} className="flex items-center justify-between text-sm bg-white border border-gray-200 rounded-lg px-3 py-2">
+                  <span className="text-gray-700 truncate">{f.name}</span>
+                  <button
+                    type="button"
+                    onClick={() => removeFile(i)}
+                    className="ml-2 text-gray-400 hover:text-red-500 flex-shrink-0"
+                  >
+                    ×
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <SubmitButton />
+        </form>
+      )}
     </div>
   );
 }

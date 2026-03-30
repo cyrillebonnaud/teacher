@@ -1,6 +1,7 @@
+export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { prisma } from "@/lib/db";
+import { supabase } from "@/lib/supabase";
 import GenerateQcmForm from "./generate-form";
 
 interface Props {
@@ -10,40 +11,45 @@ interface Props {
 const LEVELS = [
   {
     level: 1,
-    label: "Niveau 1 — Facile",
-    description: "Questions directes sur le cours",
+    label: "Facile",
+    description: "Questions directes sur le cours, réponses évidentes",
     emoji: "🟢",
     color: "border-green-200 hover:border-green-400",
-    badge: "text-green-600 bg-green-50",
   },
   {
     level: 2,
-    label: "Niveau 2 — Moyen",
-    description: "Réflexion et mise en lien des idées",
-    emoji: "🟠",
-    color: "border-orange-200 hover:border-orange-400",
-    badge: "text-orange-600 bg-orange-50",
+    label: "Moyen",
+    description: "Il faut comprendre, pas juste mémoriser",
+    emoji: "🔵",
+    color: "border-blue-200 hover:border-blue-400",
   },
   {
     level: 3,
-    label: "Niveau 3 — Expert",
-    description: "Analyse et pièges pour les champions 🏆",
-    emoji: "🔴",
-    color: "border-red-200 hover:border-red-400",
-    badge: "text-red-600 bg-red-50",
+    label: "Difficile",
+    description: "Analyse, pièges et formulations complexes",
+    emoji: "🟠",
+    color: "border-orange-200 hover:border-orange-400",
+  },
+  {
+    level: 4,
+    label: "Expert",
+    description: "Zéro aide — chaque erreur coûte 1 point",
+    emoji: "⚫",
+    color: "border-gray-400 hover:border-gray-600",
   },
 ];
 
 export default async function QcmLevelPage({ params }: Props) {
   const { id } = await params;
 
-  const sequence = await prisma.sequence.findUnique({
-    where: { id },
-    include: { _count: { select: { documents: true } } },
-  });
+  const { data: sequence } = await supabase
+    .from("sequences")
+    .select("*, documents(id)")
+    .eq("id", id)
+    .single();
   if (!sequence) notFound();
 
-  if (sequence._count.documents === 0) {
+  if (!(sequence.documents as {id:string}[]).length && !sequence.topic) {
     return (
       <div className="max-w-2xl mx-auto px-4 py-6">
         <div className="flex items-center gap-3 mb-6">

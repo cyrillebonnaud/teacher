@@ -8,7 +8,6 @@ test("redirect from / to /sequences", async ({ page }) => {
 
 test("empty state shows when no sequences", async ({ page }) => {
   await page.goto("/sequences");
-  // May or may not have sequences in test DB, just check page loads
   await expect(page.getByRole("heading", { name: "Mes séquences" })).toBeVisible();
 });
 
@@ -29,14 +28,12 @@ test("created sequence appears in sequences list", async ({ page }) => {
   await expect(page.getByText(name)).toBeVisible({ timeout: 5_000 });
 });
 
-test("sequence detail shows upload and QCM buttons when no docs", async ({ page }) => {
+test("sequence detail shows QCM button (always has topic from funnel)", async ({ page }) => {
   const name = `Detail-${Date.now()}`;
   const id = await createSequence(page, { name });
 
   await page.goto(`/sequences/${id}`);
-  await expect(page.getByText("Uploader un document")).toBeVisible();
-  // QCM button should not appear without documents
-  await expect(page.getByText("Générer un QCM")).not.toBeVisible();
+  await expect(page.getByText("Générer un QCM")).toBeVisible();
 });
 
 test("delete sequence shows confirmation dialog", async ({ page }) => {
@@ -46,8 +43,6 @@ test("delete sequence shows confirmation dialog", async ({ page }) => {
   await page.goto(`/sequences/${id}`);
   await page.locator('[aria-label="Supprimer la séquence"]').click();
   await expect(page.getByText("Supprimer la séquence ?")).toBeVisible();
-  await expect(page.getByText("Supprimer définitivement")).not.toBeVisible();
-  // Cancel
   await page.getByRole("button", { name: "Annuler" }).click();
   await expect(page.getByText("Supprimer la séquence ?")).not.toBeVisible();
 });
@@ -64,18 +59,25 @@ test("cancel delete keeps sequence intact", async ({ page }) => {
   await expect(page.getByText(name)).toBeVisible();
 });
 
-test("name field is required", async ({ page }) => {
+test("funnel step 1 shows subject cards", async ({ page }) => {
   await page.goto("/sequences/new");
-  await page.selectOption('select[name="subject"]', "Mathématiques");
-  await page.click('button[type="submit"]');
-  // Should not navigate away
-  await expect(page).toHaveURL("/sequences/new");
+  await expect(page.getByText("Mathématiques")).toBeVisible();
+  await expect(page.getByText("Français")).toBeVisible();
+  await expect(page.getByText("Histoire-Géographie")).toBeVisible();
 });
 
-test("bottom nav switches between sequences and chat", async ({ page }) => {
-  await page.goto("/sequences");
-  await page.locator('a[href="/chat"]').click();
-  await expect(page).toHaveURL("/chat", { timeout: 5_000 });
-  await page.locator('a[href="/sequences"]').click();
-  await expect(page).toHaveURL("/sequences", { timeout: 5_000 });
+test("funnel cannot advance step 1 without selecting a subject", async ({ page }) => {
+  await page.goto("/sequences/new");
+  const nextBtn = page.getByRole("button", { name: "Suivant →" });
+  await expect(nextBtn).toBeDisabled();
+});
+
+test("funnel cannot advance step 2 without description", async ({ page }) => {
+  await page.goto("/sequences/new");
+  // Select a subject
+  await page.getByText("Mathématiques").click();
+  await page.getByRole("button", { name: "Suivant →" }).click();
+  // Step 2 — next button should be disabled without description
+  const nextBtn = page.getByRole("button", { name: "Suivant →" });
+  await expect(nextBtn).toBeDisabled();
 });

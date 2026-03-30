@@ -1,6 +1,7 @@
+export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { prisma } from "@/lib/db";
+import { supabase } from "@/lib/supabase";
 import { type Question } from "@/lib/prompts";
 import QcmPlayer from "./qcm-player";
 
@@ -8,15 +9,15 @@ interface Props {
   params: Promise<{ id: string; evalId: string }>;
 }
 
-const LEVEL_LABELS: Record<number, string> = { 1: "Facile", 2: "Moyen", 3: "Expert" };
+const LEVEL_LABELS: Record<number, string> = { 1: "Facile", 2: "Moyen", 3: "Difficile", 4: "Expert" };
 
 export default async function QcmEvalPage({ params }: Props) {
   const { id, evalId } = await params;
 
-  const evaluation = await prisma.evaluation.findUnique({ where: { id: evalId } });
-  if (!evaluation || evaluation.sequenceId !== id) notFound();
+  const { data: evaluation } = await supabase.from("evaluations").select().eq("id", evalId).single();
+  if (!evaluation || evaluation.sequence_id !== id) notFound();
 
-  const sequence = await prisma.sequence.findUnique({ where: { id } });
+  const { data: sequence } = await supabase.from("sequences").select().eq("id", id).single();
   if (!sequence) notFound();
 
   const questions = JSON.parse(evaluation.questions) as Question[];
@@ -44,8 +45,9 @@ export default async function QcmEvalPage({ params }: Props) {
         level={evaluation.level}
         questions={questions}
         savedAnswers={savedAnswers}
-        isSubmitted={!!evaluation.submittedAt}
+        isSubmitted={!!evaluation.submitted_at}
         savedScore={evaluation.score}
+        helpMode={!!evaluation.help_mode}
       />
     </div>
   );

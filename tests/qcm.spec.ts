@@ -13,26 +13,24 @@ test.describe("QCM engine", () => {
     await page.close();
   });
 
-  test("QCM page shows 'no documents' state when sequence is empty", async ({
+  test("QCM page shows level selection when sequence has a topic", async ({
     page,
   }) => {
     await page.goto(`/sequences/${sequenceId}/qcm`);
-    await expect(page.getByText("Aucun document disponible")).toBeVisible();
-    await expect(page.getByText("Uploader un document")).toBeVisible();
+    await expect(page.getByText("Choisir le niveau")).toBeVisible();
+    await expect(page.getByText("Facile")).toBeVisible();
   });
 
-  test("level selection shows 3 level cards", async ({ page }) => {
-    // This test requires documents to be present.
-    // We check the level page structure by looking at the QCM page
-    // for a sequence without documents (shows the no-docs state)
+  test("level selection shows 4 level cards", async ({ page }) => {
     await page.goto(`/sequences/${sequenceId}/qcm`);
-    // Without docs, we see the empty state
-    await expect(page.getByText("Aucun document disponible")).toBeVisible();
+    await expect(page.getByText("Facile")).toBeVisible();
+    await expect(page.getByText("Moyen")).toBeVisible();
+    await expect(page.getByText("Difficile")).toBeVisible();
+    await expect(page.getByText("Expert")).toBeVisible();
   });
 
   test("QCM page not accessible for invalid sequence", async ({ page }) => {
     await page.goto("/sequences/invalid-id-xyz/qcm");
-    // Should return 404
     await expect(page.getByText("404")).toBeVisible({ timeout: 5_000 }).catch(() => {
       // Next.js might show different 404 UI
     });

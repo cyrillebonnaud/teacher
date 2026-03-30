@@ -3,24 +3,72 @@ export interface Question {
   choices: string[];
   correct: number;
   explanation: string;
+  hint?: string;
 }
 
+export const LEVELS = [
+  {
+    value: 1,
+    label: "Facile",
+    emoji: "🟢",
+    description: "Questions directes sur le cours, réponses évidentes",
+  },
+  {
+    value: 2,
+    label: "Moyen",
+    emoji: "🔵",
+    description: "Il faut comprendre, pas juste mémoriser",
+  },
+  {
+    value: 3,
+    label: "Difficile",
+    emoji: "🟠",
+    description: "Analyse, pièges et formulations complexes",
+  },
+  {
+    value: 4,
+    label: "Expert",
+    emoji: "⚫",
+    description: "Zéro aide — chaque erreur coûte 1 point",
+  },
+] as const;
+
 const LEVEL_DESCRIPTIONS: Record<number, string> = {
-  1: `Questions FACILES portant sur des faits directs et du vocabulaire de base.
-Chaque question doit avoir une réponse clairement identifiable dans le cours.
-Les distracteurs sont facilement éliminables.`,
-  2: `Questions de NIVEAU MOYEN nécessitant de comprendre le sens du cours,
-faire des liens entre concepts, ou reformuler des idées.
-Les distracteurs sont plausibles mais un élève attentif peut les éliminer.`,
-  3: `Questions EXPERTES d'analyse et de mise en relation de plusieurs concepts.
-Les questions peuvent inclure des "pièges" subtils.
-Les distracteurs sont très plausibles et nécessitent une lecture attentive du cours.`,
+  1: `Niveau FACILE — questions directes portant sur des faits clairement énoncés.
+La réponse est identifiable sans analyse. Les distracteurs sont facilement éliminables.`,
+  2: `Niveau MOYEN — compréhension et mise en lien de concepts.
+L'élève doit reformuler ou relier deux idées du cours. Les distracteurs sont plausibles.`,
+  3: `Niveau DIFFICILE — analyse et application à des situations nouvelles.
+Les questions demandent de raisonner à partir du cours, pas juste de le réciter.
+Les distracteurs sont très proches et nécessitent une lecture attentive.`,
+  4: `Niveau EXPERT — synthèse, pièges et raisonnement avancé.
+Questions de haut niveau nécessitant de croiser plusieurs concepts.
+Les distracteurs sont subtils et peuvent piéger un élève peu attentif.`,
 };
+
+function hintInstruction(helpMode: boolean): string {
+  if (!helpMode) return "";
+  return `\n\nPour chaque question, ajoute un champ "hint" : une courte indication (1 phrase max) qui oriente sans donner la réponse.`;
+}
+
+function jsonFormat(helpMode: boolean): string {
+  const hintField = helpMode ? `\n    "hint": "...",` : "";
+  return `[
+  {
+    "question": "...",
+    "choices": ["...", "...", "...", "..."],
+    "correct": 0,
+    "explanation": "Explication courte et pédagogique de la bonne réponse",${hintField}
+  }
+]`;
+}
 
 export function buildQcmPrompt(
   level: number,
   courseText: string,
-  previousQuestions: string[] = []
+  previousQuestions: string[] = [],
+  questionCount = 10,
+  helpMode = false
 ): string {
   const levelDesc = LEVEL_DESCRIPTIONS[level];
   const previousNote =
@@ -30,9 +78,9 @@ export function buildQcmPrompt(
 
   return `Tu es un professeur expert créant des QCM pour un élève de 5e (collège français).
 
-NIVEAU : ${level}/3 — ${levelDesc}
+NIVEAU : ${level}/4 — ${levelDesc}${hintInstruction(helpMode)}
 
-Génère exactement 10 questions à choix multiples basées UNIQUEMENT sur ce cours.
+Génère exactement ${questionCount} questions à choix multiples basées UNIQUEMENT sur ce cours.
 Chaque question doit avoir 4 choix (A, B, C, D) avec une seule bonne réponse.${previousNote}
 
 COURS :
@@ -42,14 +90,34 @@ ${courseText}
 
 Réponds UNIQUEMENT avec un tableau JSON valide, sans markdown, sans explication.
 Format exact :
-[
-  {
-    "question": "...",
-    "choices": ["...", "...", "...", "..."],
-    "correct": 0,
-    "explanation": "Explication courte et pédagogique de la bonne réponse"
-  }
-]`;
+${jsonFormat(helpMode)}`;
+}
+
+export function buildFreeTopicQcmPrompt(
+  topic: string,
+  level: number,
+  previousQuestions: string[] = [],
+  questionCount = 10,
+  helpMode = false
+): string {
+  const levelDesc = LEVEL_DESCRIPTIONS[level];
+  const previousNote =
+    previousQuestions.length > 0
+      ? `\n\nÉVITE ces questions déjà posées:\n${previousQuestions.map((q, i) => `${i + 1}. ${q}`).join("\n")}`
+      : "";
+
+  return `Tu es un professeur expert créant des QCM pour un élève de 5e (collège français, programme officiel Éducation Nationale).
+
+SUJET : ${topic}
+NIVEAU : ${level}/4 — ${levelDesc}${hintInstruction(helpMode)}
+
+Génère exactement ${questionCount} questions à choix multiples sur ce sujet, adaptées au programme de 5e.
+Tes questions doivent être factuellement correctes et conformes au programme scolaire français.
+Chaque question doit avoir 4 choix (A, B, C, D) avec une seule bonne réponse.${previousNote}
+
+Réponds UNIQUEMENT avec un tableau JSON valide, sans markdown, sans explication.
+Format exact :
+${jsonFormat(helpMode)}`;
 }
 
 export function buildOcrPrompt(filename: string): string {
