@@ -56,11 +56,13 @@ function jsonFormat(helpMode: boolean): string {
   return `[
   {
     "question": "...",
-    "choices": ["...", "...", "...", "..."],
-    "correct": 0,
+    "choices": ["choix A", "choix B", "choix C", "choix D"],
+    "correct": 2,
     "explanation": "Explication courte et pédagogique de la bonne réponse",${hintField}
   }
-]`;
+]
+
+IMPORTANT : "correct" est l'index (0-3) de la bonne réponse dans "choices". Varie aléatoirement sa position d'une question à l'autre — ne mets PAS toujours la bonne réponse en position 0.`;
 }
 
 export function buildQcmPrompt(
