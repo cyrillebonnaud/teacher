@@ -23,6 +23,7 @@ const SUBJECT_EMOJI: Record<string, string> = {
 const ALLOWED_TYPES = ["application/pdf", "image/jpeg", "image/png", "image/webp"];
 
 export async function createSequence(formData: FormData) {
+  const childId = (formData.get("childId") as string)?.trim() || null;
   const subject = formData.get("subject") as string;
   const rawTitle = (formData.get("title") as string)?.trim();
   const description = (formData.get("description") as string)?.trim();
@@ -34,6 +35,7 @@ export async function createSequence(formData: FormData) {
 
   if (!subject?.trim()) throw new Error("La matière est requise");
   if (!rawTitle) throw new Error("Le titre est requis");
+  if (!childId) throw new Error("Sélectionne un enfant");
 
   const title = rawTitle;
 
@@ -45,7 +47,7 @@ export async function createSequence(formData: FormData) {
 
   const { data: sequence, error } = await supabase
     .from("sequences")
-    .insert({ name: title, subject: subject.trim(), emoji, topic: description || null })
+    .insert({ name: title, subject: subject.trim(), emoji, topic: description || null, child_id: childId })
     .select()
     .single();
 

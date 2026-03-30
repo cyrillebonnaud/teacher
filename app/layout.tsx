@@ -1,22 +1,58 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import BottomNav from "@/components/bottom-nav";
+import { getCurrentParent } from "@/lib/auth";
+import { logout } from "@/actions/auth";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Teacher",
   description: "Révise avec tes cours",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const parent = await getCurrentParent().catch(() => null);
+
   return (
     <html lang="fr" className="h-full">
       <body className="min-h-full flex flex-col bg-gray-50">
-        <main className="flex-1 pb-16">{children}</main>
-        <BottomNav />
+        {parent && (
+          <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
+            <div className="max-w-2xl mx-auto px-4 h-14 flex items-center justify-between">
+              <nav className="flex items-center gap-1">
+                <Link
+                  href="/"
+                  className="px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
+                >
+                  Mes enfants
+                </Link>
+                <Link
+                  href="/programmes"
+                  className="px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
+                >
+                  Programmes
+                </Link>
+              </nav>
+              <div className="flex items-center gap-3">
+                <span className="text-sm text-gray-500">
+                  Bonjour, <span className="font-medium text-gray-900">{parent.firstName}</span>
+                </span>
+                <form action={logout}>
+                  <button
+                    type="submit"
+                    className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                  >
+                    Déconnexion
+                  </button>
+                </form>
+              </div>
+            </div>
+          </header>
+        )}
+        <main className="flex-1">{children}</main>
       </body>
     </html>
   );

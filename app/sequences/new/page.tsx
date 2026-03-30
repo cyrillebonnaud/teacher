@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { createSequence } from "@/actions/sequences";
 import { LEVELS } from "@/lib/prompts";
@@ -24,12 +24,16 @@ const SUBJECTS: { label: string; emoji: string; titleHint: string; descHint: str
 const QUESTION_COUNTS = [10, 20] as const;
 type QuestionCount = 10 | 20;
 
-const STEP_LABELS = ["Matière", "Contenu", "Niveau", "Options", "Docs", "Récap"];
+const STEP_LABELS = ["Enfant", "Matière", "Contenu", "Niveau", "Options", "Docs", "Récap"];
 
 const LEVEL_LABELS: Record<number, string> = { 1: "Facile", 2: "Moyen", 3: "Difficile", 4: "Expert" };
 
+type Child = { id: string; first_name: string; level: string };
+
 export default function NewSequencePage() {
   const [step, setStep] = useState(0);
+  const [children, setChildren] = useState<Child[]>([]);
+  const [childId, setChildId] = useState("");
   const [subject, setSubject] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -37,6 +41,13 @@ export default function NewSequencePage() {
   const [helpMode, setHelpMode] = useState(false);
   const [questionCount, setQuestionCount] = useState<QuestionCount>(10);
   const [files, setFiles] = useState<File[]>([]);
+
+  useEffect(() => {
+    fetch("/api/children")
+      .then((r) => r.json())
+      .then((data) => setChildren(data.children ?? []))
+      .catch(() => {});
+  }, []);
 
   function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     if (e.target.files) {
@@ -51,20 +62,25 @@ export default function NewSequencePage() {
   function next() { setStep((s) => s + 1); }
   function back() { setStep((s) => s - 1); }
 
+  function selectChild(id: string) {
+    setChildId(id);
+    setStep(1);
+  }
+
   function selectSubject(s: string) {
     setSubject(s);
-    setStep(1);
+    setStep(2);
   }
 
   function selectLevel(v: number) {
     setLevel(v);
     if (v === 4) setHelpMode(false);
-    setStep(3);
+    setStep(4);
   }
 
   function selectQuestionCount(count: QuestionCount) {
     setQuestionCount(count);
-    setStep(4);
+    setStep(5);
   }
 
   const isExpertLevel = level === 4;
@@ -124,8 +140,52 @@ export default function NewSequencePage() {
         ))}
       </div>
 
-      {/* ── Step 0 : Matière ───────────────────────────────────────── */}
+      {/* ── Step 0 : Enfant ───────────────────────────────────────── */}
       {step === 0 && (
+        <div className="space-y-4">
+          <p className="text-sm text-gray-500">Pour quel enfant créer ce quiz ?</p>
+          {children.length === 0 ? (
+            <div className="text-center py-8 bg-white rounded-xl border border-gray-200">
+              <p className="text-gray-500 mb-3">Aucun enfant trouvé</p>
+              <a href="/" className="text-blue-600 text-sm font-medium">
+                Ajouter un enfant depuis le dashboard →
+              </a>
+            </div>
+          ) : (
+            <div className="space-y-2">
+              {children.map((child) => (
+                <button
+                  key={child.id}
+                  type="button"
+                  onClick={() => selectChild(child.id)}
+                  className={`w-full flex items-center gap-3 px-4 py-4 rounded-xl border-2 text-left transition-colors ${
+                    childId === child.id
+                      ? "border-blue-500 bg-blue-50"
+                      : "border-gray-200 bg-white hover:border-gray-300"
+                  }`}
+                >
+                  <div className="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold flex-shrink-0">
+                    {child.first_name[0].toUpperCase()}
+                  </div>
+                  <div>
+                    <p className={`font-semibold ${childId === child.id ? "text-blue-700" : "text-gray-900"}`}>
+                      {child.first_name}
+                    </p>
+                    <p className="text-sm text-gray-500">{child.level}</p>
+                  </div>
+                  {childId === child.id && <span className="ml-auto text-blue-600 text-lg">✓</span>}
+                </button>
+              ))}
+            </div>
+          )}
+          <div className="pt-1">
+            <BackButton toSequences />
+          </div>
+        </div>
+      )}
+
+      {/* ── Step 1 : Matière ───────────────────────────────────────── */}
+      {step === 1 && (
         <div className="space-y-4">
           <p className="text-sm text-gray-500">Quelle matière tu veux réviser ?</p>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
@@ -146,13 +206,13 @@ export default function NewSequencePage() {
             ))}
           </div>
           <div className="pt-1">
-            <BackButton toSequences />
+            <BackButton />
           </div>
         </div>
       )}
 
-      {/* ── Step 1 : Contenu ───────────────────────────────────────── */}
-      {step === 1 && (
+      {/* ── Step 2 : Contenu ───────────────────────────────────────── */}
+      {step === 2 && (
         <div className="space-y-4">
           <p className="text-sm text-gray-500">Donne un titre à ton quiz</p>
           <div>
@@ -192,8 +252,8 @@ export default function NewSequencePage() {
         </div>
       )}
 
-      {/* ── Step 2 : Niveau ───────────────────────────────────────── */}
-      {step === 2 && (
+      {/* ── Step 3 : Niveau ───────────────────────────────────────── */}
+      {step === 3 && (
         <div className="space-y-3">
           <p className="text-sm text-gray-500">Choisis ton niveau de difficulté</p>
           {LEVELS.map(({ value, label, emoji, description: desc }) => (
@@ -225,8 +285,8 @@ export default function NewSequencePage() {
         </div>
       )}
 
-      {/* ── Step 3 : Options ──────────────────────────────────────── */}
-      {step === 3 && (
+      {/* ── Step 4 : Options ──────────────────────────────────────── */}
+      {step === 4 && (
         <div className="space-y-6">
           {/* Aide */}
           {!isExpertLevel && (
@@ -289,8 +349,8 @@ export default function NewSequencePage() {
         </div>
       )}
 
-      {/* ── Step 4 : Documents (optionnel) ────────────────────────── */}
-      {step === 4 && (
+      {/* ── Step 5 : Documents (optionnel) ────────────────────────── */}
+      {step === 5 && (
         <div className="space-y-5">
           <p className="text-sm text-gray-500">
             Ajoute tes documents de cours pour un quiz plus précis, ou passe à l&apos;étape suivante.
@@ -339,10 +399,11 @@ export default function NewSequencePage() {
         </div>
       )}
 
-      {/* ── Step 5 : Récap ────────────────────────────────────────── */}
-      {step === 5 && (
+      {/* ── Step 6 : Récap ────────────────────────────────────────── */}
+      {step === 6 && (
         <form action={createSequence} className="space-y-5">
           {/* Hidden fields */}
+          <input type="hidden" name="childId" value={childId} />
           <input type="hidden" name="subject" value={subject} />
           <input type="hidden" name="title" value={title} />
           <input type="hidden" name="description" value={description} />

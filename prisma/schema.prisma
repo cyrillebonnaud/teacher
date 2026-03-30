@@ -7,37 +7,80 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Parent {
+  id             String   @id @default(cuid())
+  firstName      String   @map("first_name")
+  accessCodeHash String   @unique @map("access_code_hash")
+  createdAt      DateTime @default(now()) @map("created_at")
+  children       Child[]
+
+  @@map("parents")
+}
+
+model Child {
+  id         String     @id @default(cuid())
+  parentId   String     @map("parent_id")
+  parent     Parent     @relation(fields: [parentId], references: [id], onDelete: Cascade)
+  firstName  String     @map("first_name")
+  level      String
+  accessCode String     @unique @map("access_code")
+  createdAt  DateTime   @default(now()) @map("created_at")
+  sequences  Sequence[]
+
+  @@map("children")
+}
+
+model Programme {
+  id        String   @id @default(cuid())
+  level     String
+  subject   String
+  title     String
+  content   String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@unique([level, subject])
+  @@map("programmes")
+}
+
 model Sequence {
   id          String       @id @default(cuid())
   name        String
   subject     String
   emoji       String       @default("📚")
   topic       String?
-  createdAt   DateTime     @default(now())
+  childId     String?      @map("child_id")
+  child       Child?       @relation(fields: [childId], references: [id])
+  createdAt   DateTime     @default(now()) @map("created_at")
   documents   Document[]
   evaluations Evaluation[]
+
+  @@map("sequences")
 }
 
 model Document {
   id         String   @id @default(cuid())
-  sequenceId String
+  sequenceId String   @map("sequence_id")
   sequence   Sequence @relation(fields: [sequenceId], references: [id], onDelete: Cascade)
   filename   String
-  filePath   String
-  mimeType   String
-  rawText    String   @default("")
-  createdAt  DateTime @default(now())
+  filePath   String   @map("file_path")
+  mimeType   String   @map("mime_type")
+  rawText    String   @default("") @map("raw_text")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  @@map("documents")
 }
 
 model Evaluation {
   id          String    @id @default(cuid())
-  sequenceId  String
+  sequenceId  String    @map("sequence_id")
   sequence    Sequence  @relation(fields: [sequenceId], references: [id], onDelete: Cascade)
   level       Int
-  questions   String    // JSON: Question[]
-  answers     String    @default("{}") // JSON: { [questionIndex]: answerIndex }
+  questions   String
+  answers     String    @default("{}")
   score       Int?
-  submittedAt DateTime?
-  helpMode    Boolean   @default(false)
-  createdAt   DateTime  @default(now())
+  submittedAt DateTime? @map("submitted_at")
+  helpMode    Boolean   @default(false) @map("help_mode")
+  createdAt   DateTime  @default(now()) @map("created_at")
+
+  @@map("evaluations")
 }

@@ -2,19 +2,21 @@
   "name": "teacher",
   "version": "0.1.0",
   "private": true,
+  "bin": {
+    "teacher": "./cli.js"
+  },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 6001",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "db:generate": "prisma generate",
-    "db:migrate": "prisma migrate dev",
-    "db:push": "prisma db push",
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.39.0",
-    "@prisma/client": "^6.0.0",
+    "@anthropic-ai/sdk": "^0.80.0",
+    "@prisma/client": "^6.19.2",
+    "@supabase/supabase-js": "^2.101.0",
+    "jose": "^6.2.2",
     "next": "16.2.1",
     "pdf-parse": "^1.1.1",
     "react": "19.2.4",
@@ -28,7 +30,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
-    "prisma": "^6.0.0",
+    "prisma": "^6.19.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
