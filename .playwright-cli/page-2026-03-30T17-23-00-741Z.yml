@@ -1,0 +1,316 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content":
+    - /url: "#geist-skip-nav"
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - generic [ref=e9]:
+            - link "bonnaudc Hobby" [ref=e10] [cursor=pointer]:
+              - /url: /bonnaudc
+              - img [ref=e11]
+              - generic [ref=e12]:
+                - generic [ref=e13]: bonnaudc
+                - generic [ref=e15]: Hobby
+            - button [ref=e16] [cursor=pointer]:
+              - img [ref=e18]
+          - button "Find… F" [ref=e21]:
+            - generic [ref=e23]:
+              - img [ref=e25]
+              - generic [ref=e27]: Find…
+              - generic [ref=e29]: F
+        - navigation [ref=e31]:
+          - generic [ref=e34]:
+            - link "Other Overview" [ref=e35] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six
+              - img "Other" [ref=e37]:
+                - img "Other" [ref=e38]
+              - generic [ref=e40]: Overview
+            - link "Deployments" [ref=e41] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six/deployments
+              - img [ref=e43]
+              - generic [ref=e46]: Deployments
+            - link "Logs" [ref=e47] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six/logs
+              - img [ref=e49]
+              - generic [ref=e52]: Logs
+            - link "Analytics" [ref=e53] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six/analytics
+              - img [ref=e55]
+              - generic [ref=e58]: Analytics
+            - link "Speed Insights" [ref=e59] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six/speed-insights
+              - img [ref=e61]
+              - generic [ref=e64]: Speed Insights
+            - link "Observability" [ref=e65] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six/observability
+              - img [ref=e67]
+              - generic [ref=e70]: Observability
+              - img [ref=e72]
+            - link "Firewall" [ref=e74] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six/firewall
+              - img [ref=e76]
+              - generic [ref=e80]: Firewall
+              - img [ref=e82]
+            - link "CDN" [ref=e84] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six/cdn
+              - img [ref=e86]
+              - generic [ref=e89]: CDN
+              - img [ref=e91]
+            - separator [ref=e93]
+            - link "Domains" [ref=e94] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six/settings/domains
+              - img [ref=e96]
+              - generic [ref=e99]: Domains
+            - link "Integrations" [ref=e100] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six/settings/integrations
+              - img [ref=e102]
+              - generic [ref=e105]: Integrations
+            - link "Storage" [ref=e106] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six/stores
+              - img [ref=e108]
+              - generic [ref=e111]: Storage
+            - link "Flags" [ref=e112] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six/flags
+              - img [ref=e114]
+              - generic [ref=e117]: Flags
+              - img [ref=e119]
+            - link "Agent" [ref=e121] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six/agent
+              - img [ref=e123]
+              - generic [ref=e126]: Agent
+              - img [ref=e128]
+            - link "AI Gateway" [ref=e130] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six/ai-gateway
+              - img [ref=e132]
+              - generic [ref=e135]: AI Gateway
+              - img [ref=e137]
+            - link "Sandboxes" [ref=e139] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six/sandboxes
+              - img [ref=e141]
+              - generic [ref=e144]: Sandboxes
+            - separator [ref=e145]
+            - link "Usage" [ref=e146] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six/usage
+              - img [ref=e148]
+              - generic [ref=e151]: Usage
+            - link "Settings" [ref=e152] [cursor=pointer]:
+              - /url: /bonnaudc/teacher-alpha-six/settings
+              - img [ref=e154]
+              - generic [ref=e157]: Settings
+              - img [ref=e159]
+        - generic [ref=e163]:
+          - generic [ref=e164]:
+            - generic [ref=e165]:
+              - generic [ref=e168]:
+                - generic [ref=e169]: Ship
+                - generic [ref=e171]: "26"
+              - button "Dismiss" [ref=e172] [cursor=pointer]:
+                - img [ref=e174]
+            - generic [ref=e176]:
+              - generic [ref=e177]: Built for you to ship what’s next.
+              - link "Save the date" [ref=e179] [cursor=pointer]:
+                - /url: /ship
+                - generic [ref=e180]:
+                  - text: Save the date
+                  - img [ref=e181]
+          - generic [ref=e184]:
+            - button "Avatar for cyrillebonnaud-8980 cyrillebonnaud-8980" [ref=e185] [cursor=pointer]:
+              - img "Avatar for cyrillebonnaud-8980" [ref=e186]:
+                - img "Avatar for cyrillebonnaud-8980" [ref=e187]
+              - generic [ref=e189]: cyrillebonnaud-8980
+              - img [ref=e191]
+            - button "18 unseen notifications" [ref=e195] [cursor=pointer]:
+              - generic [ref=e196]:
+                - generic [ref=e197]:
+                  - img
+                - img [ref=e198]
+      - button [ref=e201] [cursor=pointer]:
+        - img [ref=e202]
+    - generic [ref=e205]:
+      - generic [ref=e206]:
+        - generic [ref=e209]:
+          - link "Other teacher-alpha-six" [ref=e210] [cursor=pointer]:
+            - /url: /bonnaudc/teacher-alpha-six
+            - img "Other" [ref=e211]:
+              - img "Other" [ref=e212]
+            - generic [ref=e214]: teacher-alpha-six
+          - button [ref=e215] [cursor=pointer]:
+            - img [ref=e217]
+          - link "Back to team view" [ref=e221] [cursor=pointer]:
+            - /url: /bonnaudc
+            - img [ref=e223]
+        - generic [ref=e226]: Overview
+        - button "Open page actions menu" [ref=e228] [cursor=pointer]:
+          - img [ref=e230]
+      - generic [ref=e234]:
+        - generic [ref=e238]:
+          - generic [ref=e239]:
+            - generic [ref=e240]:
+              - heading "Production Deployment" [level=3] [ref=e241]
+              - generic [ref=e244]:
+                - link "github Repository" [ref=e246] [cursor=pointer]:
+                  - /url: https://github.com/cyrillebonnaud/teacher
+                  - img "github" [ref=e248]
+                  - generic [ref=e250]: Repository
+                - generic [ref=e251]:
+                  - button "Instant Rollback" [ref=e252] [cursor=pointer]:
+                    - generic [ref=e254]:
+                      - img [ref=e255]
+                      - generic [ref=e257]: Instant Rollback
+                  - generic [ref=e258]:
+                    - link "Visit" [ref=e259] [cursor=pointer]:
+                      - /url: https://teacher-alpha-six-rust.vercel.app
+                      - generic [ref=e260]: Visit
+                    - button "Visit with" [ref=e261] [cursor=pointer]:
+                      - img [ref=e263]
+            - generic [ref=e266]:
+              - link "Visit Deployment" [ref=e269] [cursor=pointer]:
+                - /url: https://teacher-alpha-six-rust.vercel.app
+                - img [ref=e272]
+              - generic [ref=e274]:
+                - generic [ref=e275]:
+                  - generic [ref=e277]:
+                    - term [ref=e278]: Deployment
+                    - definition [ref=e279]:
+                      - link "teacher-alpha-4fuqbyxlu-bonnaudc.vercel.app" [ref=e281] [cursor=pointer]:
+                        - /url: /bonnaudc/teacher-alpha-six/97xhAKJhJkdeztXy6NVAkwf2pDVy
+                  - link "0" [ref=e283] [cursor=pointer]:
+                    - /url: /bonnaudc/teacher-alpha-six/speed-insights
+                    - progressbar [ref=e285]:
+                      - img [ref=e286]
+                      - img [ref=e291]
+                - generic [ref=e294]:
+                  - term [ref=e295]:
+                    - generic [ref=e297]:
+                      - text: Domains
+                      - link [ref=e298] [cursor=pointer]:
+                        - /url: /bonnaudc/teacher-alpha-six/settings/domains
+                        - img [ref=e299]
+                  - definition [ref=e301]:
+                    - link "teacher-alpha-six-rust.vercel.app" [ref=e305] [cursor=pointer]:
+                      - /url: https://teacher-alpha-six-rust.vercel.app
+                      - generic [ref=e306]: teacher-alpha-six-rust.vercel.app
+                      - img [ref=e307]
+                - generic [ref=e309]:
+                  - generic [ref=e310]:
+                    - term [ref=e311]: Status
+                    - definition [ref=e312]:
+                      - generic "This deployment is ready." [ref=e315]:
+                        - generic [ref=e319]: Ready
+                  - generic [ref=e321]:
+                    - term [ref=e322]: Created
+                    - definition [ref=e323]:
+                      - generic [ref=e325] [cursor=pointer]:
+                        - paragraph [ref=e326]: 3m ago by cyrillebonnaud-8980
+                        - img "cyrillebonnaud-8980 Avatar" [ref=e327]:
+                          - img "cyrillebonnaud-8980 Avatar" [ref=e328]
+                - generic [ref=e330]:
+                  - term [ref=e331]: Source
+                  - definition [ref=e332]:
+                    - generic [ref=e334]:
+                      - generic [ref=e335]:
+                        - img [ref=e336]
+                        - link "main" [ref=e338] [cursor=pointer]:
+                          - /url: https://github.com/cyrillebonnaud/teacher/tree/main
+                          - code [ref=e339]: main
+                      - generic [ref=e340]:
+                        - img [ref=e341]
+                        - 'link "fb6d99a feat: Teacher MVP — révision gamifiée pour collégien" [ref=e343] [cursor=pointer]':
+                          - /url: /bonnaudc/teacher-alpha-six/97xhAKJhJkdeztXy6NVAkwf2pDVy/source
+                          - code [ref=e345]: fb6d99a
+                          - 'generic "feat: Teacher MVP — révision gamifiée pour collégien" [ref=e346]'
+            - button "Deployment Settings 4 Recommendations" [ref=e349] [cursor=pointer]:
+              - generic [ref=e350]:
+                - img [ref=e351]
+                - generic [ref=e353]:
+                  - generic [ref=e354]: Deployment Settings
+                  - generic [ref=e360]: 4 Recommendations
+          - generic [ref=e363]:
+            - generic [ref=e365]: To update your Production Deployment, push to the main branch.
+            - generic [ref=e367]:
+              - link "Deployments" [ref=e368] [cursor=pointer]:
+                - /url: /bonnaudc/teacher-alpha-six/deployments?environment=production
+                - img [ref=e370]
+                - generic [ref=e372]: Deployments
+              - link "Learn more" [ref=e373] [cursor=pointer]:
+                - /url: /docs/git#production-branch
+                - img [ref=e375]
+        - generic [ref=e379]:
+          - generic [ref=e380]:
+            - generic [ref=e381]:
+              - generic [ref=e382]:
+                - paragraph [ref=e383]:
+                  - strong [ref=e384]: Production Checklist
+                - generic [ref=e386]: 1/5
+              - button "Go to page" [ref=e387] [cursor=pointer]:
+                - img [ref=e389]
+              - button [ref=e391] [cursor=pointer]
+            - generic [ref=e395]:
+              - button "Connect Git Repository" [ref=e396] [cursor=pointer]:
+                - img [ref=e397]
+                - generic [ref=e399]: Connect Git Repository
+                - img [ref=e400]
+              - button "Add Custom Domain" [ref=e402] [cursor=pointer]:
+                - img [ref=e403]
+                - generic [ref=e405]: Add Custom Domain
+              - button "Preview Deployment" [ref=e406] [cursor=pointer]:
+                - img [ref=e407]
+                - generic [ref=e409]: Preview Deployment
+              - button "Enable Web Analytics" [ref=e410] [cursor=pointer]:
+                - img [ref=e411]
+                - generic [ref=e413]: Enable Web Analytics
+              - button "Enable Speed Insights" [ref=e414] [cursor=pointer]:
+                - img [ref=e415]
+                - generic [ref=e417]: Enable Speed Insights
+          - generic [ref=e418]:
+            - generic [ref=e419]:
+              - generic [ref=e420]:
+                - paragraph [ref=e421]:
+                  - strong [ref=e422]: Observability
+                - time [ref=e423]: 6h
+              - link "Go to page" [ref=e424] [cursor=pointer]:
+                - /url: /bonnaudc/teacher-alpha-six/observability?period=6h
+                - img [ref=e426]
+              - link [ref=e428] [cursor=pointer]:
+                - /url: /bonnaudc/teacher-alpha-six/observability?period=6h
+            - generic [ref=e430]:
+              - generic [ref=e431]:
+                - generic [ref=e432]: Edge Requests
+                - generic [ref=e433]: "46"
+              - img [ref=e438]
+              - generic [ref=e443]:
+                - generic [ref=e444]: Function Invocations
+                - generic [ref=e445]: "6"
+              - img [ref=e450]
+              - generic [ref=e455]:
+                - generic [ref=e456]: Error Rate
+                - generic [ref=e457]: 100%
+              - img [ref=e462]
+          - generic [ref=e469]:
+            - generic [ref=e470]:
+              - paragraph [ref=e472]:
+                - strong [ref=e473]: Analytics
+              - link "Go to page" [ref=e474] [cursor=pointer]:
+                - /url: /bonnaudc/teacher-alpha-six/analytics
+                - img [ref=e476]
+              - link [ref=e478] [cursor=pointer]:
+                - /url: /bonnaudc/teacher-alpha-six/analytics
+            - generic [ref=e480]:
+              - generic [ref=e481]:
+                - img [ref=e482]
+                - paragraph [ref=e484]: Track visitors and page views
+              - link "Enable" [ref=e485] [cursor=pointer]:
+                - /url: /bonnaudc/teacher-alpha-six/analytics?enable=1&source=project-overview-analytics-card
+                - generic [ref=e486]: Enable
+        - generic [ref=e487]:
+          - paragraph [ref=e491]: Active Branches
+          - generic [ref=e495]:
+            - heading "No Active Branches" [level=3] [ref=e496]
+            - paragraph [ref=e498]: Commit using our Git connections.
+  - alert [ref=e500]
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - img

@@ -2,7 +2,7 @@ export const dynamic = "force-dynamic";
 
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { getCurrentParent } from "@/lib/auth";
+import { getSession } from "@/lib/auth";
 import { supabase } from "@/lib/supabase";
 import ProgrammesClient from "./programmes-client";
 
@@ -14,8 +14,8 @@ export default async function ProgrammesPage({
   searchParams: Promise<{ level?: string; subject?: string; q?: string }>;
 }) {
   const params = await searchParams;
-  const parent = await getCurrentParent().catch(() => null);
-  if (!parent) redirect("/login");
+  const session = await getSession().catch(() => null);
+  if (!session) redirect("/login");
 
   const level = LEVELS.includes(params.level ?? "") ? params.level! : "5e";
   const subject = params.subject ?? "";

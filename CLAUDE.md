@@ -5,18 +5,16 @@
 - Next.js 16 (App Router) + React 19 + TypeScript
 - Tailwind CSS 4 (inline theme, pas de config file)
 - Prisma + SQLite (MVP) — migrable vers Postgres/Supabase en V1
-- Claude API via `@anthropic-ai/sdk`
+- Claude via API Anthropic (`@anthropic-ai/sdk`) — clé API requise dans `.env.local`
 - Playwright pour les tests E2E
 
 ## Setup initial
 
 ```bash
-cp .env.local.example .env.local
-# Édite .env.local et ajoute ta clé ANTHROPIC_API_KEY
-
 npm install
 npm run db:push      # Crée la base SQLite
-npm run dev          # Lance sur http://localhost:3000
+# Créer .env.local avec ANTHROPIC_API_KEY
+npm run dev          # Lance sur http://localhost:6001
 ```
 
 ## Commandes
@@ -67,8 +65,9 @@ Inspirée de `safe-tank` :
 ## Variables d'environnement
 
 ```
-ANTHROPIC_API_KEY=sk-ant-...     # Requis — clé Claude API
-DATABASE_URL=file:./dev.db # Chemin SQLite (relatif à prisma/schema.prisma)
+DATABASE_URL=file:./dev.db         # Chemin SQLite (relatif à prisma/schema.prisma)
+ANTHROPIC_API_KEY=sk-ant-...       # Clé API Anthropic (obligatoire)
+CLAUDE_MODEL=claude-haiku-4-5-20251001  # Modèle par défaut (optionnel)
 ```
 
 ## Migration vers V1 (cloud)

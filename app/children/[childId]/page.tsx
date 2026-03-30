@@ -2,24 +2,29 @@ export const dynamic = "force-dynamic";
 
 import { redirect, notFound } from "next/navigation";
 import Link from "next/link";
-import { getCurrentParent } from "@/lib/auth";
+import { getSession } from "@/lib/auth";
 import { supabase } from "@/lib/supabase";
 
 const LEVEL_LABELS: Record<number, string> = { 1: "Facile", 2: "Moyen", 3: "Difficile", 4: "Expert" };
 
 export default async function ChildPage({ params }: { params: Promise<{ childId: string }> }) {
   const { childId } = await params;
-  const parent = await getCurrentParent().catch(() => null);
-  if (!parent) redirect("/login");
+  const session = await getSession().catch(() => null);
+  if (!session) redirect("/login");
 
-  // Verify child belongs to this parent
-  const { data: child } = await supabase
+  // Allow parent (must own the child) or the child itself
+  let childQuery = supabase
     .from("children")
     .select("id, first_name, level")
-    .eq("id", childId)
-    .eq("parent_id", parent.id)
-    .single();
+    .eq("id", childId);
 
+  if (session.type === "parent") {
+    childQuery = childQuery.eq("parent_id", session.id);
+  } else if (session.type === "child" && session.id !== childId) {
+    notFound();
+  }
+
+  const { data: child } = await childQuery.single();
   if (!child) notFound();
 
   const { data: sequences } = await supabase

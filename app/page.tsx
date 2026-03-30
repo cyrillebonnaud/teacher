@@ -2,13 +2,15 @@ export const dynamic = "force-dynamic";
 
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { getCurrentParent } from "@/lib/auth";
+import { getSession } from "@/lib/auth";
 import { supabase } from "@/lib/supabase";
 import AddChildForm from "@/components/add-child-form";
 
 export default async function DashboardPage() {
-  const parent = await getCurrentParent().catch(() => null);
-  if (!parent) redirect("/login");
+  const session = await getSession().catch(() => null);
+  if (!session) redirect("/login");
+  if (session.type === "child") redirect(`/children/${session.id}`);
+  const parent = session;
 
   const { data: children } = await supabase
     .from("children")

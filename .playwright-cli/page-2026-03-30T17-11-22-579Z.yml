@@ -1,0 +1,361 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content":
+    - /url: "#geist-skip-nav"
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - button [disabled] [ref=e13] [cursor=pointer]:
+            - img [ref=e15]
+          - button "Find… F" [ref=e18]:
+            - generic [ref=e20]:
+              - img [ref=e22]
+              - generic [ref=e24]: Find…
+              - generic [ref=e26]: F
+        - navigation [ref=e28]:
+          - generic [ref=e29]:
+            - generic [ref=e31]:
+              - link "Projects" [ref=e32] [cursor=pointer]:
+                - /url: "#intent:sidebar:projects"
+                - img [ref=e34]
+                - generic [ref=e37]: Projects
+              - link "Deployments" [ref=e38] [cursor=pointer]:
+                - /url: "#intent:sidebar:deployments"
+                - img [ref=e40]
+                - generic [ref=e43]: Deployments
+              - link "Logs" [ref=e44] [cursor=pointer]:
+                - /url: "#intent:sidebar:logs"
+                - img [ref=e46]
+                - generic [ref=e49]: Logs
+              - link "Analytics" [ref=e50] [cursor=pointer]:
+                - /url: "#intent:sidebar:analytics"
+                - img [ref=e52]
+                - generic [ref=e55]: Analytics
+              - link "Speed Insights" [ref=e56] [cursor=pointer]:
+                - /url: "#intent:sidebar:speed-insights"
+                - img [ref=e58]
+                - generic [ref=e61]: Speed Insights
+              - link "Observability" [ref=e62] [cursor=pointer]:
+                - /url: "#intent:sidebar:observability"
+                - img [ref=e64]
+                - generic [ref=e67]: Observability
+                - img [ref=e69]
+              - link "Firewall" [ref=e71] [cursor=pointer]:
+                - /url: "#intent:sidebar:firewall"
+                - img [ref=e73]
+                - generic [ref=e77]: Firewall
+              - link "CDN" [ref=e78] [cursor=pointer]:
+                - /url: "#intent:sidebar:cdn"
+                - img [ref=e80]
+                - generic [ref=e83]: CDN
+              - separator [ref=e84]
+              - link "Domains" [ref=e85] [cursor=pointer]:
+                - /url: "#intent:sidebar:domains"
+                - img [ref=e87]
+                - generic [ref=e90]: Domains
+              - link "Integrations" [ref=e91] [cursor=pointer]:
+                - /url: "#intent:sidebar:integrations"
+                - img [ref=e93]
+                - generic [ref=e96]: Integrations
+              - link "Storage" [ref=e97] [cursor=pointer]:
+                - /url: "#intent:sidebar:storage"
+                - img [ref=e99]
+                - generic [ref=e102]: Storage
+              - link "Flags" [ref=e103] [cursor=pointer]:
+                - /url: "#intent:sidebar:flags"
+                - img [ref=e105]
+                - generic [ref=e108]: Flags
+              - link "Agent" [ref=e109] [cursor=pointer]:
+                - /url: "#intent:sidebar:agent"
+                - img [ref=e111]
+                - generic [ref=e114]: Agent
+                - img [ref=e116]
+              - link "AI Gateway" [ref=e118] [cursor=pointer]:
+                - /url: "#intent:sidebar:ai-gateway"
+                - img [ref=e120]
+                - generic [ref=e123]: AI Gateway
+                - img [ref=e125]
+              - link "Sandboxes" [ref=e127] [cursor=pointer]:
+                - /url: "#intent:sidebar:sandboxes"
+                - img [ref=e129]
+                - generic [ref=e132]: Sandboxes
+              - separator [ref=e133]
+              - link "Usage" [ref=e134] [cursor=pointer]:
+                - /url: "#intent:sidebar:usage"
+                - img [ref=e136]
+                - generic [ref=e139]: Usage
+              - link "Support" [ref=e140] [cursor=pointer]:
+                - /url: "#intent:sidebar:support"
+                - img [ref=e142]
+                - generic [ref=e145]: Support
+              - link "Settings" [ref=e146] [cursor=pointer]:
+                - /url: "#intent:sidebar:settings"
+                - img [ref=e148]
+                - generic [ref=e151]: Settings
+                - img [ref=e153]
+            - generic:
+              - generic:
+                - button:
+                  - generic:
+                    - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: Filters
+                  - generic:
+                    - button "Reset" [disabled]:
+                      - generic: Reset
+                - generic:
+                  - paragraph:
+                    - button "Timeline" [disabled] [expanded]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - img
+                          - generic: Timeline
+                  - region "Timeline":
+                    - generic:
+                      - generic:
+                        - generic:
+                          - button "6:41pm - 7:11pm":
+                            - generic:
+                              - img
+                        - generic:
+                          - generic: Combobox Menu
+                          - generic:
+                            - combobox "Combobox Menu" [expanded]: Last 30 minutes
+                            - img
+                - generic:
+                  - paragraph:
+                    - button "Contains Console Level" [disabled] [expanded]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - img
+                          - generic: Contains Console Level
+                  - region "Contains Console Level":
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - checkbox "Warning 0"
+                                    - generic:
+                                      - img
+                                  - generic:
+                                    - generic:
+                                      - generic: Warning
+                                      - paragraph [ref=e156] [cursor=pointer]: "0"
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - checkbox "Error 0"
+                                    - generic:
+                                      - img
+                                  - generic:
+                                    - generic:
+                                      - generic: Error
+                                      - paragraph [ref=e158] [cursor=pointer]: "0"
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - checkbox "Fatal 0"
+                                    - generic:
+                                      - img
+                                  - generic:
+                                    - generic:
+                                      - generic: Fatal
+                                      - paragraph [ref=e160] [cursor=pointer]: "0"
+                - generic:
+                  - paragraph:
+                    - button "Resource":
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - img
+                          - generic: Resource
+                - generic:
+                  - paragraph:
+                    - button "Environment":
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - img
+                          - generic: Environment
+                - generic:
+                  - paragraph:
+                    - button "Route" [disabled] [expanded]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - img
+                          - generic: Route
+                  - region "Route":
+                    - generic:
+                      - generic:
+                        - paragraph: No options.
+                - generic:
+                  - paragraph:
+                    - button "Request Path":
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - img
+                          - generic: Request Path
+                - generic:
+                  - paragraph:
+                    - button "Status Code":
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - img
+                          - generic: Status Code
+                - generic:
+                  - paragraph:
+                    - button "Request Type":
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - img
+                          - generic: Request Type
+                - generic:
+                  - paragraph:
+                    - button "Host":
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - img
+                          - generic: Host
+                - generic:
+                  - paragraph:
+                    - button "Request Method":
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - img
+                          - generic: Request Method
+                - generic:
+                  - paragraph:
+                    - button "Cache":
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - img
+                          - generic: Cache
+                - generic:
+                  - paragraph:
+                    - button "Branch":
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - img
+                          - generic: Branch
+        - generic [ref=e163]:
+          - generic [ref=e164]:
+            - generic [ref=e165]:
+              - generic [ref=e168]:
+                - generic [ref=e169]: Ship
+                - generic [ref=e171]: "26"
+              - button "Dismiss" [ref=e172] [cursor=pointer]:
+                - img [ref=e174]
+            - generic [ref=e176]:
+              - generic [ref=e177]: Built for you to ship what’s next.
+              - link "Save the date" [ref=e179] [cursor=pointer]:
+                - /url: /ship
+                - generic [ref=e180]:
+                  - text: Save the date
+                  - img [ref=e181]
+          - generic [ref=e184]:
+            - button "Avatar for cyrillebonnaud-8980 cyrillebonnaud-8980" [disabled]:
+              - img "Avatar for cyrillebonnaud-8980":
+                - img "Avatar for cyrillebonnaud-8980"
+              - generic:
+                - generic: cyrillebonnaud-8980
+              - generic:
+                - img
+            - img [ref=e187]
+      - button [ref=e190] [cursor=pointer]:
+        - img [ref=e191]
+    - generic [ref=e194]:
+      - generic [ref=e195]:
+        - generic [ref=e201]:
+          - generic [ref=e202]:
+            - link "Deployments" [disabled] [ref=e203]
+            - img [ref=e204]
+          - generic [ref=e206]:
+            - link "4wG8pAc8u" [disabled] [ref=e207]
+            - img [ref=e208]
+          - generic [ref=e210]: Logs
+        - button "Open page actions menu" [ref=e212] [cursor=pointer]:
+          - img [ref=e214]
+      - generic [ref=e217]:
+        - generic [ref=e219]:
+          - link "Deployment" [ref=e220] [cursor=pointer]:
+            - /url: "#intent:tabs:deployment"
+          - link "Logs" [ref=e221] [cursor=pointer]:
+            - /url: "#intent:tabs:logs"
+          - link "Resources" [ref=e222] [cursor=pointer]:
+            - /url: "#intent:tabs:resources"
+          - link "Source" [ref=e223] [cursor=pointer]:
+            - /url: "#intent:tabs:source"
+          - link "Open Graph" [ref=e224] [cursor=pointer]:
+            - /url: "#intent:tabs:open-graph"
+        - generic [ref=e230]:
+          - generic [ref=e231]:
+            - generic [ref=e232]:
+              - button "Enable My Logs" [ref=e234] [cursor=pointer]:
+                - img [ref=e236]
+              - button "Enable Has Traces" [ref=e240] [cursor=pointer]:
+                - img [ref=e242]
+              - generic [ref=e249]:
+                - textbox [ref=e250]:
+                  - paragraph [ref=e251]
+                - generic: Search logs...
+                - generic:
+                  - img
+            - generic [ref=e252]:
+              - generic [ref=e253]:
+                - button "Live" [disabled] [ref=e254]:
+                  - img [ref=e256]
+                  - generic [ref=e258]: Live
+                - button "Refresh Logs" [disabled] [ref=e259]:
+                  - img [ref=e261]
+              - button "Query Actions" [ref=e263] [cursor=pointer]:
+                - img [ref=e265]
+          - img [ref=e269]:
+            - generic [ref=e271]:
+              - generic [ref=e273]: 18:42:00
+              - generic [ref=e275]: 18:52:50
+              - generic [ref=e277]: 19:11:50
+          - generic [ref=e279]:
+            - generic [ref=e280]: Time
+            - generic [ref=e281]: Status
+            - generic [ref=e282]: Host
+            - generic [ref=e283]: Request
+            - generic [ref=e284]: Messages
+  - alert [ref=e437]
+  - generic [ref=e438]: 18:52:50
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - img

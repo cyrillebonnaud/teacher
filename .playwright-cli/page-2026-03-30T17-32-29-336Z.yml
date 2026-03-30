@@ -1,0 +1,1366 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e5]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - link "Supabase Logo" [ref=e10] [cursor=pointer]:
+            - /url: /
+            - img "Supabase Logo" [ref=e11]
+          - navigation "Main" [ref=e12]:
+            - list [ref=e14]:
+              - listitem [ref=e15]:
+                - button "Product" [ref=e16] [cursor=pointer]:
+                  - text: Product
+                  - img [ref=e17]
+              - listitem [ref=e19]:
+                - button "Developers" [ref=e20] [cursor=pointer]:
+                  - text: Developers
+                  - img [ref=e21]
+              - listitem [ref=e23]:
+                - button "Solutions" [ref=e24] [cursor=pointer]:
+                  - text: Solutions
+                  - img [ref=e25]
+              - listitem [ref=e27]:
+                - link "Pricing" [ref=e28] [cursor=pointer]:
+                  - /url: /pricing
+                  - paragraph [ref=e31]: Pricing
+              - listitem [ref=e32]:
+                - link "Docs" [ref=e33] [cursor=pointer]:
+                  - /url: /docs
+                  - paragraph [ref=e36]: Docs
+              - listitem [ref=e37]:
+                - link "Blog" [ref=e38] [cursor=pointer]:
+                  - /url: /blog
+                  - paragraph [ref=e41]: Blog
+        - generic [ref=e43]:
+          - link "99.8K" [ref=e44] [cursor=pointer]:
+            - /url: https://github.com/supabase/supabase
+            - generic [ref=e46]:
+              - img [ref=e47]
+              - text: 99.8K
+          - link "Sign in" [ref=e49] [cursor=pointer]:
+            - /url: https://supabase.com/dashboard
+          - link "Start your project" [ref=e50] [cursor=pointer]:
+            - /url: https://supabase.com/dashboard/sign-up
+    - main [ref=e51]:
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - heading "Build in a weekend Scale to millions" [level=1] [ref=e59]:
+            - generic [ref=e60]: Build in a weekend
+            - generic [ref=e61]: Scale to millions
+          - paragraph [ref=e62]:
+            - text: Supabase is the Postgres development platform.
+            - text: Start your project with a Postgres database, Authentication, instant APIs, Edge Functions, Realtime subscriptions, Storage, and Vector embeddings.
+        - generic [ref=e63]:
+          - link "Start your project" [ref=e64] [cursor=pointer]:
+            - /url: https://supabase.com/dashboard
+            - generic [ref=e65]: Start your project
+          - link "Request a demo" [ref=e66] [cursor=pointer]:
+            - /url: /contact/sales
+            - generic [ref=e67]: Request a demo
+      - generic [ref=e68]:
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - img "mozilla" [ref=e73]
+            - img "github" [ref=e75]
+            - img "1password" [ref=e77]
+            - img "pwc" [ref=e79]
+            - img "pika" [ref=e81]
+            - img "humata" [ref=e83]
+            - img "udio" [ref=e85]
+            - img "langchain" [ref=e87]
+            - img "resend" [ref=e89]
+            - img "loops" [ref=e91]
+            - img "mobbin" [ref=e93]
+            - img "gopuff" [ref=e95]
+            - img "chatbase" [ref=e97]
+            - img "betashares" [ref=e99]
+            - img "submagic" [ref=e101]
+          - generic [ref=e102]:
+            - img "mozilla" [ref=e104]
+            - img "github" [ref=e106]
+            - img "1password" [ref=e108]
+            - img "pwc" [ref=e110]
+            - img "pika" [ref=e112]
+            - img "humata" [ref=e114]
+            - img "udio" [ref=e116]
+            - img "langchain" [ref=e118]
+            - img "resend" [ref=e120]
+            - img "loops" [ref=e122]
+            - img "mobbin" [ref=e124]
+            - img "gopuff" [ref=e126]
+            - img "chatbase" [ref=e128]
+            - img "betashares" [ref=e130]
+            - img "submagic" [ref=e132]
+          - generic [ref=e133]:
+            - img "mozilla" [ref=e135]
+            - img "github" [ref=e137]
+            - img "1password" [ref=e139]
+            - img "pwc" [ref=e141]
+            - img "pika" [ref=e143]
+            - img "humata" [ref=e145]
+            - img "udio" [ref=e147]
+            - img "langchain" [ref=e149]
+            - img "resend" [ref=e151]
+            - img "loops" [ref=e153]
+            - img "mobbin" [ref=e155]
+            - img "gopuff" [ref=e157]
+            - img "chatbase" [ref=e159]
+            - img "betashares" [ref=e161]
+            - img "submagic" [ref=e163]
+          - generic [ref=e164]:
+            - img "mozilla" [ref=e166]
+            - img "github" [ref=e168]
+            - img "1password" [ref=e170]
+            - img "pwc" [ref=e172]
+            - img "pika" [ref=e174]
+            - img "humata" [ref=e176]
+            - img "udio" [ref=e178]
+            - img "langchain" [ref=e180]
+            - img "resend" [ref=e182]
+            - img "loops" [ref=e184]
+            - img "mobbin" [ref=e186]
+            - img "gopuff" [ref=e188]
+            - img "chatbase" [ref=e190]
+            - img "betashares" [ref=e192]
+            - img "submagic" [ref=e194]
+        - paragraph [ref=e195]: Trusted by fast-growing companies worldwide
+      - generic [ref=e196]:
+        - link "Postgres Database Every project is a full Postgres database, the world's most trusted relational database. 100% portable Built-in Auth with RLS Easy to extend Supabase Postgres database visual composition" [ref=e197] [cursor=pointer]:
+          - /url: /database
+          - generic [ref=e199]:
+            - generic [ref=e200]:
+              - generic [ref=e201]:
+                - img [ref=e202]
+                - heading "Postgres Database" [level=2] [ref=e204]
+              - generic [ref=e205]:
+                - paragraph [ref=e206]:
+                  - text: Every project is
+                  - strong [ref=e207]: a full Postgres database
+                  - text: ", the world's most trusted relational database."
+                - list [ref=e209]:
+                  - listitem [ref=e210]:
+                    - img [ref=e211]
+                    - text: 100% portable
+                  - listitem [ref=e213]:
+                    - img [ref=e214]
+                    - text: Built-in Auth with RLS
+                  - listitem [ref=e216]:
+                    - img [ref=e217]
+                    - text: Easy to extend
+            - img "Supabase Postgres database visual composition" [ref=e219]:
+              - generic [ref=e220]:
+                - img "Supabase Postgres database" [ref=e221]
+                - img [ref=e222]
+        - link "Authentication Add user sign ups and logins, securing your data with Row Level Security. Supabase Authentication provides Row Level Security which enables you to define custom Policies to restrict access to your database" [ref=e229] [cursor=pointer]:
+          - /url: /auth
+          - generic [ref=e231]:
+            - generic [ref=e232]:
+              - generic [ref=e233]:
+                - img [ref=e234]
+                - heading "Authentication" [level=2] [ref=e236]
+              - paragraph [ref=e238]:
+                - strong [ref=e239]: Add user sign ups and logins
+                - text: ","
+                - text: securing your data with Row Level Security.
+            - img "Supabase Authentication provides Row Level Security which enables you to define custom Policies to restrict access to your database" [ref=e240]:
+              - img "Supabase Authentication user db rows" [ref=e241]
+              - img [ref=e242]
+        - link "Edge Functions Easily write custom code without deploying or scaling servers. Supabase Edge Functions visual composition" [ref=e243] [cursor=pointer]:
+          - /url: /edge-functions
+          - generic [ref=e245]:
+            - generic [ref=e246]:
+              - generic [ref=e247]:
+                - img [ref=e248]
+                - heading "Edge Functions" [level=2] [ref=e250]
+              - paragraph [ref=e252]:
+                - text: Easily write custom code
+                - strong [ref=e253]: without deploying or scaling servers.
+            - img "Supabase Edge Functions visual composition" [ref=e254]:
+              - img "Supabase Edge Functions globe" [ref=e255]
+              - generic [ref=e256]:
+                - generic [ref=e257]: $
+                - text: supabase
+                - generic [ref=e258]: functions deploy
+        - link "Storage Store, organize, and serve large files, from videos to images. Supabase Storage supports images, documents and videos" [ref=e259] [cursor=pointer]:
+          - /url: /storage
+          - generic [ref=e261]:
+            - generic [ref=e262]:
+              - generic [ref=e263]:
+                - img [ref=e264]
+                - heading "Storage" [level=2] [ref=e266]
+              - paragraph [ref=e268]:
+                - strong [ref=e269]: Store, organize, and serve
+                - text: large files, from videos to images.
+            - img "Supabase Storage supports images, documents and videos" [ref=e270]:
+              - generic [ref=e271]:
+                - generic [ref=e272]:
+                  - img [ref=e274]
+                  - img [ref=e279]
+                  - img [ref=e283]
+                - generic [ref=e286]:
+                  - img [ref=e288]
+                  - img [ref=e293]
+                  - img [ref=e297]
+                - generic [ref=e300]:
+                  - img [ref=e302]
+                  - img [ref=e307]
+                  - img [ref=e311]
+                - generic [ref=e314]:
+                  - img [ref=e316]
+                  - img [ref=e321]
+                  - img [ref=e325]
+                - generic [ref=e328]:
+                  - img [ref=e330]
+                  - img [ref=e335]
+                  - img [ref=e339]
+                - generic [ref=e342]:
+                  - img [ref=e344]
+                  - img [ref=e349]
+                  - img [ref=e353]
+                - generic [ref=e356]:
+                  - img [ref=e358]
+                  - img [ref=e363]
+                  - img [ref=e367]
+                - generic [ref=e370]:
+                  - img [ref=e372]
+                  - img [ref=e377]
+                  - img [ref=e381]
+                - generic [ref=e384]:
+                  - img [ref=e386]
+                  - img [ref=e391]
+                  - img [ref=e395]
+                - generic [ref=e398]:
+                  - img [ref=e400]
+                  - img [ref=e405]
+                  - img [ref=e409]
+              - generic [ref=e412]:
+                - generic [ref=e413]:
+                  - img [ref=e415]
+                  - img [ref=e420]
+                  - img [ref=e424]
+                - generic [ref=e427]:
+                  - img [ref=e429]
+                  - img [ref=e434]
+                  - img [ref=e438]
+                - generic [ref=e441]:
+                  - img [ref=e443]
+                  - img [ref=e448]
+                  - img [ref=e452]
+                - generic [ref=e455]:
+                  - img [ref=e457]
+                  - img [ref=e462]
+                  - img [ref=e466]
+                - generic [ref=e469]:
+                  - img [ref=e471]
+                  - img [ref=e476]
+                  - img [ref=e480]
+                - generic [ref=e483]:
+                  - img [ref=e485]
+                  - img [ref=e490]
+                  - img [ref=e494]
+                - generic [ref=e497]:
+                  - img [ref=e499]
+                  - img [ref=e504]
+                  - img [ref=e508]
+                - generic [ref=e511]:
+                  - img [ref=e513]
+                  - img [ref=e518]
+                  - img [ref=e522]
+                - generic [ref=e525]:
+                  - img [ref=e527]
+                  - img [ref=e532]
+                  - img [ref=e536]
+                - generic [ref=e539]:
+                  - img [ref=e541]
+                  - img [ref=e546]
+                  - img [ref=e550]
+        - link "Realtime Build multiplayer experiences with real-time data synchronization. Supabase Realtime multiplayer app demo":
+          - /url: /realtime
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                  - heading "Realtime" [level=2]
+                - generic:
+                  - paragraph:
+                    - strong: Build multiplayer experiences
+                    - text: with real-time data synchronization.
+              - img "Supabase Realtime multiplayer app demo" [ref=e553] [cursor=pointer]:
+                - img "Supabase Realtime" [ref=e554]
+                - img [ref=e556]
+                - img [ref=e563]
+        - link "Vector Integrate your favorite ML-models to store, index and search vector embeddings. OpenAI logo OpenAI Hugging Face logo Hugging Face Supabase Vector uses pgvector to store, index, and access embeddings" [ref=e574] [cursor=pointer]:
+          - /url: /modules/vector
+          - generic [ref=e576]:
+            - generic [ref=e577]:
+              - generic [ref=e578]:
+                - img [ref=e579]
+                - heading "Vector" [level=2] [ref=e581]
+              - generic [ref=e582]:
+                - paragraph [ref=e583]:
+                  - text: Integrate your favorite ML-models to
+                  - strong [ref=e584]: store, index and search vector embeddings
+                  - text: .
+                - list [ref=e586]:
+                  - listitem [ref=e587]:
+                    - img "OpenAI logo" [ref=e588]
+                    - generic [ref=e590]: OpenAI
+                  - listitem [ref=e591]:
+                    - img "Hugging Face logo" [ref=e592]
+                    - generic [ref=e599]: Hugging Face
+            - img "Supabase Vector uses pgvector to store, index, and access embeddings" [ref=e600]:
+              - generic [ref=e601]:
+                - img "Supabase Vector graph" [ref=e602]
+                - img [ref=e603]
+        - link "Data APIs Instant ready-to-use Restful APIs." [ref=e605] [cursor=pointer]:
+          - /url: https://supabase.com/docs/guides/api
+          - generic [ref=e607]:
+            - generic [ref=e608]:
+              - generic [ref=e609]:
+                - img [ref=e610]
+                - heading "Data APIs" [level=2] [ref=e612]
+              - paragraph [ref=e614]:
+                - text: Instant ready-to-use
+                - strong [ref=e615]: Restful APIs
+                - text: .
+            - figure [ref=e616]:
+              - generic [ref=e617]:
+                - generic [ref=e618]:
+                  - img "Supabase restful DataAPIs" [ref=e619]
+                  - img "Supabase restful DataAPIs" [ref=e620]
+                - generic [ref=e621]:
+                  - img "Supabase restful DataAPIs" [ref=e622]
+                  - img "Supabase restful DataAPIs" [ref=e623]
+                - generic [ref=e624]:
+                  - img "Supabase restful DataAPIs" [ref=e625]
+                  - img "Supabase restful DataAPIs" [ref=e626]
+                - img "Supabase restful DataAPIs" [ref=e627]
+        - paragraph [ref=e628]: Use one or all. Best of breed products. Integrated as a platform.
+      - generic [ref=e630]:
+        - generic [ref=e631]:
+          - text: Use Supabase with
+          - generic [ref=e633]: any framework
+        - generic [ref=e634]:
+          - link [ref=e635] [cursor=pointer]:
+            - /url: https://supabase.com/docs/guides/getting-started/quickstarts/reactjs
+            - img [ref=e637]
+          - link [ref=e639] [cursor=pointer]:
+            - /url: https://supabase.com/docs/guides/getting-started/quickstarts/nextjs
+            - img [ref=e641]
+          - link [ref=e643] [cursor=pointer]:
+            - /url: https://supabase.com/docs/guides/getting-started/quickstarts/redwoodjs
+            - img [ref=e645]
+          - link [ref=e647] [cursor=pointer]:
+            - /url: https://supabase.com/docs/guides/getting-started/quickstarts/flutter
+            - img [ref=e649]
+          - link [ref=e651] [cursor=pointer]:
+            - /url: https://supabase.com/docs/guides/getting-started/quickstarts/kotlin
+            - img [ref=e653]
+          - link [ref=e655] [cursor=pointer]:
+            - /url: https://supabase.com/docs/guides/getting-started/quickstarts/sveltekit
+            - img [ref=e657]
+          - link [ref=e659] [cursor=pointer]:
+            - /url: https://supabase.com/docs/guides/getting-started/quickstarts/solidjs
+            - img [ref=e661]
+          - link [ref=e663] [cursor=pointer]:
+            - /url: https://supabase.com/docs/guides/getting-started/quickstarts/vue
+            - img [ref=e665]
+          - link [ref=e667] [cursor=pointer]:
+            - /url: https://supabase.com/docs/guides/getting-started/quickstarts/nuxtjs
+            - img [ref=e669]
+          - link [ref=e671] [cursor=pointer]:
+            - /url: https://supabase.com/docs/guides/getting-started/quickstarts/refine
+            - img [ref=e673]
+      - generic [ref=e675]:
+        - generic [ref=e676]:
+          - generic [ref=e677]:
+            - generic [ref=e678]:
+              - generic [ref=e679]: Customer Stories
+              - heading "Trusted by the world’s most innovative companies." [level=3] [ref=e680]
+            - paragraph [ref=e681]: See how Supabase empowers companies of all sizes to accelerate their growth and streamline their work.
+          - generic [ref=e682]:
+            - link "View all stories" [ref=e683] [cursor=pointer]:
+              - /url: /customers
+              - generic [ref=e684]: View all stories
+            - link "View events" [ref=e685] [cursor=pointer]:
+              - /url: /events
+              - generic [ref=e686]: View events
+        - generic [ref=e687]:
+          - generic [ref=e688]:
+            - generic [ref=e689]:
+              - generic:
+                - generic:
+                  - img "Quivr"
+              - generic:
+                - generic:
+                  - img "Tinloof"
+            - generic [ref=e690]:
+              - generic:
+                - generic:
+                  - img "1Password"
+              - link "Next Door Lending" [ref=e691] [cursor=pointer]:
+                - /url: /customers/next-door-lending
+                - img "Next Door Lending" [ref=e694]
+            - 'link "Maergo''s Express Delivery: How Supabase Helped Achieve Scalability, Speed, and Cost Saving Maergo''s Express Delivery: How Supabase Helped Achieve Scalability, Speed, and Cost Saving" [ref=e696] [cursor=pointer]':
+              - /url: /customers/maergo
+              - generic [ref=e698]:
+                - img [ref=e699]
+                - 'img "Maergo''s Express Delivery: How Supabase Helped Achieve Scalability, Speed, and Cost Saving" [ref=e704]'
+                - paragraph [ref=e705]: "Maergo's Express Delivery: How Supabase Helped Achieve Scalability, Speed, and Cost Saving"
+            - generic [ref=e706]:
+              - link "Shotgun" [ref=e707] [cursor=pointer]:
+                - /url: /customers/shotgun
+                - img "Shotgun" [ref=e710]
+              - generic:
+                - generic:
+                  - img "Mozilla"
+            - link "Bootstrapped founder builds an AI app with Supabase and scales to $1M in 5 months. Bootstrapped founder builds an AI app with Supabase and scales to $1M in 5 months." [ref=e712] [cursor=pointer]:
+              - /url: /customers/chatbase
+              - generic [ref=e714]:
+                - img [ref=e715]
+                - img "Bootstrapped founder builds an AI app with Supabase and scales to $1M in 5 months." [ref=e720]
+                - paragraph [ref=e721]: Bootstrapped founder builds an AI app with Supabase and scales to $1M in 5 months.
+            - generic [ref=e722]:
+              - link "Mobbin" [ref=e723] [cursor=pointer]:
+                - /url: /customers/mobbin
+                - img "Mobbin" [ref=e726]
+              - link "HappyTeams" [ref=e727] [cursor=pointer]:
+                - /url: /customers/happyteams
+                - img "HappyTeams" [ref=e730]
+            - 'link "Scaling securely: one million users in 7 months protected with Supabase Auth Scaling securely: one million users in 7 months protected with Supabase Auth" [ref=e732] [cursor=pointer]':
+              - /url: /customers/pebblely
+              - generic [ref=e734]:
+                - img [ref=e735]
+                - 'img "Scaling securely: one million users in 7 months protected with Supabase Auth" [ref=e740]'
+                - paragraph [ref=e741]: "Scaling securely: one million users in 7 months protected with Supabase Auth"
+          - generic [ref=e742]:
+            - generic [ref=e743]:
+              - generic:
+                - generic:
+                  - img "Quivr"
+              - generic:
+                - generic:
+                  - img "Tinloof"
+            - generic [ref=e744]:
+              - generic:
+                - generic:
+                  - img "1Password"
+              - link "Next Door Lending" [ref=e745] [cursor=pointer]:
+                - /url: /customers/next-door-lending
+                - img "Next Door Lending" [ref=e748]
+            - 'link "Maergo''s Express Delivery: How Supabase Helped Achieve Scalability, Speed, and Cost Saving Maergo''s Express Delivery: How Supabase Helped Achieve Scalability, Speed, and Cost Saving" [ref=e750] [cursor=pointer]':
+              - /url: /customers/maergo
+              - generic [ref=e752]:
+                - img [ref=e753]
+                - 'img "Maergo''s Express Delivery: How Supabase Helped Achieve Scalability, Speed, and Cost Saving" [ref=e758]'
+                - paragraph [ref=e759]: "Maergo's Express Delivery: How Supabase Helped Achieve Scalability, Speed, and Cost Saving"
+            - generic [ref=e760]:
+              - link "Shotgun" [ref=e761] [cursor=pointer]:
+                - /url: /customers/shotgun
+                - img "Shotgun" [ref=e764]
+              - generic:
+                - generic:
+                  - img "Mozilla"
+            - link "Bootstrapped founder builds an AI app with Supabase and scales to $1M in 5 months. Bootstrapped founder builds an AI app with Supabase and scales to $1M in 5 months." [ref=e766] [cursor=pointer]:
+              - /url: /customers/chatbase
+              - generic [ref=e768]:
+                - img [ref=e769]
+                - img "Bootstrapped founder builds an AI app with Supabase and scales to $1M in 5 months." [ref=e774]
+                - paragraph [ref=e775]: Bootstrapped founder builds an AI app with Supabase and scales to $1M in 5 months.
+            - generic [ref=e776]:
+              - link "Mobbin" [ref=e777] [cursor=pointer]:
+                - /url: /customers/mobbin
+                - img "Mobbin" [ref=e780]
+              - link "HappyTeams" [ref=e781] [cursor=pointer]:
+                - /url: /customers/happyteams
+                - img "HappyTeams" [ref=e784]
+            - 'link "Scaling securely: one million users in 7 months protected with Supabase Auth Scaling securely: one million users in 7 months protected with Supabase Auth" [ref=e786] [cursor=pointer]':
+              - /url: /customers/pebblely
+              - generic [ref=e788]:
+                - img [ref=e789]
+                - 'img "Scaling securely: one million users in 7 months protected with Supabase Auth" [ref=e794]'
+                - paragraph [ref=e795]: "Scaling securely: one million users in 7 months protected with Supabase Auth"
+      - generic [ref=e797]:
+        - heading "Start building in seconds" [level=3] [ref=e798]
+        - paragraph [ref=e799]: Kickstart your next project with templates built by us and our community.
+        - generic [ref=e800]:
+          - link "View all examples" [ref=e801] [cursor=pointer]:
+            - /url: /docs/guides/examples
+            - generic [ref=e802]: View all examples
+          - link "Official GitHub library" [ref=e803] [cursor=pointer]:
+            - /url: https://github.com/supabase/supabase/tree/master/examples
+            - img [ref=e806]
+            - generic [ref=e808]: Official GitHub library
+      - generic [ref=e810]:
+        - link "Next.js logo Stripe logo Vercel logo Stripe Subscriptions Starter The all-in-one subscription starter kit for high-performance SaaS applications, powered by Stripe, Supabase, and Vercel. View Template" [ref=e812] [cursor=pointer]:
+          - /url: https://github.com/supabase-community/nextjs-subscription-payments
+          - generic [ref=e814]:
+            - generic [ref=e815]:
+              - generic [ref=e816]:
+                - generic "Next.js" [ref=e817]:
+                  - img "Next.js logo" [ref=e818]
+                - generic "Stripe" [ref=e820]:
+                  - img "Stripe logo" [ref=e821]
+                - generic "Vercel" [ref=e823]:
+                  - img "Vercel logo" [ref=e824]
+                - img [ref=e826]
+              - generic [ref=e829]:
+                - heading "Stripe Subscriptions Starter" [level=4] [ref=e831]
+                - paragraph [ref=e832]: The all-in-one subscription starter kit for high-performance SaaS applications, powered by Stripe, Supabase, and Vercel.
+            - button "View Template" [ref=e836]:
+              - generic [ref=e837]: View Template
+              - generic [ref=e839]:
+                - img [ref=e840]
+                - img [ref=e843]
+        - link "Next.js logo Vercel logo Next.js Starter A Next.js App Router template configured with cookie-based auth using Supabase, TypeScript and Tailwind CSS. View Template" [ref=e847] [cursor=pointer]:
+          - /url: https://github.com/vercel/next.js/tree/canary/examples/with-supabase
+          - generic [ref=e849]:
+            - generic [ref=e850]:
+              - generic [ref=e851]:
+                - generic "Next.js" [ref=e852]:
+                  - img "Next.js logo" [ref=e853]
+                - generic "Vercel" [ref=e855]:
+                  - img "Vercel logo" [ref=e856]
+                - img [ref=e858]
+              - generic [ref=e861]:
+                - heading "Next.js Starter" [level=4] [ref=e863]
+                - paragraph [ref=e864]: A Next.js App Router template configured with cookie-based auth using Supabase, TypeScript and Tailwind CSS.
+            - button "View Template" [ref=e868]:
+              - generic [ref=e869]: View Template
+              - generic [ref=e871]:
+                - img [ref=e872]
+                - img [ref=e875]
+        - link "Next.js logo OpenAI logo Vercel logo AI Chatbot An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Supabase. View Template" [ref=e879] [cursor=pointer]:
+          - /url: https://github.com/supabase-community/vercel-ai-chatbot
+          - generic [ref=e881]:
+            - generic [ref=e882]:
+              - generic [ref=e883]:
+                - generic "Next.js" [ref=e884]:
+                  - img "Next.js logo" [ref=e885]
+                - generic "OpenAI" [ref=e887]:
+                  - img "OpenAI logo" [ref=e888]
+                - generic "Vercel" [ref=e890]:
+                  - img "Vercel logo" [ref=e891]
+                - img [ref=e893]
+              - generic [ref=e896]:
+                - heading "AI Chatbot" [level=4] [ref=e898]
+                - paragraph [ref=e899]: An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Supabase.
+            - button "View Template" [ref=e903]:
+              - generic [ref=e904]: View Template
+              - generic [ref=e906]:
+                - img [ref=e907]
+                - img [ref=e910]
+        - link "LangChain logo Next.js logo LangChain + Next.js Starter Starter template and example use-cases for LangChain projects in Next.js, including chat, agents, and retrieval. View Template" [ref=e914] [cursor=pointer]:
+          - /url: https://github.com/langchain-ai/langchain-nextjs-template
+          - generic [ref=e916]:
+            - generic [ref=e917]:
+              - generic [ref=e918]:
+                - generic "LangChain" [ref=e919]:
+                  - img "LangChain logo" [ref=e920]
+                - generic "Next.js" [ref=e922]:
+                  - img "Next.js logo" [ref=e923]
+                - img [ref=e925]
+              - generic [ref=e928]:
+                - heading "LangChain + Next.js Starter" [level=4] [ref=e930]
+                - paragraph [ref=e931]: Starter template and example use-cases for LangChain projects in Next.js, including chat, agents, and retrieval.
+            - button "View Template" [ref=e935]:
+              - generic [ref=e936]: View Template
+              - generic [ref=e938]:
+                - img [ref=e939]
+                - img [ref=e942]
+        - link "Flutter logo Flutter User Management Get started with Supabase and Flutter by building a user management app with auth, file storage, and database. View Template" [ref=e946] [cursor=pointer]:
+          - /url: https://github.com/supabase/supabase/tree/master/examples/user-management/flutter-user-management
+          - generic [ref=e948]:
+            - generic [ref=e949]:
+              - generic [ref=e950]:
+                - generic "Flutter" [ref=e951]:
+                  - img "Flutter logo" [ref=e952]
+                - img [ref=e954]
+              - generic [ref=e957]:
+                - heading "Flutter User Management" [level=4] [ref=e959]
+                - paragraph [ref=e960]: Get started with Supabase and Flutter by building a user management app with auth, file storage, and database.
+            - button "View Template" [ref=e964]:
+              - generic [ref=e965]: View Template
+              - generic [ref=e967]:
+                - img [ref=e968]
+                - img [ref=e971]
+        - link "Expo logo Expo React Native Starter An extended version of create-t3-turbo implementing authentication on both the web and mobile applications. View Template" [ref=e975] [cursor=pointer]:
+          - /url: https://github.com/supabase-community/create-t3-turbo
+          - generic [ref=e977]:
+            - generic [ref=e978]:
+              - generic [ref=e979]:
+                - generic "Expo" [ref=e980]:
+                  - img "Expo logo" [ref=e981]
+                - img [ref=e983]
+              - generic [ref=e986]:
+                - heading "Expo React Native Starter" [level=4] [ref=e988]
+                - paragraph [ref=e989]: An extended version of create-t3-turbo implementing authentication on both the web and mobile applications.
+            - button "View Template" [ref=e993]:
+              - generic [ref=e994]: View Template
+              - generic [ref=e996]:
+                - img [ref=e997]
+                - img [ref=e1000]
+      - generic [ref=e1003]:
+        - heading "Stay productive and manage your app without leaving the dashboard" [level=3] [ref=e1004]:
+          - text: Stay productive and manage your app
+          - text: without leaving the dashboard
+        - generic [ref=e1005]:
+          - tablist [ref=e1006]:
+            - tab "Table Editor" [selected] [ref=e1007] [cursor=pointer]
+            - tab "SQL Editor" [ref=e1008] [cursor=pointer]
+            - tab "RLS Policies" [ref=e1009] [cursor=pointer]
+          - list [ref=e1010]:
+            - listitem [ref=e1011]:
+              - link "Full CRUD" [ref=e1012] [cursor=pointer]:
+                - /url: /docs/guides/database/tables?queryGroups=database-method&database-method=sql&queryGroups=language&language=js
+                - img [ref=e1013]
+                - generic [ref=e1015]: Full CRUD
+            - listitem [ref=e1016]:
+              - link "Materialized Views" [ref=e1017] [cursor=pointer]:
+                - /url: /docs/guides/database/tables?queryGroups=database-method&database-method=sql&queryGroups=language&language=js#materialized-views
+                - img [ref=e1018]
+                - generic [ref=e1020]: Materialized Views
+            - listitem [ref=e1021]:
+              - link "Foreign Tables" [ref=e1022] [cursor=pointer]:
+                - /url: /docs/guides/database/tables?queryGroups=database-method&database-method=sql&queryGroups=language&language=js#joining-tables-with-foreign-keys
+                - img [ref=e1023]
+                - generic [ref=e1025]: Foreign Tables
+            - listitem [ref=e1026]:
+              - link "Partitioned Tables" [ref=e1027] [cursor=pointer]:
+                - /url: /docs/guides/database/partitions
+                - img [ref=e1028]
+                - generic [ref=e1030]: Partitioned Tables
+            - listitem [ref=e1031]:
+              - link "Easy as a spreadsheet" [ref=e1032] [cursor=pointer]:
+                - /url: /docs/guides/database/overview#table-view
+                - img [ref=e1033]
+                - generic [ref=e1035]: Easy as a spreadsheet
+      - generic [ref=e1042]:
+        - heading "Join the community" [level=3] [ref=e1043]
+        - paragraph [ref=e1044]: Discover what our community has to say about their Supabase experience.
+        - link "Join us on Discord" [ref=e1046] [cursor=pointer]:
+          - /url: https://discord.supabase.com/
+          - img [ref=e1049]
+          - generic [ref=e1051]: Join us on Discord
+      - generic [ref=e1053]:
+        - generic [ref=e1054]:
+          - link "@nerdburn twitter image @nerdburn It’s fun, feels lightweight, and really quick to spin up user auth and a few tables. Almost too easy! Highly recommend." [ref=e1055] [cursor=pointer]:
+            - /url: https://twitter.com/nerdburn/status/1356857261495214085
+            - generic [ref=e1056]:
+              - generic [ref=e1058]:
+                - img "@nerdburn twitter image" [ref=e1060]
+                - paragraph [ref=e1061]: "@nerdburn"
+                - img [ref=e1063]
+              - paragraph [ref=e1065]: It’s fun, feels lightweight, and really quick to spin up user auth and a few tables. Almost too easy! Highly recommend.
+          - link "@patrickc twitter image @patrickc Very impressed by @supabase's growth. For new startups, they seem to have gone from \"promising\" to \"standard\" in remarkably short order." [ref=e1066] [cursor=pointer]:
+            - /url: https://x.com/patrickc/status/1979157875600617913
+            - generic [ref=e1067]:
+              - generic [ref=e1069]:
+                - img "@patrickc twitter image" [ref=e1071]
+                - paragraph [ref=e1072]: "@patrickc"
+                - img [ref=e1074]
+              - paragraph [ref=e1076]: Very impressed by @supabase's growth. For new startups, they seem to have gone from "promising" to "standard" in remarkably short order.
+          - 'link "@Aliahsan_sfv twitter image @Aliahsan_sfv Okay, I finally tried Supabase today and wow... why did I wait so long? 😅 Went from ''how do I even start'' to having auth + database + real-time updates working in like 20 minutes. Sometimes the hype is actually justified! #Supabase" [ref=e1077] [cursor=pointer]':
+            - /url: https://x.com/Aliahsan_sfv/status/1967167095894098210
+            - generic [ref=e1078]:
+              - generic [ref=e1080]:
+                - img "@Aliahsan_sfv twitter image" [ref=e1082]
+                - paragraph [ref=e1083]: "@Aliahsan_sfv"
+                - img [ref=e1085]
+              - paragraph [ref=e1087]: "Okay, I finally tried Supabase today and wow... why did I wait so long? 😅 Went from 'how do I even start' to having auth + database + real-time updates working in like 20 minutes. Sometimes the hype is actually justified! #Supabase"
+          - link "@yatsiv_yuriy twitter image @yatsiv_yuriy Supabase is the best product experience I've had in years. Not just tech - taste. From docs to latency to the URL structure that makes you think \"oh, that's obvious\" Feels like every other platform should study how they built it @supabase I love you" [ref=e1088] [cursor=pointer]:
+            - /url: https://x.com/yatsiv_yuriy/status/1979182362480071162
+            - generic [ref=e1089]:
+              - generic [ref=e1091]:
+                - img "@yatsiv_yuriy twitter image" [ref=e1093]
+                - paragraph [ref=e1094]: "@yatsiv_yuriy"
+                - img [ref=e1096]
+              - paragraph [ref=e1098]: Supabase is the best product experience I've had in years. Not just tech - taste. From docs to latency to the URL structure that makes you think "oh, that's obvious" Feels like every other platform should study how they built it @supabase I love you
+          - link "@adeelibr twitter image @adeelibr @supabase shout out, their MCP is awesome. It's helping me create better row securities and telling me best practises for setting up a supabase app" [ref=e1099] [cursor=pointer]:
+            - /url: https://x.com/adeelibr/status/1981356783818985774
+            - generic [ref=e1100]:
+              - generic [ref=e1102]:
+                - img "@adeelibr twitter image" [ref=e1104]
+                - paragraph [ref=e1105]: "@adeelibr"
+                - img [ref=e1107]
+              - paragraph [ref=e1109]: "@supabase shout out, their MCP is awesome. It's helping me create better row securities and telling me best practises for setting up a supabase app"
+          - link "@TyronBache twitter image @TyronBache Really impressed with @supabase's Assistant. It has helped me troubleshoot and solve complex CORS Configuration issues on Pinger." [ref=e1110] [cursor=pointer]:
+            - /url: https://x.com/TyronBache/status/1924425289959928039
+            - generic [ref=e1111]:
+              - generic [ref=e1113]:
+                - img "@TyronBache twitter image" [ref=e1115]
+                - paragraph [ref=e1116]: "@TyronBache"
+                - img [ref=e1118]
+              - paragraph [ref=e1120]: Really impressed with @supabase's Assistant. It has helped me troubleshoot and solve complex CORS Configuration issues on Pinger.
+          - link "@MinimEditor twitter image @MinimEditor I’ve always used Supabase just as a database. Yesterday, I helped debug a founder’s vibe-coding project built with React + React Router — no backend server. The “backend” was entirely Supabase Edge Functions as the API. First time using Supabase this way. Impressive." [ref=e1121] [cursor=pointer]:
+            - /url: https://x.com/MinimEditor/status/1954422981708722372
+            - generic [ref=e1122]:
+              - generic [ref=e1124]:
+                - img "@MinimEditor twitter image" [ref=e1126]
+                - paragraph [ref=e1127]: "@MinimEditor"
+                - img [ref=e1129]
+              - paragraph [ref=e1131]: I’ve always used Supabase just as a database. Yesterday, I helped debug a founder’s vibe-coding project built with React + React Router — no backend server. The “backend” was entirely Supabase Edge Functions as the API. First time using Supabase this way. Impressive.
+          - link "@orlandopedro_ twitter image @orlandopedro_ Love @supabase custom domains makes the auth so much better" [ref=e1132] [cursor=pointer]:
+            - /url: https://x.com/orlandopedro_/status/1958618806143578336
+            - generic [ref=e1133]:
+              - generic [ref=e1135]:
+                - img "@orlandopedro_ twitter image" [ref=e1137]
+                - paragraph [ref=e1138]: "@orlandopedro_"
+                - img [ref=e1140]
+              - paragraph [ref=e1142]: Love @supabase custom domains makes the auth so much better
+          - 'link "@sdusteric twitter image @sdusteric Loving #Supabase MCP. Claude Code would not only plan what data we should save but also figure out a migration script by checking what the schema looks like on Supabase via MCP." [ref=e1143] [cursor=pointer]':
+            - /url: https://x.com/sdusteric/status/1957703488470921550
+            - generic [ref=e1144]:
+              - generic [ref=e1146]:
+                - img "@sdusteric twitter image" [ref=e1148]
+                - paragraph [ref=e1149]: "@sdusteric"
+                - img [ref=e1151]
+              - paragraph [ref=e1153]: "Loving #Supabase MCP. Claude Code would not only plan what data we should save but also figure out a migration script by checking what the schema looks like on Supabase via MCP."
+          - link "@SteinlageScott twitter image @SteinlageScott I love @supabase's built-in Advisors. The security and performance linters improve everything and boost my confidence in what I'm building!" [ref=e1154] [cursor=pointer]:
+            - /url: https://x.com/SteinlageScott/status/1958603243401183701
+            - generic [ref=e1155]:
+              - generic [ref=e1157]:
+                - img "@SteinlageScott twitter image" [ref=e1159]
+                - paragraph [ref=e1160]: "@SteinlageScott"
+                - img [ref=e1162]
+              - paragraph [ref=e1164]: I love @supabase's built-in Advisors. The security and performance linters improve everything and boost my confidence in what I'm building!
+          - link "@BowTiedQilin twitter image @BowTiedQilin Working with @supabase has been one of the best dev experiences I've had lately. Incredibly easy to set up, great documentation, and so many fewer hoops to jump through than the competition. I definitely plan to use it on any and all future projects." [ref=e1165] [cursor=pointer]:
+            - /url: https://x.com/BowTiedQilin/status/1497602628410388480
+            - generic [ref=e1166]:
+              - generic [ref=e1168]:
+                - img "@BowTiedQilin twitter image" [ref=e1170]
+                - paragraph [ref=e1171]: "@BowTiedQilin"
+                - img [ref=e1173]
+              - paragraph [ref=e1175]: Working with @supabase has been one of the best dev experiences I've had lately. Incredibly easy to set up, great documentation, and so many fewer hoops to jump through than the competition. I definitely plan to use it on any and all future projects.
+          - link "@adm_lawson twitter image @adm_lawson Love supabse edge functions. Cursor+Supabase+MCP+Docker desktop is all I need" [ref=e1176] [cursor=pointer]:
+            - /url: https://x.com/adm_lawson/status/1958216298309066887
+            - generic [ref=e1177]:
+              - generic [ref=e1179]:
+                - img "@adm_lawson twitter image" [ref=e1181]
+                - paragraph [ref=e1182]: "@adm_lawson"
+                - img [ref=e1184]
+              - paragraph [ref=e1186]: Love supabse edge functions. Cursor+Supabase+MCP+Docker desktop is all I need
+          - link "@gokul_i twitter image @gokul_i First time running @supabase in local. It just works. Very good DX imo." [ref=e1187] [cursor=pointer]:
+            - /url: https://x.com/gokul_i/status/1958880167889133811
+            - generic [ref=e1188]:
+              - generic [ref=e1190]:
+                - img "@gokul_i twitter image" [ref=e1192]
+                - paragraph [ref=e1193]: "@gokul_i"
+                - img [ref=e1195]
+              - paragraph [ref=e1197]: First time running @supabase in local. It just works. Very good DX imo.
+          - link "@dadooos_ twitter image @dadooos_ Run supabase locally and just wow in silence! I am impressed! This is the kind of tooling I would want for my team." [ref=e1198] [cursor=pointer]:
+            - /url: https://x.com/dadooos_/status/1947924753618243663
+            - generic [ref=e1199]:
+              - generic [ref=e1201]:
+                - img "@dadooos_ twitter image" [ref=e1203]
+                - paragraph [ref=e1204]: "@dadooos_"
+                - img [ref=e1206]
+              - paragraph [ref=e1208]: Run supabase locally and just wow in silence! I am impressed! This is the kind of tooling I would want for my team.
+          - 'link "@Rodrigo66799141 twitter image @Rodrigo66799141 After a week of diving deep into Supabase for my new SaaS project, I''m really impressed with its Auth and RLS features. It makes security much simpler for solo founders. #buildinpublic #SaaS" [ref=e1209] [cursor=pointer]':
+            - /url: https://x.com/Rodrigo66799141/status/1959246083957100851
+            - generic [ref=e1210]:
+              - generic [ref=e1212]:
+                - img "@Rodrigo66799141 twitter image" [ref=e1214]
+                - paragraph [ref=e1215]: "@Rodrigo66799141"
+                - img [ref=e1217]
+              - paragraph [ref=e1219]: "After a week of diving deep into Supabase for my new SaaS project, I'm really impressed with its Auth and RLS features. It makes security much simpler for solo founders. #buildinpublic #SaaS"
+          - link "@xthemadgeniusx twitter image @xthemadgeniusx Lately been using Supabase over AWS/ GCP for products to save on costs and rapid builds(Vibe Code) that do not need all the Infra and the hefty costs that come with AWS/ GCP out the door. Great solution overall." [ref=e1220] [cursor=pointer]:
+            - /url: https://x.com/xthemadgeniusx/status/1960049950110384250
+            - generic [ref=e1221]:
+              - generic [ref=e1223]:
+                - img "@xthemadgeniusx twitter image" [ref=e1225]
+                - paragraph [ref=e1226]: "@xthemadgeniusx"
+                - img [ref=e1228]
+              - paragraph [ref=e1230]: Lately been using Supabase over AWS/ GCP for products to save on costs and rapid builds(Vibe Code) that do not need all the Infra and the hefty costs that come with AWS/ GCP out the door. Great solution overall.
+          - link "@pontusab twitter image @pontusab I love everything about Supabase." [ref=e1231] [cursor=pointer]:
+            - /url: https://x.com/pontusab/status/1958603243401183701
+            - generic [ref=e1232]:
+              - generic [ref=e1234]:
+                - img "@pontusab twitter image" [ref=e1236]
+                - paragraph [ref=e1237]: "@pontusab"
+                - img [ref=e1239]
+              - paragraph [ref=e1241]: I love everything about Supabase.
+          - link "@viratt_mankali twitter image @viratt_mankali Love how Supabase makes full stack features this easy. Using it with Next.js and loving the experience!" [ref=e1242] [cursor=pointer]:
+            - /url: https://x.com/viratt_mankali/status/1963290133421240591
+            - generic [ref=e1243]:
+              - generic [ref=e1245]:
+                - img "@viratt_mankali twitter image" [ref=e1247]
+                - paragraph [ref=e1248]: "@viratt_mankali"
+                - img [ref=e1250]
+              - paragraph [ref=e1252]: Love how Supabase makes full stack features this easy. Using it with Next.js and loving the experience!
+        - generic [ref=e1253]:
+          - link "@nerdburn twitter image @nerdburn It’s fun, feels lightweight, and really quick to spin up user auth and a few tables. Almost too easy! Highly recommend." [ref=e1254] [cursor=pointer]:
+            - /url: https://twitter.com/nerdburn/status/1356857261495214085
+            - generic [ref=e1255]:
+              - generic [ref=e1257]:
+                - img "@nerdburn twitter image" [ref=e1259]
+                - paragraph [ref=e1260]: "@nerdburn"
+                - img [ref=e1262]
+              - paragraph [ref=e1264]: It’s fun, feels lightweight, and really quick to spin up user auth and a few tables. Almost too easy! Highly recommend.
+          - link "@patrickc twitter image @patrickc Very impressed by @supabase's growth. For new startups, they seem to have gone from \"promising\" to \"standard\" in remarkably short order." [ref=e1265] [cursor=pointer]:
+            - /url: https://x.com/patrickc/status/1979157875600617913
+            - generic [ref=e1266]:
+              - generic [ref=e1268]:
+                - img "@patrickc twitter image" [ref=e1270]
+                - paragraph [ref=e1271]: "@patrickc"
+                - img [ref=e1273]
+              - paragraph [ref=e1275]: Very impressed by @supabase's growth. For new startups, they seem to have gone from "promising" to "standard" in remarkably short order.
+          - 'link "@Aliahsan_sfv twitter image @Aliahsan_sfv Okay, I finally tried Supabase today and wow... why did I wait so long? 😅 Went from ''how do I even start'' to having auth + database + real-time updates working in like 20 minutes. Sometimes the hype is actually justified! #Supabase" [ref=e1276] [cursor=pointer]':
+            - /url: https://x.com/Aliahsan_sfv/status/1967167095894098210
+            - generic [ref=e1277]:
+              - generic [ref=e1279]:
+                - img "@Aliahsan_sfv twitter image" [ref=e1281]
+                - paragraph [ref=e1282]: "@Aliahsan_sfv"
+                - img [ref=e1284]
+              - paragraph [ref=e1286]: "Okay, I finally tried Supabase today and wow... why did I wait so long? 😅 Went from 'how do I even start' to having auth + database + real-time updates working in like 20 minutes. Sometimes the hype is actually justified! #Supabase"
+          - link "@yatsiv_yuriy twitter image @yatsiv_yuriy Supabase is the best product experience I've had in years. Not just tech - taste. From docs to latency to the URL structure that makes you think \"oh, that's obvious\" Feels like every other platform should study how they built it @supabase I love you" [ref=e1287] [cursor=pointer]:
+            - /url: https://x.com/yatsiv_yuriy/status/1979182362480071162
+            - generic [ref=e1288]:
+              - generic [ref=e1290]:
+                - img "@yatsiv_yuriy twitter image" [ref=e1292]
+                - paragraph [ref=e1293]: "@yatsiv_yuriy"
+                - img [ref=e1295]
+              - paragraph [ref=e1297]: Supabase is the best product experience I've had in years. Not just tech - taste. From docs to latency to the URL structure that makes you think "oh, that's obvious" Feels like every other platform should study how they built it @supabase I love you
+          - link "@adeelibr twitter image @adeelibr @supabase shout out, their MCP is awesome. It's helping me create better row securities and telling me best practises for setting up a supabase app" [ref=e1298] [cursor=pointer]:
+            - /url: https://x.com/adeelibr/status/1981356783818985774
+            - generic [ref=e1299]:
+              - generic [ref=e1301]:
+                - img "@adeelibr twitter image" [ref=e1303]
+                - paragraph [ref=e1304]: "@adeelibr"
+                - img [ref=e1306]
+              - paragraph [ref=e1308]: "@supabase shout out, their MCP is awesome. It's helping me create better row securities and telling me best practises for setting up a supabase app"
+          - link "@TyronBache twitter image @TyronBache Really impressed with @supabase's Assistant. It has helped me troubleshoot and solve complex CORS Configuration issues on Pinger." [ref=e1309] [cursor=pointer]:
+            - /url: https://x.com/TyronBache/status/1924425289959928039
+            - generic [ref=e1310]:
+              - generic [ref=e1312]:
+                - img "@TyronBache twitter image" [ref=e1314]
+                - paragraph [ref=e1315]: "@TyronBache"
+                - img [ref=e1317]
+              - paragraph [ref=e1319]: Really impressed with @supabase's Assistant. It has helped me troubleshoot and solve complex CORS Configuration issues on Pinger.
+          - link "@MinimEditor twitter image @MinimEditor I’ve always used Supabase just as a database. Yesterday, I helped debug a founder’s vibe-coding project built with React + React Router — no backend server. The “backend” was entirely Supabase Edge Functions as the API. First time using Supabase this way. Impressive." [ref=e1320] [cursor=pointer]:
+            - /url: https://x.com/MinimEditor/status/1954422981708722372
+            - generic [ref=e1321]:
+              - generic [ref=e1323]:
+                - img "@MinimEditor twitter image" [ref=e1325]
+                - paragraph [ref=e1326]: "@MinimEditor"
+                - img [ref=e1328]
+              - paragraph [ref=e1330]: I’ve always used Supabase just as a database. Yesterday, I helped debug a founder’s vibe-coding project built with React + React Router — no backend server. The “backend” was entirely Supabase Edge Functions as the API. First time using Supabase this way. Impressive.
+          - link "@orlandopedro_ twitter image @orlandopedro_ Love @supabase custom domains makes the auth so much better" [ref=e1331] [cursor=pointer]:
+            - /url: https://x.com/orlandopedro_/status/1958618806143578336
+            - generic [ref=e1332]:
+              - generic [ref=e1334]:
+                - img "@orlandopedro_ twitter image" [ref=e1336]
+                - paragraph [ref=e1337]: "@orlandopedro_"
+                - img [ref=e1339]
+              - paragraph [ref=e1341]: Love @supabase custom domains makes the auth so much better
+          - 'link "@sdusteric twitter image @sdusteric Loving #Supabase MCP. Claude Code would not only plan what data we should save but also figure out a migration script by checking what the schema looks like on Supabase via MCP." [ref=e1342] [cursor=pointer]':
+            - /url: https://x.com/sdusteric/status/1957703488470921550
+            - generic [ref=e1343]:
+              - generic [ref=e1345]:
+                - img "@sdusteric twitter image" [ref=e1347]
+                - paragraph [ref=e1348]: "@sdusteric"
+                - img [ref=e1350]
+              - paragraph [ref=e1352]: "Loving #Supabase MCP. Claude Code would not only plan what data we should save but also figure out a migration script by checking what the schema looks like on Supabase via MCP."
+          - link "@SteinlageScott twitter image @SteinlageScott I love @supabase's built-in Advisors. The security and performance linters improve everything and boost my confidence in what I'm building!" [ref=e1353] [cursor=pointer]:
+            - /url: https://x.com/SteinlageScott/status/1958603243401183701
+            - generic [ref=e1354]:
+              - generic [ref=e1356]:
+                - img "@SteinlageScott twitter image" [ref=e1358]
+                - paragraph [ref=e1359]: "@SteinlageScott"
+                - img [ref=e1361]
+              - paragraph [ref=e1363]: I love @supabase's built-in Advisors. The security and performance linters improve everything and boost my confidence in what I'm building!
+          - link "@BowTiedQilin twitter image @BowTiedQilin Working with @supabase has been one of the best dev experiences I've had lately. Incredibly easy to set up, great documentation, and so many fewer hoops to jump through than the competition. I definitely plan to use it on any and all future projects." [ref=e1364] [cursor=pointer]:
+            - /url: https://x.com/BowTiedQilin/status/1497602628410388480
+            - generic [ref=e1365]:
+              - generic [ref=e1367]:
+                - img "@BowTiedQilin twitter image" [ref=e1369]
+                - paragraph [ref=e1370]: "@BowTiedQilin"
+                - img [ref=e1372]
+              - paragraph [ref=e1374]: Working with @supabase has been one of the best dev experiences I've had lately. Incredibly easy to set up, great documentation, and so many fewer hoops to jump through than the competition. I definitely plan to use it on any and all future projects.
+          - link "@adm_lawson twitter image @adm_lawson Love supabse edge functions. Cursor+Supabase+MCP+Docker desktop is all I need" [ref=e1375] [cursor=pointer]:
+            - /url: https://x.com/adm_lawson/status/1958216298309066887
+            - generic [ref=e1376]:
+              - generic [ref=e1378]:
+                - img "@adm_lawson twitter image" [ref=e1380]
+                - paragraph [ref=e1381]: "@adm_lawson"
+                - img [ref=e1383]
+              - paragraph [ref=e1385]: Love supabse edge functions. Cursor+Supabase+MCP+Docker desktop is all I need
+          - link "@gokul_i twitter image @gokul_i First time running @supabase in local. It just works. Very good DX imo." [ref=e1386] [cursor=pointer]:
+            - /url: https://x.com/gokul_i/status/1958880167889133811
+            - generic [ref=e1387]:
+              - generic [ref=e1389]:
+                - img "@gokul_i twitter image" [ref=e1391]
+                - paragraph [ref=e1392]: "@gokul_i"
+                - img [ref=e1394]
+              - paragraph [ref=e1396]: First time running @supabase in local. It just works. Very good DX imo.
+          - link "@dadooos_ twitter image @dadooos_ Run supabase locally and just wow in silence! I am impressed! This is the kind of tooling I would want for my team." [ref=e1397] [cursor=pointer]:
+            - /url: https://x.com/dadooos_/status/1947924753618243663
+            - generic [ref=e1398]:
+              - generic [ref=e1400]:
+                - img "@dadooos_ twitter image" [ref=e1402]
+                - paragraph [ref=e1403]: "@dadooos_"
+                - img [ref=e1405]
+              - paragraph [ref=e1407]: Run supabase locally and just wow in silence! I am impressed! This is the kind of tooling I would want for my team.
+          - 'link "@Rodrigo66799141 twitter image @Rodrigo66799141 After a week of diving deep into Supabase for my new SaaS project, I''m really impressed with its Auth and RLS features. It makes security much simpler for solo founders. #buildinpublic #SaaS" [ref=e1408] [cursor=pointer]':
+            - /url: https://x.com/Rodrigo66799141/status/1959246083957100851
+            - generic [ref=e1409]:
+              - generic [ref=e1411]:
+                - img "@Rodrigo66799141 twitter image" [ref=e1413]
+                - paragraph [ref=e1414]: "@Rodrigo66799141"
+                - img [ref=e1416]
+              - paragraph [ref=e1418]: "After a week of diving deep into Supabase for my new SaaS project, I'm really impressed with its Auth and RLS features. It makes security much simpler for solo founders. #buildinpublic #SaaS"
+          - link "@xthemadgeniusx twitter image @xthemadgeniusx Lately been using Supabase over AWS/ GCP for products to save on costs and rapid builds(Vibe Code) that do not need all the Infra and the hefty costs that come with AWS/ GCP out the door. Great solution overall." [ref=e1419] [cursor=pointer]:
+            - /url: https://x.com/xthemadgeniusx/status/1960049950110384250
+            - generic [ref=e1420]:
+              - generic [ref=e1422]:
+                - img "@xthemadgeniusx twitter image" [ref=e1424]
+                - paragraph [ref=e1425]: "@xthemadgeniusx"
+                - img [ref=e1427]
+              - paragraph [ref=e1429]: Lately been using Supabase over AWS/ GCP for products to save on costs and rapid builds(Vibe Code) that do not need all the Infra and the hefty costs that come with AWS/ GCP out the door. Great solution overall.
+          - link "@pontusab twitter image @pontusab I love everything about Supabase." [ref=e1430] [cursor=pointer]:
+            - /url: https://x.com/pontusab/status/1958603243401183701
+            - generic [ref=e1431]:
+              - generic [ref=e1433]:
+                - img "@pontusab twitter image" [ref=e1435]
+                - paragraph [ref=e1436]: "@pontusab"
+                - img [ref=e1438]
+              - paragraph [ref=e1440]: I love everything about Supabase.
+          - link "@viratt_mankali twitter image @viratt_mankali Love how Supabase makes full stack features this easy. Using it with Next.js and loving the experience!" [ref=e1441] [cursor=pointer]:
+            - /url: https://x.com/viratt_mankali/status/1963290133421240591
+            - generic [ref=e1442]:
+              - generic [ref=e1444]:
+                - img "@viratt_mankali twitter image" [ref=e1446]
+                - paragraph [ref=e1447]: "@viratt_mankali"
+                - img [ref=e1449]
+              - paragraph [ref=e1451]: Love how Supabase makes full stack features this easy. Using it with Next.js and loving the experience!
+        - generic [ref=e1452]:
+          - link "@nerdburn twitter image @nerdburn It’s fun, feels lightweight, and really quick to spin up user auth and a few tables. Almost too easy! Highly recommend." [ref=e1453] [cursor=pointer]:
+            - /url: https://twitter.com/nerdburn/status/1356857261495214085
+            - generic [ref=e1454]:
+              - generic [ref=e1456]:
+                - img "@nerdburn twitter image" [ref=e1458]
+                - paragraph [ref=e1459]: "@nerdburn"
+                - img [ref=e1461]
+              - paragraph [ref=e1463]: It’s fun, feels lightweight, and really quick to spin up user auth and a few tables. Almost too easy! Highly recommend.
+          - link "@patrickc twitter image @patrickc Very impressed by @supabase's growth. For new startups, they seem to have gone from \"promising\" to \"standard\" in remarkably short order." [ref=e1464] [cursor=pointer]:
+            - /url: https://x.com/patrickc/status/1979157875600617913
+            - generic [ref=e1465]:
+              - generic [ref=e1467]:
+                - img "@patrickc twitter image" [ref=e1469]
+                - paragraph [ref=e1470]: "@patrickc"
+                - img [ref=e1472]
+              - paragraph [ref=e1474]: Very impressed by @supabase's growth. For new startups, they seem to have gone from "promising" to "standard" in remarkably short order.
+          - 'link "@Aliahsan_sfv twitter image @Aliahsan_sfv Okay, I finally tried Supabase today and wow... why did I wait so long? 😅 Went from ''how do I even start'' to having auth + database + real-time updates working in like 20 minutes. Sometimes the hype is actually justified! #Supabase" [ref=e1475] [cursor=pointer]':
+            - /url: https://x.com/Aliahsan_sfv/status/1967167095894098210
+            - generic [ref=e1476]:
+              - generic [ref=e1478]:
+                - img "@Aliahsan_sfv twitter image" [ref=e1480]
+                - paragraph [ref=e1481]: "@Aliahsan_sfv"
+                - img [ref=e1483]
+              - paragraph [ref=e1485]: "Okay, I finally tried Supabase today and wow... why did I wait so long? 😅 Went from 'how do I even start' to having auth + database + real-time updates working in like 20 minutes. Sometimes the hype is actually justified! #Supabase"
+          - link "@yatsiv_yuriy twitter image @yatsiv_yuriy Supabase is the best product experience I've had in years. Not just tech - taste. From docs to latency to the URL structure that makes you think \"oh, that's obvious\" Feels like every other platform should study how they built it @supabase I love you" [ref=e1486] [cursor=pointer]:
+            - /url: https://x.com/yatsiv_yuriy/status/1979182362480071162
+            - generic [ref=e1487]:
+              - generic [ref=e1489]:
+                - img "@yatsiv_yuriy twitter image" [ref=e1491]
+                - paragraph [ref=e1492]: "@yatsiv_yuriy"
+                - img [ref=e1494]
+              - paragraph [ref=e1496]: Supabase is the best product experience I've had in years. Not just tech - taste. From docs to latency to the URL structure that makes you think "oh, that's obvious" Feels like every other platform should study how they built it @supabase I love you
+          - link "@adeelibr twitter image @adeelibr @supabase shout out, their MCP is awesome. It's helping me create better row securities and telling me best practises for setting up a supabase app" [ref=e1497] [cursor=pointer]:
+            - /url: https://x.com/adeelibr/status/1981356783818985774
+            - generic [ref=e1498]:
+              - generic [ref=e1500]:
+                - img "@adeelibr twitter image" [ref=e1502]
+                - paragraph [ref=e1503]: "@adeelibr"
+                - img [ref=e1505]
+              - paragraph [ref=e1507]: "@supabase shout out, their MCP is awesome. It's helping me create better row securities and telling me best practises for setting up a supabase app"
+          - link "@TyronBache twitter image @TyronBache Really impressed with @supabase's Assistant. It has helped me troubleshoot and solve complex CORS Configuration issues on Pinger." [ref=e1508] [cursor=pointer]:
+            - /url: https://x.com/TyronBache/status/1924425289959928039
+            - generic [ref=e1509]:
+              - generic [ref=e1511]:
+                - img "@TyronBache twitter image" [ref=e1513]
+                - paragraph [ref=e1514]: "@TyronBache"
+                - img [ref=e1516]
+              - paragraph [ref=e1518]: Really impressed with @supabase's Assistant. It has helped me troubleshoot and solve complex CORS Configuration issues on Pinger.
+          - link "@MinimEditor twitter image @MinimEditor I’ve always used Supabase just as a database. Yesterday, I helped debug a founder’s vibe-coding project built with React + React Router — no backend server. The “backend” was entirely Supabase Edge Functions as the API. First time using Supabase this way. Impressive." [ref=e1519] [cursor=pointer]:
+            - /url: https://x.com/MinimEditor/status/1954422981708722372
+            - generic [ref=e1520]:
+              - generic [ref=e1522]:
+                - img "@MinimEditor twitter image" [ref=e1524]
+                - paragraph [ref=e1525]: "@MinimEditor"
+                - img [ref=e1527]
+              - paragraph [ref=e1529]: I’ve always used Supabase just as a database. Yesterday, I helped debug a founder’s vibe-coding project built with React + React Router — no backend server. The “backend” was entirely Supabase Edge Functions as the API. First time using Supabase this way. Impressive.
+          - link "@orlandopedro_ twitter image @orlandopedro_ Love @supabase custom domains makes the auth so much better" [ref=e1530] [cursor=pointer]:
+            - /url: https://x.com/orlandopedro_/status/1958618806143578336
+            - generic [ref=e1531]:
+              - generic [ref=e1533]:
+                - img "@orlandopedro_ twitter image" [ref=e1535]
+                - paragraph [ref=e1536]: "@orlandopedro_"
+                - img [ref=e1538]
+              - paragraph [ref=e1540]: Love @supabase custom domains makes the auth so much better
+          - 'link "@sdusteric twitter image @sdusteric Loving #Supabase MCP. Claude Code would not only plan what data we should save but also figure out a migration script by checking what the schema looks like on Supabase via MCP." [ref=e1541] [cursor=pointer]':
+            - /url: https://x.com/sdusteric/status/1957703488470921550
+            - generic [ref=e1542]:
+              - generic [ref=e1544]:
+                - img "@sdusteric twitter image" [ref=e1546]
+                - paragraph [ref=e1547]: "@sdusteric"
+                - img [ref=e1549]
+              - paragraph [ref=e1551]: "Loving #Supabase MCP. Claude Code would not only plan what data we should save but also figure out a migration script by checking what the schema looks like on Supabase via MCP."
+          - link "@SteinlageScott twitter image @SteinlageScott I love @supabase's built-in Advisors. The security and performance linters improve everything and boost my confidence in what I'm building!" [ref=e1552] [cursor=pointer]:
+            - /url: https://x.com/SteinlageScott/status/1958603243401183701
+            - generic [ref=e1553]:
+              - generic [ref=e1555]:
+                - img "@SteinlageScott twitter image" [ref=e1557]
+                - paragraph [ref=e1558]: "@SteinlageScott"
+                - img [ref=e1560]
+              - paragraph [ref=e1562]: I love @supabase's built-in Advisors. The security and performance linters improve everything and boost my confidence in what I'm building!
+          - link "@BowTiedQilin twitter image @BowTiedQilin Working with @supabase has been one of the best dev experiences I've had lately. Incredibly easy to set up, great documentation, and so many fewer hoops to jump through than the competition. I definitely plan to use it on any and all future projects." [ref=e1563] [cursor=pointer]:
+            - /url: https://x.com/BowTiedQilin/status/1497602628410388480
+            - generic [ref=e1564]:
+              - generic [ref=e1566]:
+                - img "@BowTiedQilin twitter image" [ref=e1568]
+                - paragraph [ref=e1569]: "@BowTiedQilin"
+                - img [ref=e1571]
+              - paragraph [ref=e1573]: Working with @supabase has been one of the best dev experiences I've had lately. Incredibly easy to set up, great documentation, and so many fewer hoops to jump through than the competition. I definitely plan to use it on any and all future projects.
+          - link "@adm_lawson twitter image @adm_lawson Love supabse edge functions. Cursor+Supabase+MCP+Docker desktop is all I need" [ref=e1574] [cursor=pointer]:
+            - /url: https://x.com/adm_lawson/status/1958216298309066887
+            - generic [ref=e1575]:
+              - generic [ref=e1577]:
+                - img "@adm_lawson twitter image" [ref=e1579]
+                - paragraph [ref=e1580]: "@adm_lawson"
+                - img [ref=e1582]
+              - paragraph [ref=e1584]: Love supabse edge functions. Cursor+Supabase+MCP+Docker desktop is all I need
+          - link "@gokul_i twitter image @gokul_i First time running @supabase in local. It just works. Very good DX imo." [ref=e1585] [cursor=pointer]:
+            - /url: https://x.com/gokul_i/status/1958880167889133811
+            - generic [ref=e1586]:
+              - generic [ref=e1588]:
+                - img "@gokul_i twitter image" [ref=e1590]
+                - paragraph [ref=e1591]: "@gokul_i"
+                - img [ref=e1593]
+              - paragraph [ref=e1595]: First time running @supabase in local. It just works. Very good DX imo.
+          - link "@dadooos_ twitter image @dadooos_ Run supabase locally and just wow in silence! I am impressed! This is the kind of tooling I would want for my team." [ref=e1596] [cursor=pointer]:
+            - /url: https://x.com/dadooos_/status/1947924753618243663
+            - generic [ref=e1597]:
+              - generic [ref=e1599]:
+                - img "@dadooos_ twitter image" [ref=e1601]
+                - paragraph [ref=e1602]: "@dadooos_"
+                - img [ref=e1604]
+              - paragraph [ref=e1606]: Run supabase locally and just wow in silence! I am impressed! This is the kind of tooling I would want for my team.
+          - 'link "@Rodrigo66799141 twitter image @Rodrigo66799141 After a week of diving deep into Supabase for my new SaaS project, I''m really impressed with its Auth and RLS features. It makes security much simpler for solo founders. #buildinpublic #SaaS" [ref=e1607] [cursor=pointer]':
+            - /url: https://x.com/Rodrigo66799141/status/1959246083957100851
+            - generic [ref=e1608]:
+              - generic [ref=e1610]:
+                - img "@Rodrigo66799141 twitter image" [ref=e1612]
+                - paragraph [ref=e1613]: "@Rodrigo66799141"
+                - img [ref=e1615]
+              - paragraph [ref=e1617]: "After a week of diving deep into Supabase for my new SaaS project, I'm really impressed with its Auth and RLS features. It makes security much simpler for solo founders. #buildinpublic #SaaS"
+          - link "@xthemadgeniusx twitter image @xthemadgeniusx Lately been using Supabase over AWS/ GCP for products to save on costs and rapid builds(Vibe Code) that do not need all the Infra and the hefty costs that come with AWS/ GCP out the door. Great solution overall." [ref=e1618] [cursor=pointer]:
+            - /url: https://x.com/xthemadgeniusx/status/1960049950110384250
+            - generic [ref=e1619]:
+              - generic [ref=e1621]:
+                - img "@xthemadgeniusx twitter image" [ref=e1623]
+                - paragraph [ref=e1624]: "@xthemadgeniusx"
+                - img [ref=e1626]
+              - paragraph [ref=e1628]: Lately been using Supabase over AWS/ GCP for products to save on costs and rapid builds(Vibe Code) that do not need all the Infra and the hefty costs that come with AWS/ GCP out the door. Great solution overall.
+          - link "@pontusab twitter image @pontusab I love everything about Supabase." [ref=e1629] [cursor=pointer]:
+            - /url: https://x.com/pontusab/status/1958603243401183701
+            - generic [ref=e1630]:
+              - generic [ref=e1632]:
+                - img "@pontusab twitter image" [ref=e1634]
+                - paragraph [ref=e1635]: "@pontusab"
+                - img [ref=e1637]
+              - paragraph [ref=e1639]: I love everything about Supabase.
+          - link "@viratt_mankali twitter image @viratt_mankali Love how Supabase makes full stack features this easy. Using it with Next.js and loving the experience!" [ref=e1640] [cursor=pointer]:
+            - /url: https://x.com/viratt_mankali/status/1963290133421240591
+            - generic [ref=e1641]:
+              - generic [ref=e1643]:
+                - img "@viratt_mankali twitter image" [ref=e1645]
+                - paragraph [ref=e1646]: "@viratt_mankali"
+                - img [ref=e1648]
+              - paragraph [ref=e1650]: Love how Supabase makes full stack features this easy. Using it with Next.js and loving the experience!
+      - generic [ref=e1651]:
+        - heading "Open source from day one" [level=2] [ref=e1652]
+        - paragraph [ref=e1653]: Supabase is built in the open because we believe great developer tools should be transparent, inspectable, and owned by the community. Read, contribute, self-host. You're never locked in, and always in control.
+        - generic [ref=e1654]:
+          - link "@supabase99.8K" [ref=e1655] [cursor=pointer]:
+            - /url: https://github.com/supabase
+            - img [ref=e1657]
+            - generic [ref=e1659]:
+              - text: "@supabase"
+              - text: 99.8K
+          - generic [ref=e1661]: Top 100 GitHub repos
+      - generic [ref=e1662]:
+        - heading "Build in a weekend, scale to millions" [level=2] [ref=e1664]
+        - generic [ref=e1665]:
+          - link "Start your project" [ref=e1666] [cursor=pointer]:
+            - /url: https://supabase.com/dashboard
+            - generic [ref=e1667]: Start your project
+          - link "Request a demo" [ref=e1668] [cursor=pointer]:
+            - /url: /contact/sales
+            - generic [ref=e1669]: Request a demo
+    - contentinfo [ref=e1670]:
+      - heading "Footer" [level=2] [ref=e1671]
+      - generic [ref=e1673]:
+        - generic [ref=e1674]:
+          - text: We protect your data.
+          - link "More on Security" [ref=e1675] [cursor=pointer]:
+            - /url: /security
+        - list [ref=e1676]:
+          - listitem [ref=e1677]:
+            - img [ref=e1678]
+            - text: SOC2 Type 2
+            - generic [ref=e1680]: Certified
+          - listitem [ref=e1681]:
+            - img [ref=e1682]
+            - text: HIPAA
+            - generic [ref=e1684]: Compliant
+      - generic [ref=e1686]:
+        - generic [ref=e1687]:
+          - generic [ref=e1688]:
+            - link "Supabase Logo" [ref=e1689] [cursor=pointer]:
+              - /url: /
+              - img "Supabase Logo" [ref=e1690]
+            - generic [ref=e1691]:
+              - link "Twitter" [ref=e1692] [cursor=pointer]:
+                - /url: https://twitter.com/supabase
+                - generic [ref=e1693]: Twitter
+                - img [ref=e1695]
+              - link "GitHub" [ref=e1697] [cursor=pointer]:
+                - /url: https://github.com/supabase
+                - generic [ref=e1698]: GitHub
+                - img [ref=e1700]
+              - link "Discord" [ref=e1702] [cursor=pointer]:
+                - /url: https://discord.supabase.com/
+                - generic [ref=e1703]: Discord
+                - img [ref=e1705]
+              - link "Youtube" [ref=e1707] [cursor=pointer]:
+                - /url: https://youtube.com/c/supabase
+                - generic [ref=e1708]: Youtube
+                - img [ref=e1710]
+          - generic [ref=e1713]:
+            - generic [ref=e1714]:
+              - heading "Product" [level=6] [ref=e1715]
+              - list [ref=e1716]:
+                - listitem [ref=e1717]:
+                  - link "Database" [ref=e1718] [cursor=pointer]:
+                    - /url: /database
+                    - generic [ref=e1719]: Database
+                - listitem [ref=e1720]:
+                  - link "Auth" [ref=e1721] [cursor=pointer]:
+                    - /url: /auth
+                    - generic [ref=e1722]: Auth
+                - listitem [ref=e1723]:
+                  - link "Functions" [ref=e1724] [cursor=pointer]:
+                    - /url: /edge-functions
+                    - generic [ref=e1725]: Functions
+                - listitem [ref=e1726]:
+                  - link "Realtime" [ref=e1727] [cursor=pointer]:
+                    - /url: /realtime
+                    - generic [ref=e1728]: Realtime
+                - listitem [ref=e1729]:
+                  - link "Storage" [ref=e1730] [cursor=pointer]:
+                    - /url: /storage
+                    - generic [ref=e1731]: Storage
+                - listitem [ref=e1732]:
+                  - link "Vector" [ref=e1733] [cursor=pointer]:
+                    - /url: /modules/vector
+                    - generic [ref=e1734]: Vector
+                - listitem [ref=e1735]:
+                  - link "Cron" [ref=e1736] [cursor=pointer]:
+                    - /url: /modules/cron
+                    - generic [ref=e1737]: Cron
+                - listitem [ref=e1738]:
+                  - link "Pricing" [ref=e1739] [cursor=pointer]:
+                    - /url: /pricing
+                    - generic [ref=e1740]: Pricing
+                - listitem [ref=e1741]:
+                  - link "Launch Week" [ref=e1742] [cursor=pointer]:
+                    - /url: /launch-week
+                    - generic [ref=e1743]: Launch Week
+            - generic [ref=e1744]:
+              - heading "Solutions" [level=6] [ref=e1745]
+              - list [ref=e1746]:
+                - listitem [ref=e1747]:
+                  - link "AI Builders" [ref=e1748] [cursor=pointer]:
+                    - /url: /solutions/ai-builders
+                    - generic [ref=e1749]: AI Builders
+                - listitem [ref=e1750]:
+                  - link "No Code" [ref=e1751] [cursor=pointer]:
+                    - /url: /solutions/no-code
+                    - generic [ref=e1752]: No Code
+                - listitem [ref=e1753]:
+                  - link "Beginners" [ref=e1754] [cursor=pointer]:
+                    - /url: /solutions/beginners
+                    - generic [ref=e1755]: Beginners
+                - listitem [ref=e1756]:
+                  - link "Developers" [ref=e1757] [cursor=pointer]:
+                    - /url: /solutions/developers
+                    - generic [ref=e1758]: Developers
+                - listitem [ref=e1759]:
+                  - link "Postgres Devs" [ref=e1760] [cursor=pointer]:
+                    - /url: /solutions/postgres-developers
+                    - generic [ref=e1761]: Postgres Devs
+                - listitem [ref=e1762]:
+                  - link "Vibe Coders" [ref=e1763] [cursor=pointer]:
+                    - /url: /solutions/vibe-coders
+                    - generic [ref=e1764]: Vibe Coders
+                - listitem [ref=e1765]:
+                  - link "Hackathon Contestants" [ref=e1766] [cursor=pointer]:
+                    - /url: /solutions/hackathon
+                    - generic [ref=e1767]: Hackathon Contestants
+                - listitem [ref=e1768]:
+                  - link "Startups" [ref=e1769] [cursor=pointer]:
+                    - /url: /solutions/startups
+                    - generic [ref=e1770]: Startups
+                - listitem [ref=e1771]:
+                  - link "Agencies" [ref=e1772] [cursor=pointer]:
+                    - /url: /solutions/agencies
+                    - generic [ref=e1773]: Agencies
+                - listitem [ref=e1774]:
+                  - link "Enterprise" [ref=e1775] [cursor=pointer]:
+                    - /url: /solutions/enterprise
+                    - generic [ref=e1776]: Enterprise
+                - listitem [ref=e1777]:
+                  - link "Innovation Teams" [ref=e1778] [cursor=pointer]:
+                    - /url: /solutions/innovation-teams
+                    - generic [ref=e1779]: Innovation Teams
+            - generic [ref=e1780]:
+              - heading "Resources" [level=6] [ref=e1781]
+              - list [ref=e1782]:
+                - listitem [ref=e1783]:
+                  - link "Blog" [ref=e1784] [cursor=pointer]:
+                    - /url: /blog
+                    - generic [ref=e1785]: Blog
+                - listitem [ref=e1786]:
+                  - link "Support" [ref=e1787] [cursor=pointer]:
+                    - /url: /support
+                    - generic [ref=e1788]: Support
+                - listitem [ref=e1789]:
+                  - link "System Status" [ref=e1790] [cursor=pointer]:
+                    - /url: https://status.supabase.com/
+                    - generic [ref=e1791]: System Status
+                - listitem [ref=e1792]:
+                  - link "Become a Partner" [ref=e1793] [cursor=pointer]:
+                    - /url: /partners
+                    - generic [ref=e1794]: Become a Partner
+                - listitem [ref=e1795]:
+                  - link "Integrations" [ref=e1796] [cursor=pointer]:
+                    - /url: /partners/integrations
+                    - generic [ref=e1797]: Integrations
+                - listitem [ref=e1798]:
+                  - link "Brand Assets" [ref=e1799] [cursor=pointer]:
+                    - /url: /brand-assets
+                    - generic [ref=e1800]: Brand Assets
+                - listitem [ref=e1801]:
+                  - link "Security & Compliance" [ref=e1802] [cursor=pointer]:
+                    - /url: /security
+                    - generic [ref=e1803]: Security & Compliance
+                - listitem [ref=e1804]:
+                  - link "DPA" [ref=e1805] [cursor=pointer]:
+                    - /url: /legal/dpa
+                    - generic [ref=e1806]: DPA
+                - listitem [ref=e1807]:
+                  - link "SOC2" [ref=e1808] [cursor=pointer]:
+                    - /url: /security
+                    - generic [ref=e1809]: SOC2
+                - listitem [ref=e1810]:
+                  - link "HIPAA" [ref=e1811] [cursor=pointer]:
+                    - /url: https://forms.supabase.com/hipaa2
+                    - generic [ref=e1812]: HIPAA
+            - generic [ref=e1813]:
+              - heading "Developers" [level=6] [ref=e1814]
+              - list [ref=e1815]:
+                - listitem [ref=e1816]:
+                  - link "Documentation" [ref=e1817] [cursor=pointer]:
+                    - /url: /docs
+                    - generic [ref=e1818]: Documentation
+                - listitem [ref=e1819]:
+                  - link "Supabase UI" [ref=e1820] [cursor=pointer]:
+                    - /url: https://supabase.com/ui
+                    - generic [ref=e1821]: Supabase UI
+                - listitem [ref=e1822]:
+                  - link "Changelog" [ref=e1823] [cursor=pointer]:
+                    - /url: /changelog
+                    - generic [ref=e1824]: Changelog
+                - listitem [ref=e1825]:
+                  - link "Careers" [ref=e1826] [cursor=pointer]:
+                    - /url: /careers
+                    - generic [ref=e1827]: Careers
+                - listitem [ref=e1828]:
+                  - link "Contributing" [ref=e1829] [cursor=pointer]:
+                    - /url: https://github.com/supabase/supabase/blob/master/CONTRIBUTING.md
+                    - generic [ref=e1830]: Contributing
+                - listitem [ref=e1831]:
+                  - link "Open Source" [ref=e1832] [cursor=pointer]:
+                    - /url: /open-source
+                    - generic [ref=e1833]: Open Source
+                - listitem [ref=e1834]:
+                  - link "SupaSquad" [ref=e1835] [cursor=pointer]:
+                    - /url: /supasquad
+                    - generic [ref=e1836]: SupaSquad
+                - listitem [ref=e1837]:
+                  - link "DevTo" [ref=e1838] [cursor=pointer]:
+                    - /url: https://dev.to/supabase
+                    - generic [ref=e1839]: DevTo
+                - listitem [ref=e1840]:
+                  - link "RSS" [ref=e1841] [cursor=pointer]:
+                    - /url: /rss.xml
+                    - generic [ref=e1842]: RSS
+            - generic [ref=e1843]:
+              - heading "Company" [level=6] [ref=e1844]
+              - list [ref=e1845]:
+                - listitem [ref=e1846]:
+                  - link "Company" [ref=e1847] [cursor=pointer]:
+                    - /url: /company
+                    - generic [ref=e1848]: Company
+                - listitem [ref=e1849]:
+                  - link "General Availability" [ref=e1850] [cursor=pointer]:
+                    - /url: /ga
+                    - generic [ref=e1851]: General Availability
+                - listitem [ref=e1852]:
+                  - link "Terms of Service" [ref=e1853] [cursor=pointer]:
+                    - /url: /terms
+                    - generic [ref=e1854]: Terms of Service
+                - listitem [ref=e1855]:
+                  - link "Privacy Policy" [ref=e1856] [cursor=pointer]:
+                    - /url: /privacy
+                    - generic [ref=e1857]: Privacy Policy
+                - listitem [ref=e1858]:
+                  - button "Privacy Settings" [ref=e1859] [cursor=pointer]:
+                    - generic [ref=e1860]: Privacy Settings
+                - listitem [ref=e1861]:
+                  - link "Acceptable Use Policy" [ref=e1862] [cursor=pointer]:
+                    - /url: /aup
+                    - generic [ref=e1863]: Acceptable Use Policy
+                - listitem [ref=e1864]:
+                  - link "Support Policy" [ref=e1865] [cursor=pointer]:
+                    - /url: /support-policy
+                    - generic [ref=e1866]: Support Policy
+                - listitem [ref=e1867]:
+                  - link "Service Level Agreement" [ref=e1868] [cursor=pointer]:
+                    - /url: /sla
+                    - generic [ref=e1869]: Service Level Agreement
+                - listitem [ref=e1870]:
+                  - link "Humans.txt" [ref=e1871] [cursor=pointer]:
+                    - /url: /humans.txt
+                    - generic [ref=e1872]: Humans.txt
+                - listitem [ref=e1873]:
+                  - link "Lawyers.txt" [ref=e1874] [cursor=pointer]:
+                    - /url: /lawyers.txt
+                    - generic [ref=e1875]: Lawyers.txt
+                - listitem [ref=e1876]:
+                  - link "Security.txt" [ref=e1877] [cursor=pointer]:
+                    - /url: /.well-known/security.txt
+                    - generic [ref=e1878]: Security.txt
+                - listitem [ref=e1879]:
+                  - link "Contact Us" [ref=e1880] [cursor=pointer]:
+                    - /url: /contact-us
+                    - generic [ref=e1881]: Contact Us
+        - generic [ref=e1882]:
+          - generic [ref=e1883]: © Supabase Inc
+          - button "Toggle theme" [ref=e1885] [cursor=pointer]:
+            - img [ref=e1886]
+            - generic [ref=e1888]: Toggle theme
+  - alert [ref=e1889]

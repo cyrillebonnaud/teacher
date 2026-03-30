@@ -9,7 +9,7 @@ export default defineConfig({
   workers: 1,
   reporter: "list",
   use: {
-    baseURL: "http://localhost:3001",
+    baseURL: "http://localhost:6001",
     screenshot: "only-on-failure",
     trace: "retain-on-failure",
   },
@@ -20,8 +20,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "npm run dev -- -p 3001",
-    port: 3001,
+    command: "npm run dev",
+    port: 6001,
     reuseExistingServer: true,
     timeout: 30_000,
   },

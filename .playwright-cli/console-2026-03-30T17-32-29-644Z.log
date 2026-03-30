@@ -1,0 +1,12 @@
+[     137ms] [ERROR] Failed to initialize Usercentrics: TypeError: Failed to fetch
+    at https://frontend-assets.supabase.com/www/4295e41e8105/_next/static/chunks/805cecbb.34e988bdf9631b6a.js?dpl=dpl_C7ALrDgJ4QzA8E4zs26Pejv574ju:1:48420
+    at Object.next (https://frontend-assets.supabase.com/www/4295e41e8105/_next/static/chunks/805cecbb.34e988bdf9631b6a.js?dpl=dpl_C7ALrDgJ4QzA8E4zs26Pejv574ju:1:15200)
+    at https://frontend-assets.supabase.com/www/4295e41e8105/_next/static/chunks/805cecbb.34e988bdf9631b6a.js?dpl=dpl_C7ALrDgJ4QzA8E4zs26Pejv574ju:1:14160
+    at new Promise (<anonymous>)
+    at w (https://frontend-assets.supabase.com/www/4295e41e8105/_next/static/chunks/805cecbb.34e988bdf9631b6a.js?dpl=dpl_C7ALrDgJ4QzA8E4zs26Pejv574ju:1:13909)
+    at tl (https://frontend-assets.supabase.com/www/4295e41e8105/_next/static/chunks/805cecbb.34e988bdf9631b6a.js?dpl=dpl_C7ALrDgJ4QzA8E4zs26Pejv574ju:1:48166)
+    at https://frontend-assets.supabase.com/www/4295e41e8105/_next/static/chunks/805cecbb.34e988bdf9631b6a.js?dpl=dpl_C7ALrDgJ4QzA8E4zs26Pejv574ju:1:48002
+    at Object.next (https://frontend-assets.supabase.com/www/4295e41e8105/_next/static/chunks/805cecbb.34e988bdf9631b6a.js?dpl=dpl_C7ALrDgJ4QzA8E4zs26Pejv574ju:1:15200)
+    at https://frontend-assets.supabase.com/www/4295e41e8105/_next/static/chunks/805cecbb.34e988bdf9631b6a.js?dpl=dpl_C7ALrDgJ4QzA8E4zs26Pejv574ju:1:14160
+    at new Promise (<anonymous>) @ https://frontend-assets.supabase.com/www/4295e41e8105/_next/static/chunks/pages/_app-355cc832abbfe551.js?dpl=dpl_C7ALrDgJ4QzA8E4zs26Pejv574ju:0
+[    1000ms] [WARNING] ConfigCat - WARN - [3000] There is an existing client instance for the specified SDK Key. No new client instance will be created and the specified options are ignored. Returning the existing client instance. SDK Key: 'configcat-proxy/frontend-v2'. @ https://frontend-assets.supabase.com/studio/76efd06a96b6/_next/static/chunks/9f6af8a85317a889.js?dpl=dpl_6yLbLceLnsnereGcXB1wanHejdxi:12

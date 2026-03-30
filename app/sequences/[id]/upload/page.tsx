@@ -1,6 +1,7 @@
+export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { prisma } from "@/lib/db";
+import { supabase } from "@/lib/supabase";
 import UploadForm from "./upload-form";
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
 
 export default async function UploadPage({ params }: Props) {
   const { id } = await params;
-  const sequence = await prisma.sequence.findUnique({ where: { id } });
+  const { data: sequence } = await supabase.from("sequences").select().eq("id", id).single();
   if (!sequence) notFound();
 
   return (

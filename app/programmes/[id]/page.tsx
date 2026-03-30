@@ -2,7 +2,7 @@ export const dynamic = "force-dynamic";
 
 import { redirect, notFound } from "next/navigation";
 import Link from "next/link";
-import { getCurrentParent } from "@/lib/auth";
+import { getSession } from "@/lib/auth";
 import { supabase } from "@/lib/supabase";
 
 function renderMarkdown(text: string, query?: string): React.ReactNode[] {
@@ -73,8 +73,8 @@ export default async function ProgrammePage({
   const sp = await searchParams;
   const query = sp.q ?? "";
 
-  const parent = await getCurrentParent().catch(() => null);
-  if (!parent) redirect("/login");
+  const session = await getSession().catch(() => null);
+  if (!session) redirect("/login");
 
   const { data: programme } = await supabase
     .from("programmes")

@@ -21,7 +21,6 @@ export default function LoginPage() {
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">📚</div>
           <h1 className="text-2xl font-bold text-gray-900">Teacher</h1>
-          <p className="text-sm text-gray-500 mt-1">Espace parents</p>
         </div>
 
         <form action={handleSubmit} className="bg-white rounded-2xl border border-gray-200 p-6 space-y-4">
@@ -34,7 +33,7 @@ export default function LoginPage() {
               name="code"
               autoComplete="off"
               autoCapitalize="characters"
-              placeholder="ex. CYRILLE"
+              placeholder=""
               className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg bg-slate-50 focus:outline-none focus:bg-white focus:border-blue-500 uppercase tracking-widest"
             />
           </div>

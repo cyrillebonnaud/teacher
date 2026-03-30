@@ -1,0 +1,14 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - heading "Mes séquences" [level=1] [ref=e5]
+        - link "+ Nouvelle" [ref=e6] [cursor=pointer]:
+          - /url: /sequences/new
+      - generic [ref=e7]:
+        - generic [ref=e8]: 📚
+        - paragraph [ref=e9]: Aucune séquence pour l'instant
+        - paragraph [ref=e10]: Crée ta première séquence pour commencer à réviser
+        - link "Créer une séquence" [ref=e11] [cursor=pointer]:
+          - /url: /sequences/new
+  - alert [ref=e12]

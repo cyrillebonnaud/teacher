@@ -1,0 +1,347 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content":
+    - /url: "#geist-skip-nav"
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - generic [ref=e9]:
+            - link "bonnaudc Hobby" [ref=e10] [cursor=pointer]:
+              - /url: /bonnaudc
+              - img [ref=e11]
+              - generic [ref=e12]:
+                - generic [ref=e13]: bonnaudc
+                - generic [ref=e15]: Hobby
+            - button [ref=e16] [cursor=pointer]:
+              - img [ref=e18]
+          - button "Find… F" [ref=e21]:
+            - generic [ref=e23]:
+              - img [ref=e25]
+              - generic [ref=e27]: Find…
+              - generic [ref=e29]: F
+        - navigation [ref=e31]:
+          - generic [ref=e34]:
+            - link "Other Overview" [ref=e35] [cursor=pointer]:
+              - /url: /bonnaudc/teacher
+              - img "Other" [ref=e37]:
+                - img "Other" [ref=e38]
+              - generic [ref=e40]: Overview
+            - link "Deployments" [ref=e41] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/deployments
+              - img [ref=e43]
+              - generic [ref=e46]: Deployments
+            - link "Logs" [ref=e47] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/logs
+              - img [ref=e49]
+              - generic [ref=e52]: Logs
+            - link "Analytics" [ref=e53] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/analytics
+              - img [ref=e55]
+              - generic [ref=e58]: Analytics
+            - link "Speed Insights" [ref=e59] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/speed-insights
+              - img [ref=e61]
+              - generic [ref=e64]: Speed Insights
+            - link "Observability" [ref=e65] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/observability
+              - img [ref=e67]
+              - generic [ref=e70]: Observability
+              - img [ref=e72]
+            - link "Firewall" [ref=e74] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/firewall
+              - img [ref=e76]
+              - generic [ref=e80]: Firewall
+              - img [ref=e82]
+            - link "CDN" [ref=e84] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/cdn
+              - img [ref=e86]
+              - generic [ref=e89]: CDN
+              - img [ref=e91]
+            - separator [ref=e93]
+            - link "Domains" [ref=e94] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/settings/domains
+              - img [ref=e96]
+              - generic [ref=e99]: Domains
+            - link "Integrations" [ref=e100] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/settings/integrations
+              - img [ref=e102]
+              - generic [ref=e105]: Integrations
+            - link "Storage" [ref=e106] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/stores
+              - img [ref=e108]
+              - generic [ref=e111]: Storage
+            - link "Flags" [ref=e112] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/flags
+              - img [ref=e114]
+              - generic [ref=e117]: Flags
+              - img [ref=e119]
+            - link "Agent" [ref=e121] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/agent
+              - img [ref=e123]
+              - generic [ref=e126]: Agent
+              - img [ref=e128]
+            - link "AI Gateway" [ref=e130] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/ai-gateway
+              - img [ref=e132]
+              - generic [ref=e135]: AI Gateway
+              - img [ref=e137]
+            - link "Sandboxes" [ref=e139] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/sandboxes
+              - img [ref=e141]
+              - generic [ref=e144]: Sandboxes
+            - separator [ref=e145]
+            - link "Usage" [ref=e146] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/usage
+              - img [ref=e148]
+              - generic [ref=e151]: Usage
+            - link "Settings" [ref=e152] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/settings
+              - img [ref=e154]
+              - generic [ref=e157]: Settings
+              - img [ref=e159]
+        - generic [ref=e163]:
+          - generic [ref=e164]:
+            - generic [ref=e165]:
+              - generic [ref=e168]:
+                - generic [ref=e169]: Ship
+                - generic [ref=e171]: "26"
+              - button "Dismiss" [ref=e172] [cursor=pointer]:
+                - img [ref=e174]
+            - generic [ref=e176]:
+              - generic [ref=e177]: Built for you to ship what’s next.
+              - link "Save the date" [ref=e179] [cursor=pointer]:
+                - /url: /ship
+                - generic [ref=e180]:
+                  - text: Save the date
+                  - img [ref=e181]
+          - generic [ref=e184]:
+            - button "Avatar for cyrillebonnaud-8980 cyrillebonnaud-8980" [ref=e185] [cursor=pointer]:
+              - img "Avatar for cyrillebonnaud-8980" [ref=e186]:
+                - img "Avatar for cyrillebonnaud-8980" [ref=e187]
+              - generic [ref=e189]: cyrillebonnaud-8980
+              - img [ref=e191]
+            - button "notifications" [ref=e195] [cursor=pointer]:
+              - generic [ref=e197]:
+                - img
+      - button [ref=e199] [cursor=pointer]:
+        - img [ref=e200]
+    - generic [ref=e203]:
+      - generic [ref=e204]:
+        - generic [ref=e207]:
+          - link "Other teacher" [ref=e208] [cursor=pointer]:
+            - /url: /bonnaudc/teacher
+            - img "Other" [ref=e209]:
+              - img "Other" [ref=e210]
+            - generic [ref=e212]: teacher
+          - button [ref=e213] [cursor=pointer]:
+            - img [ref=e215]
+          - link "Back to team view" [ref=e219] [cursor=pointer]:
+            - /url: /bonnaudc/~/deployments
+            - img [ref=e221]
+        - generic [ref=e223]:
+          - generic [ref=e224]:
+            - link "Deployments" [ref=e225] [cursor=pointer]:
+              - /url: /bonnaudc/teacher/deployments
+            - img [ref=e226]
+          - generic [ref=e228]: BAin3UeRw
+        - button "Open page actions menu" [ref=e230] [cursor=pointer]:
+          - img [ref=e232]
+      - generic [ref=e235]:
+        - generic [ref=e237]:
+          - link "Deployment" [ref=e238] [cursor=pointer]:
+            - /url: /bonnaudc/teacher/BAin3UeRw9xqVqQrujqUPGDLD2WB
+          - link "Logs" [ref=e239] [cursor=pointer]:
+            - /url: /bonnaudc/teacher/BAin3UeRw9xqVqQrujqUPGDLD2WB/logs
+          - link "Resources" [ref=e240] [cursor=pointer]:
+            - /url: /bonnaudc/teacher/BAin3UeRw9xqVqQrujqUPGDLD2WB/resources
+          - link "Source" [ref=e241] [cursor=pointer]:
+            - /url: /bonnaudc/teacher/BAin3UeRw9xqVqQrujqUPGDLD2WB/source
+          - link "Open Graph" [ref=e242] [cursor=pointer]:
+            - /url: /bonnaudc/teacher/BAin3UeRw9xqVqQrujqUPGDLD2WB/og
+        - generic [ref=e243]:
+          - generic [ref=e245]:
+            - generic [ref=e246]:
+              - heading "Deployment Details" [level=3] [ref=e248]
+              - button "Redeploy" [ref=e250] [cursor=pointer]:
+                - img [ref=e252]
+                - generic [ref=e254]: Redeploy
+            - generic [ref=e255]:
+              - generic [ref=e259]:
+                - generic [ref=e261]:
+                  - img [ref=e263]
+                  - heading "Build Failed" [level=3] [ref=e265]
+                - paragraph [ref=e270]: Command "npm run build" exited with 1
+              - generic [ref=e272]:
+                - generic [ref=e273]:
+                  - generic [ref=e274]:
+                    - generic [ref=e275]: Created
+                    - generic [ref=e276]:
+                      - img "cyrillebonnaud-8980 Avatar" [ref=e279]:
+                        - img "cyrillebonnaud-8980 Avatar" [ref=e280]
+                      - generic [ref=e281]: cyrillebonnaud-8980
+                      - generic [ref=e283]: 2m ago
+                  - generic [ref=e284]:
+                    - generic [ref=e285]: Status
+                    - generic "This deployment had an error." [ref=e286]:
+                      - generic [ref=e290]: Error
+                      - link "Latest" [ref=e291] [cursor=pointer]:
+                        - /url: /bonnaudc/teacher/deployments?filterBranch=main
+                  - generic [ref=e292]:
+                    - generic [ref=e293]: Duration
+                    - generic "Mar 30, 2026, 7:08:53 PM GMT+2" [ref=e294]:
+                      - img [ref=e295]
+                      - text: 38s
+                      - generic [ref=e298]: 56s ago
+                  - generic [ref=e299]:
+                    - generic [ref=e300]: Environment
+                    - generic [ref=e301]:
+                      - img [ref=e302]
+                      - link "Production" [ref=e304] [cursor=pointer]:
+                        - /url: /bonnaudc/teacher/settings/environments/production
+                - generic [ref=e305]:
+                  - generic [ref=e306]: Domains
+                  - generic [ref=e307]:
+                    - img [ref=e309]
+                    - link "teacher-myguey396-bonnaudc.vercel.app" [ref=e311] [cursor=pointer]:
+                      - /url: https://teacher-myguey396-bonnaudc.vercel.app
+                - generic [ref=e312]:
+                  - generic [ref=e313]: Source
+                  - generic [ref=e314]:
+                    - img [ref=e315]
+                    - link "main" [ref=e317] [cursor=pointer]:
+                      - /url: https://github.com/cyrillebonnaud/teacher/tree/main
+                  - generic [ref=e318]:
+                    - img [ref=e319]
+                    - 'link "fb6d99a feat: Teacher MVP — révision gamifiée pour collégien" [ref=e321] [cursor=pointer]':
+                      - /url: /bonnaudc/teacher/BAin3UeRw9xqVqQrujqUPGDLD2WB/source
+                      - generic [ref=e323]: fb6d99a
+                      - 'generic "feat: Teacher MVP — révision gamifiée pour collégien" [ref=e324]'
+            - button "Deployment Settings 3 Recommendations" [ref=e328] [cursor=pointer]:
+              - generic [ref=e329]:
+                - img [ref=e330]
+                - generic [ref=e332]:
+                  - generic [ref=e333]: Deployment Settings
+                  - generic [ref=e339]: 3 Recommendations
+          - generic [ref=e340]:
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - heading "Build Logs 38s" [level=2] [ref=e343]:
+                  - generic [ref=e344] [cursor=pointer]:
+                    - img [ref=e345]
+                    - generic [ref=e349]: Build Logs
+                    - generic [ref=e350]: 38s
+                    - img [ref=e352]
+                - region "Build Logs 38s" [ref=e354]:
+                  - generic [ref=e356]:
+                    - generic [ref=e357]:
+                      - button "all lines" [ref=e358] [cursor=pointer]:
+                        - generic [ref=e360]:
+                          - img [ref=e362]
+                          - img [ref=e365]
+                      - generic [ref=e367]: 64 lines
+                      - 'button "error count: 3" [ref=e370] [cursor=pointer]':
+                        - generic [ref=e371]:
+                          - img [ref=e372]
+                          - generic [ref=e375]: "3"
+                      - generic [ref=e377]:
+                        - searchbox "Search" [ref=e378]
+                        - img [ref=e380]
+                        - generic [ref=e383]:
+                          - generic [ref=e384]: ⌘
+                          - text: F
+                    - generic [ref=e388]:
+                      - generic [ref=e389]:
+                        - generic [ref=e391]: 19:08:48.037
+                        - generic [ref=e393]: ✓ Compiled successfully in 7.0s
+                      - generic [ref=e394]:
+                        - generic [ref=e396]: 19:08:48.039
+                        - generic [ref=e398]: Running TypeScript ...
+                      - generic [ref=e399]:
+                        - generic [ref=e401]: 19:08:52.305
+                        - generic [ref=e403]: Failed to type check.
+                      - generic [ref=e406]: 19:08:52.306
+                      - generic [ref=e408]:
+                        - generic [ref=e410]: 19:08:52.307
+                        - generic [ref=e412]: ./lib/claude.ts:96:26
+                      - generic [ref=e413]:
+                        - generic [ref=e415]: 19:08:52.307
+                        - generic [ref=e417]: "Type error: Property 'content' does not exist on type '(Message & { _request_id?: string | null | undefined; }) | (Stream<RawMessageStreamEvent> & { _request_id?: string | null | undefined; })'."
+                      - generic [ref=e418]:
+                        - generic [ref=e420]: 19:08:52.307
+                        - generic [ref=e422]: "Property 'content' does not exist on type 'Stream<RawMessageStreamEvent> & { _request_id?: string | null | undefined; }'."
+                      - generic [ref=e425]: 19:08:52.307
+                      - generic [ref=e427]:
+                        - generic [ref=e429]: 19:08:52.308
+                        - generic [ref=e431]: "94 | } as Parameters<typeof client.messages.create>[0]);"
+                      - generic [ref=e432]:
+                        - generic [ref=e434]: 19:08:52.308
+                        - generic [ref=e436]: 95 |
+                      - generic [ref=e437]:
+                        - generic [ref=e439]: 19:08:52.308
+                        - generic [ref=e441]: "> 96 | const block = response.content[0];"
+                      - generic [ref=e442]:
+                        - generic [ref=e444]: 19:08:52.308
+                        - generic [ref=e446]: "| ^"
+                      - generic [ref=e447]:
+                        - generic [ref=e449]: 19:08:52.309
+                        - generic [ref=e451]: 97 | if (block.type !== "text") throw new Error("Unexpected response type from Claude vision");
+                      - generic [ref=e452]:
+                        - generic [ref=e454]: 19:08:52.309
+                        - generic [ref=e456]: "98 | log(\"vision:res\", { inputTokens: response.usage.input_tokens, outputTokens: response.usa..."
+                      - generic [ref=e457]:
+                        - generic [ref=e459]: 19:08:52.309
+                        - generic [ref=e461]: 99 | return block.text;
+                      - generic [ref=e462]:
+                        - generic [ref=e464]: 19:08:52.338
+                        - generic [ref=e466]: "Next.js build worker exited with code: 1 and signal: null"
+                      - generic [ref=e467]:
+                        - generic [ref=e469]: 19:08:52.374
+                        - generic [ref=e471]: "Error: Command \"npm run build\" exited with 1"
+              - heading "Deployment Summary" [level=2] [ref=e474]:
+                - generic:
+                  - img
+                  - generic: Deployment Summary
+                  - generic:
+                    - img
+              - heading "Deployment Checks" [level=2] [ref=e476]:
+                - generic [ref=e477] [cursor=pointer]:
+                  - img [ref=e478]
+                  - generic [ref=e480]: Deployment Checks
+                  - img [ref=e482]
+              - heading "Assigning Custom Domains" [level=2] [ref=e485]:
+                - generic:
+                  - img
+                  - generic: Assigning Custom Domains
+                  - generic:
+                    - img
+            - generic [ref=e487]:
+              - link "Runtime Logs View and debug runtime logs & errors" [ref=e488] [cursor=pointer]:
+                - /url: /bonnaudc/teacher/logs
+                - generic [ref=e489]:
+                  - paragraph [ref=e491]: Runtime Logs
+                  - paragraph [ref=e492]: View and debug runtime logs & errors
+              - link "Observability Monitor app health & performance" [ref=e493] [cursor=pointer]:
+                - /url: /bonnaudc/teacher/observability/serverless-functions
+                - generic [ref=e494]:
+                  - paragraph [ref=e496]: Observability
+                  - paragraph [ref=e497]: Monitor app health & performance
+              - link "Speed Insights Not Enabled Performance metrics from real users" [ref=e498] [cursor=pointer]:
+                - /url: /bonnaudc/teacher/speed-insights
+                - generic [ref=e499]:
+                  - generic [ref=e500]:
+                    - paragraph [ref=e501]: Speed Insights
+                    - generic [ref=e503]: Not Enabled
+                  - paragraph [ref=e504]: Performance metrics from real users
+              - link "Web Analytics Not Enabled Analyze visitors & traffic in real-time" [ref=e505] [cursor=pointer]:
+                - /url: /bonnaudc/teacher/analytics
+                - generic [ref=e506]:
+                  - generic [ref=e507]:
+                    - paragraph [ref=e508]: Web Analytics
+                    - generic [ref=e510]: Not Enabled
+                  - paragraph [ref=e511]: Analyze visitors & traffic in real-time
+  - alert [ref=e512]
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - img

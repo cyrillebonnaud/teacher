@@ -1,6 +1,7 @@
+export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { prisma } from "@/lib/db";
+import { supabase } from "@/lib/supabase";
 import DocumentEditor from "./document-editor";
 
 interface Props {
@@ -10,10 +11,10 @@ interface Props {
 export default async function DocumentDetailPage({ params }: Props) {
   const { id, docId } = await params;
 
-  const doc = await prisma.document.findUnique({ where: { id: docId } });
-  if (!doc || doc.sequenceId !== id) notFound();
+  const { data: doc } = await supabase.from("documents").select().eq("id", docId).single();
+  if (!doc || doc.sequence_id !== id) notFound();
 
-  const sequence = await prisma.sequence.findUnique({ where: { id } });
+  const { data: sequence } = await supabase.from("sequences").select().eq("id", id).single();
   if (!sequence) notFound();
 
   return (
@@ -29,12 +30,12 @@ export default async function DocumentDetailPage({ params }: Props) {
           <p className="text-sm text-gray-500">{sequence.emoji} {sequence.name}</p>
         </div>
         <span className="text-2xl">
-          {doc.mimeType === "application/pdf" ? "📄" : "📷"}
+          {doc.mime_type === "application/pdf" ? "📄" : "📷"}
         </span>
       </div>
 
       {/* Preview */}
-      {doc.mimeType !== "application/pdf" && (
+      {doc.mime_type !== "application/pdf" && (
         <div className="mb-5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -46,7 +47,7 @@ export default async function DocumentDetailPage({ params }: Props) {
       )}
 
       {/* Text editor */}
-      <DocumentEditor docId={docId} initialText={doc.rawText} />
+      <DocumentEditor docId={docId} initialText={doc.raw_text} />
     </div>
   );
 }
