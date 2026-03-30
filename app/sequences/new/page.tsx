@@ -151,10 +151,10 @@ export default function NewSequencePage() {
       {/* ── Step 1 : Contenu ───────────────────────────────────────── */}
       {step === 1 && (
         <div className="space-y-4">
-          <p className="text-sm text-gray-500">Sur quoi porte ce quiz ?</p>
+          <p className="text-sm text-gray-500">Donne un titre à ton quiz</p>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Titre <span className="text-gray-400 font-normal">(optionnel)</span>
+              Titre <span className="text-red-400">*</span>
             </label>
             <input
               type="text"
@@ -166,13 +166,12 @@ export default function NewSequencePage() {
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Décris ce que tu veux réviser <span className="text-red-400">*</span>
+              Ajouter des détails <span className="text-gray-400 font-normal">(optionnel)</span>
             </label>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              required
-              rows={4}
+              rows={3}
               placeholder="ex. les régimes alimentaires des animaux : herbivore, carnivore, omnivore..."
               className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg bg-slate-50 focus:outline-none focus:bg-white focus:border-blue-500 resize-none"
             />
@@ -181,7 +180,7 @@ export default function NewSequencePage() {
             <BackButton />
             <button
               onClick={next}
-              disabled={!description.trim()}
+              disabled={!title.trim()}
               className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl disabled:opacity-40"
             >
               Suivant →
@@ -292,7 +291,7 @@ export default function NewSequencePage() {
         <form action={createSequence} className="space-y-5">
           {/* Hidden fields */}
           <input type="hidden" name="subject" value={subject} />
-          <input type="hidden" name="title" value={title || description.slice(0, 60)} />
+          <input type="hidden" name="title" value={title} />
           <input type="hidden" name="description" value={description} />
           <input type="hidden" name="level" value={level} />
           <input type="hidden" name="questionCount" value={questionCount} />

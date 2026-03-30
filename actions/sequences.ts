@@ -33,9 +33,9 @@ export async function createSequence(formData: FormData) {
   const files = rawFiles.filter((f) => f && f.size > 0);
 
   if (!subject?.trim()) throw new Error("La matière est requise");
-  if (!description) throw new Error("La description est requise");
+  if (!rawTitle) throw new Error("Le titre est requis");
 
-  const title = rawTitle || description.slice(0, 60);
+  const title = rawTitle;
 
   const validCount = ([10, 20] as number[]).includes(questionCount)
     ? (questionCount as 10 | 20)
